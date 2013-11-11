@@ -1,0 +1,15 @@
+# UGC 11914 = NGC 7217
+# Noordermeer+2005
+# H I
+# dens should be multiply to 1.44 to account for the presence of He
+# r   dens
+# "   M_sun/pc^2
+  0   2.88
+ 15   2.85
+ 30   2.85
+ 45   3.17
+ 60   4.00
+ 75   4.31
+ 90   3.23
+105   1.56
+120   0.52

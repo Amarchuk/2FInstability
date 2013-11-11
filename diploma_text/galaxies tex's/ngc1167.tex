@@ -1,0 +1,176 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[english,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+%\usepackage{psfig,amsfonts}
+\usepackage{array,longtable}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{graphics}
+\setcounter{LTchunksize}{20}
+\textheight 23.0cm
+\textwidth 18.0cm
+
+\hoffset=-2.5cm
+%\voffset=-2.5cm
+\baselineskip=22pt
+\sloppy
+
+\renewcommand{\refname}{ }
+\renewcommand{\tablename}{Таблица}
+\renewcommand{\figurename}{Рис.}
+
+\def\bc{\begin{center}}
+\def\ec{\end{center}}
+
+\def\lb{\linebreak}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\beq{\begin{eqnarray}}
+\def\eeq{\end{eqnarray}}
+\def\bfig{\begin{figure}}
+\def\efig{\end{figure}}
+\def\bnum{\begin{enumerate}}
+\def\enum{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\mm{\mathrm}
+
+\begin{document}
+
+\noindent
+Noordermeer E., van der Hulst J. M., 
+``The stellar mass distribution in early-type disc galaxies: surface
+photometry and bulge-disc decompositions'', 
+MNRAS, 376, 1480-1512 (2007)
+
+%*******************************************************DISK********************
+\begin{longtable}[c]{llllllllllllll}
+\caption{NGC 1167. Structural parameters of the galaxy}\label{GAL}  \\ 
+\hline 
+band & scale & 
+$\mu_\mm{e,b}$ & $\mu_\mm{e,b}^\mm{c}$ & $r_\mm{e,b}$ & 
+$n$ & $m_\mm{b}$ & $M_\mm{b}$ & 
+$\mu_\mm{0,d}$ & $\mu_\mm{0,d}^\mm{c}$ & $h$ & 
+$m_\mm{d}$ & $M_\mm{d}$ & $B/D$ \\ 
+& (kpc/$''$) & \multicolumn{2}{c}{(mag arcsec$^{-2}$)} & (arcsec) 
+& & \multicolumn{2}{c}{(mag)} & 
+\multicolumn{2}{c}{(mag arcsec$^{-2}$)} & & 
+\multicolumn{2}{c}{(mag)} & \\
+(1)&(2)&(3)&(4)&(5)&(6)&(7)&(8)&(9)&(10)&(11)&(12)&(13)&(14) \\ 
+\hline
+\endfirsthead 
+\hline
+\multicolumn{14}{c}{\small\slshape Structural parameters of the galaxy. 
+Continued. } \\ \hline
+band & scale & 
+$\mu_\mm{e,b}$ & $\mu_\mm{e,b}^\mm{c}$ & $r_\mm{e,b}$ & 
+$n$ & $m_\mm{b}$ & $M_\mm{b}$ & 
+$\mu_\mm{0,d}$ & $\mu_\mm{0,d}^\mm{c}$ & $h$ & 
+$m_\mm{d}$ & $M_\mm{d}$ & $B/D$ \\ 
+& (kpc/$''$) & \multicolumn{2}{c}{(mag arcsec$^{-2}$)} & (arcsec) 
+& & \multicolumn{2}{c}{(mag)} & 
+\multicolumn{2}{c}{(mag arcsec$^{-2}$)} & & 
+\multicolumn{2}{c}{(mag)} & \\
+(1)&(2)&(3)&(4)&(5)&(6)&(7)&(8)&(9)&(10)&(11)&(12)&(13)&(14) \\
+\hline
+\endhead 
+\hline
+$R$ & 0.33 & 19.89 & 19.40 & 6.7 & 1.7 & 12.94 & -21.69 & 
+20.35 & 20.12 & 24.2 & 11.69 & -22.94 & 0.32 \tabularnewline
+
+$B$ & 0.33 & 21.52 & 20.73 & 6.7 & 1.7 & 14.57 & -20.37 & 
+22.24 & 21.71 & 27.5 & 13.40 & -21.54 & 0.34 \tabularnewline
+\hline
+\end{longtable}
+
+Columns: 
+(1) Photometric band. 
+(2) Conversion factor to convert arcsecs into kpc.
+(3) Bulge effective surface brightness. 
+(4) Idem, but corrected for galactic foreground extinction.
+(5) Effective radius of the bulge, given in arcsec.
+(6) S\`ersic index. 
+(7) Bulge total apparent magnitude.
+(8) Bulge total absolute magnitude.
+(9) Disc central surface brightness. 
+(10) Idem, but corrected for galactic foreground extinction.
+(11) Disc scalelength, given in arcsec.
+(12) Disc total apparent magnitude.
+(13) Disc total absolute magnitude. 
+(14) The ratio of the bulge to disc luminosities. 
+
+\bigskip
+\noindent
+Noordermeer E., van der Hulst J.M., Sancisi R., 
+Swaters R. S., and van Albada T.S., 
+``The mass distribution in early-type disc galaxies: declining rotation
+curves and correlations with optical properties'', 
+MNRAS, 376, 1513-1546 (2007)
+
+%*******************************************************DISK********************
+\begin{longtable}[c]{cccccccccc}
+\caption{NGC 1167. Basic data}\label{GAL}  \\ 
+\hline 
+Type & D & $M_B$ & $M_R$ & $\mu_\mm{0,d}^\mm{c}$ & $h$ & $r_\mm{e,b}$
+& $V_\mm{sys}$ & $PA$ & $i$ \\ 
+& (Mpc) & (mag) & (mag) & (mag arcsec$^{-2}$) & (kpc) & (kpc)
+& (km/s) & (deg) & (deg) \\
+(1)&(2)&(3)&(4)&(5)&(6)&(7)&(8)&(9)&(10) \\ 
+\hline
+\endfirsthead 
+\hline
+\multicolumn{6}{c}{\small\slshape Basic data. 
+Continued. } \\ \hline
+Type & D & $M_B$ & $M_R$ & $\mu_\mm{0,d}^\mm{c}$ & $h$ & $r_\mm{e,b}$
+& $V_\mm{sys}$ & $PA$ & $i$ \\ 
+& (Mpc) & (mag) & (mag) & (mag arcsec$^{-2}$) & (kpc) & (kpc)
+& (km/s) & (deg) & (deg) \\
+(1)&(2)&(3)&(4)&(5)&(6)&(7)&(8)&(9)&(10) \\ 
+\hline
+\endhead 
+\hline
+Sa0 & 67.4 & -21.88 & -23.24 & 20.12 & 8.0 & 2.2 
+& 4952 & 250-256 & 36 \tabularnewline
+\hline
+\end{longtable}
+
+Columns: 
+(1) Morphological type from NED). 
+(2) Distance. 
+(3), (4) absolute B-and R-band magnitudes 
+(corrected for Galactic foreground extinction).
+(5) R-band central disc surface brightness 
+(corrected for Galactic foreground extinction and inclination effects).
+(6) $R$-band disc scalelength.
+(7) $R$-band bulge effective radius.
+(8) Heliocentric systemic velocity.
+(9) Position angle (north through east) of major axis. 
+(10)Inclination angle.
+
+\bigskip
+\noindent
+Фотометрия в $B$ и $R$ даёт согласованные значения центральной 
+поверхностной плотности для диска.
+
+\bigskip
+\noindent
+Галактика раннего типа. В диске наблюдаются туго закрученные 
+тонкие ветви (SDSS). Излучение $H_\alpha$ только в центре. 
+На профиле яркости в полосе $B$ никаких особенностей.
+
+\bigskip
+\noindent
+У галактики много газа. Интегрально $M_\mm{HI} = 1.65 \cdot 10^{10} 
+M_\odot$. Но газ распределён широко, и значения 
+поверхностной плотности низкие, даже в области газового кольца 
+примерно на 60 arcsec. 
+
+\bigskip
+\noindent
+Газовая (WSRT) и звёздная кинематика плохо согласуются (точки на 
+звёздной кривой вращения лежат выше точек на газовой кривой 
+вращения). Профиль дисперсии скоростей $\sigma_R$ восстанавливать 
+через $\sigma_\mm{los}$.
+
+\end{document}

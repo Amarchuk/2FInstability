@@ -1,0 +1,914 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{default} 
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  \begin{center}
+  \usebeamerfont{institute}
+  \insertinstitute\par
+  \vspace{0.6 cm}
+  \usebeamerfont{author}
+  \insertauthor\par
+ \par
+  \usebeamerfont{subtitle}
+  \usebeamercolor[fg]{subtitle}
+  \insertsubtitle\par
+  \usebeamerfont{title}
+  \inserttitle\par
+  \usebeamercolor[fg]{titlegraphic}
+  \inserttitlegraphic
+ \par
+%  \bigskip
+  \usebeamerfont{date}
+  \insertdate\par
+  \end{center}
+}
+
+\setbeamersize{text margin left=5pt,text margin right=5pt}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Предметный указатель
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Institute
+САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ
+\begin_inset Newline newline
+\end_inset
+
+Математико-механический факультет
+\begin_inset Newline newline
+\end_inset
+
+Кафедра астрофизики 
+\end_layout
+
+\begin_layout Author
+Марчук Александр Александрович 
+\end_layout
+
+\begin_layout Title
+Поляризация излучения рентгеновских гало
+\end_layout
+
+\begin_layout Subtitle
+Дипломная работа 
+\end_layout
+
+\begin_layout Date
+2013
+\end_layout
+
+\begin_layout BeginFrame
+Введение
+\end_layout
+
+\begin_layout Standard
+\align center
+Рентгеновские гало -- свечение вокруг далеких рентгеновских источников,
+ образованное в результате рассеяния света пылью.
+\end_layout
+
+\begin_layout Standard
+\align center
+Предсказание: Overbeck, 1965 год.
+\end_layout
+
+\begin_layout Standard
+\align center
+Наблюдения: обсерватории Einstein, ROSAT, Chandra, Newton и др., на длинах
+ волн от 
+\begin_inset Formula $\sim$
+\end_inset
+
+1.4 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AA
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+(6 кэВ) до 12.4 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AA
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+(1 кэВ).
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size footnotesize
+\begin_inset Formula $\sim$
+\end_inset
+
+50 источников (
+\begin_inset Formula $\varphi$
+\end_inset
+
+< 1000
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+"
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\color red
+Рассеянное излучение должно быть поляризовано.
+\end_layout
+
+\begin_layout Standard
+Цель работы: моделирование поляризации излучения рентгеновских гало.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+[Для Крабовидной туманности 
+\begin_inset Formula $P_{l}=19\%\pm10\%$
+\end_inset
+
+.
+ (Novick et al., 1972)]
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Теория
+\end_layout
+
+\begin_layout Itemize
+Однократное рассеяние.
+\end_layout
+
+\begin_layout Itemize
+Точная теория рассеяния света: шары, бесконечные цилиндры.
+\end_layout
+
+\begin_layout Itemize
+Углы рассеяния: 
+\begin_inset Formula $\Theta_{1,2}=\arcsin\frac{\rho}{r_{1,2}}\approx\frac{D\varphi}{r_{1,2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Полидисперсные ансамбли частиц: 
+\begin_inset Formula $n(a)=a^{-q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Матрица рассеяния 
+\begin_inset Formula $\hat{F}$
+\end_inset
+
+: 
+\begin_inset Formula $\vec{S}_{{\rm sca}}={\cal K}\hat{F}\,\vec{S}_{\star}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\left[I_{{\rm sca}}(\varphi,\lambda)=I_{\star}(\lambda)\,{\displaystyle K\,\int\limits _{\Theta_{1}}^{\Theta_{2}}\frac{1}{r^{2}}\tilde{F}(\Theta,\lambda)\,{\rm d}\Theta}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Оптика пыли в рентгеновском диапазоне
+\end_layout
+
+\begin_layout Standard
+\align center
+Вещество: силикат, аморфный углерод.
+\begin_inset Newline newline
+\end_inset
+
+Показатели преломления из Draine, (2003) и Zubko, et.
+ al, (1996)
+\end_layout
+
+\begin_layout Itemize
+Оптическая толщина рентгеновских гало в рентгеновском диапазоне мала.
+\end_layout
+
+\begin_layout Itemize
+Углы рассеяния малы: 
+\begin_inset Formula $\Theta<1^{\circ}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Фактор асимметрии индикатрисы рассеяния 
+\begin_inset Formula $g$
+\end_inset
+
+ очень близок к единице.
+\end_layout
+
+\begin_layout Itemize
+Поляризация и профиль яркости не зависят от вещества.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Шары
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{\textsf{{min}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{\textsf{{max}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D/r_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D/r_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вещество
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.005 мкм
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.25 мкм
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.7 кэВ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Силикаты
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Яркость гало растет, а степень поляризации уменьшается при приближении облака
+ к наблюдателю.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+С уменьшением энергии излучения степень поляризации растет, а яркость падает.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Яркость и поляризация гало растут с уменьшением размеров рассеивающих частиц.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+В некоторых случаях степень поляризации излучения гало может достигать 
+\begin_inset Formula $1\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Цилиндры
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\Omega$
+\end_inset
+
+ - угол между направлением магнитного поля 
+\begin_inset Formula $\vec{B}$
+\end_inset
+
+ и лучом зрения.
+\end_layout
+
+\begin_layout Standard
+\align center
+Статическая ориентация (PF-ориентация) - цилиндры ориентированы своей осью
+ 
+\begin_inset Formula $\bot$
+\end_inset
+
+ вектору 
+\begin_inset Formula $\vec{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Слабая зависимость яркости и поляризации гало от угла 
+\begin_inset Formula $\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Степень поляризации излучения гало мала.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Заключение
+\end_layout
+
+\begin_layout Itemize
+В рамках модели с однократным рассеянием света выполнены расчеты распределений
+ яркости и поляризации излучения в гало.
+ При этом использовались сферические и цилиндрические частицы.
+ Изучено влияние на наблюдаемые профили изменений параметров ансамблей пылинок,
+ положения облака на луче зрения, а также энергии и состояния поляризации
+ падающего излучения.
+\end_layout
+
+\begin_layout Itemize
+Установлено, что обычно степень линейной поляризации рассеянного излучения
+ мала и не превосходит 
+\begin_inset Formula $P_{l}\sim0.1\%$
+\end_inset
+
+ на угловых расстояниях 
+\begin_inset Formula $\varphi<1^{\circ}$
+\end_inset
+
+ от рентгеновского источника.
+ Степень поляризации растет при увеличении доли мелких частиц в ансамбле
+ и при смещении пылевого облака к источнику.
+\end_layout
+
+\begin_layout Itemize
+Показано, что в некоторых случаях линейная поляризация излучения гало может
+ достигать 
+\begin_inset Formula $P_{l}\sim1\%$
+\end_inset
+
+ , что может быть зафиксировано будущими рентгеновскими поляриметрами.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Спасибо за внимание
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+Спасибо за внимание.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Литература
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Draine, (2003)"
+key "Draine2003"
+
+\end_inset
+
+Draine, B.
+ T.
+ (2003).
+ Scattering by Interstellar Dust Grains.
+ II.
+ X-Rays.
+ ApJ, 598, 1026–1037.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Zubko, et. al, (1996)"
+key "Zubko1996"
+
+\end_inset
+
+Zubko, V.
+ G., Mennella, V., Colangeli, L., & Bussoletti, E.
+ (1996).
+ Optical constants of cosmic carbon analogue grains - I.
+ Simulation of clustering by a modified continuous distribution of ellipsoids.
+ MNRAS, 282, 1321–1329.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Overbeck, 1965"
+key "Overbeck1965"
+
+\end_inset
+
+Overbeck, J.
+ W.
+ (1965).
+ Small-Angle Scattering of Celestial X-Rays by Interstellar Grains.
+ ApJ, 141, 864.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Novick"
+key "Novick"
+
+\end_inset
+
+Novick, R., Weisskopf, M.
+ C., Berthelsdorf, R., Linke, R., & Wolff, R.
+ S.
+ (1972).
+ Detection of X-Ray Polarization of the Crab Nebula.
+ ApJ, 174, L1.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "picture"
+key "picture"
+
+\end_inset
+
+Картинка на первом слайде: Cygnus X-3 http://chandra.harvard.edu/photo/2000/cygx39
+9/
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Цилиндры
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Поляризованный источник
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+\begin_inset Quotes eld
+\end_inset
+
+Максимальная
+\begin_inset Quotes erd
+\end_inset
+
+ поляризация
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{\textsf{{min}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{\textsf{{max}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D/r_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Вещество
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.001 мкм
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.25 мкм
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5 кэВ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Силикаты
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document

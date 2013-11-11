@@ -1,0 +1,36 @@
+# UGC 624 = NGC 338
+# Noordermeer+2007 ionized gas + HI
+# PA = ?
+# inclination =  64 deg (adopted by Noordermeer+2007)
+# data are corrected for inclination
+# r"     v_r   dv
+  0      0.0   24
+  1    159.0   42
+  2    197.0   spline
+  4    248.5   spline
+  6    276.0   spline
+  8    290.0   spline
+ 10    296.0   spline
+ 12    295.0   spline
+ 14    293.0   spline
+ 16    293.0   spline
+ 18    290.0   spline
+ 20    290.0   spline
+ 22    288.5   spline
+ 24    290.0   spline
+ 26    291.0   spline
+ 28    293.0   spline
+ 30    294.0   spline
+ 32    296.0   spline
+ 34    298.0   spline
+ 36    299.0   spline
+ 38    299.0   spline
+ 40    298.0   spline
+ 42    295.0   spline
+ 46    292.0   spline
+ 50    283.0    7
+ 60    268.5   12
+ 70    255.0   25
+ 80    275.0   25
+ 90    286.0   25
+100    267.0   40

@@ -1,0 +1,218 @@
+%\documentclass[a4paper,12pt]{article}
+\documentclass[russian,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[]{natbib}
+%\usepackage{psfig,amsfonts}
+
+\textheight 23.0cm
+\textwidth 16.5cm
+
+\hoffset=-1.25cm
+\voffset=-1.5cm
+\baselineskip=20pt
+\sloppy
+
+\def\bs{\bigskip}
+\def\noi{\noindent}
+
+\def\bc{\begin{center}}
+\def\ec{\end{center}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+
+\begin{document}
+
+\bc
+\Large\bf 
+Двухжидкостная неустойчивость и крупномасштабное звёздообразование в 
+галактиках
+\ec
+
+\section{Аннотация}
+
+Будет исследована устойчивость газового диска конкретных спиральных 
+галактик на основе критерия двухжидкостной неустойчивости 
+(\citealt{JS84,Efstathiou00}) и определены профили критической поверхностной 
+плотности газа. Эти профили будут сравниваться с наблюдаемым распределением 
+газа HI$+$H$_2$. Условия наступления неустойчивости будут проанализированы 
+с точки зрения идущего в галактиках крупномасштабного звёздообразования, 
+индикатором которого является излучение в линии H$_\alpha$. Особое внимание 
+будет уделено галактикам, у которых излучение в линии H$_\alpha$ наблюдается, 
+а газовый диск в областях звёздообразования оказывается устойчивым согласно 
+стандартному критерию гравитационной неустойчивости 
+(\citealt{Toomre64,GL_B65,Kennicutt89}). 
+Возможно, решение этой загадки будет найдено в рамках критерия 
+двухжидкостной неустойчивости.
+
+\section{Описание задачи}
+
+Для решения поставленной задачи будет отобран ряд галактик с известными 
+кривыми вращения как по линиям HI (газовые кривые вращения --- 
+$v_\mathrm{c}(R)$), так и по абсорбционным линиям (звёздные кривые 
+вращения --- $v_\varphi(R)$). За основу будет взята выборка 
+\cite{Noordermeer+05}, объекты для которой были отобраны из обзора WHISP --- 
+Westerbork HI survey of spiral and irregular galaxies 
+\citep{Kamphius+96,vanderHulst+01}. Выборка \cite{Noordermeer+05} включает 
+68 галактик с протяжёнными кривыми вращения и профилями поверхностной 
+плотности HI --- $\Sigma_\mathrm{g}(R)$. 
+Данные по звёздной кинематике будут найдены в литературе.
+
+Кривые вращения совместно с известными по литературе профилями 
+дисперсии лучевых скоростей $\sigma_\mathrm{los}(R)$ дадут возможность 
+восстановить форму эллипсоида скоростей и профиль дисперсии скоростей в 
+радиальном направлении $\sigma_\mathrm{R}$. Процедура восстановления 
+описана в работе \cite{Sil'chenko+11} и сводится к определению 
+профиля $\sigma_\mathrm{R}$ через известное соотношение, называемое 
+асимметричным сдвигом %\citep{BT87}: 
+\begin{equation}
+v_\mathrm{c}^2 - v_\varphi^2 = 
+\sigma_R^2 \left( 
+\frac{\sigma_\varphi^2}{\sigma_R^2} -1 - 
+\frac{\partial \ln \Sigma_\mathrm{d}}{\partial \ln R} - 
+\frac{\partial \ln \sigma_R^2}{\partial \ln R}
+\right) \, ,
+\label{AsDr}
+\end{equation}
+где $\Sigma_\mathrm{d}$ --- поверхностная плотность звёзд диска, а 
+$\sigma_\varphi$ --- дисперсия скоростей звёзд в азимутальном 
+направлении. Для диска, находящегося в равновесии,
+$$
+\frac{\sigma_\varphi^2}{\sigma_R^2} = \frac{1}{2} 
+\left( 1 + \frac{\partial \ln v_\varphi}{\partial \ln R}\right) 
+\, .
+$$
+
+Кроме этого, для отобранных галактик будут собраны данные по 
+декомпозиции изображений галактик на балдж и диск (за основу будут взяты 
+параметры декомпозиции из работы \cite{NvdH07}). Тем самым будут 
+определены профили поверхностной яркости диска $I_\mathrm{d}(R)$. В тех 
+случаях, когда фотометрические параметры диска и балджа не будут 
+найдены в литературе, декомпозиция будет сделана самостоятельно при 
+помощи пакета Galfit. %\citep{}.
+
+Если фотометрия известна хотя бы для двух полос, можно 
+перейти от поверхностной яркости $I_\mathrm{d}(R)$ 
+к поверхностной плотности звёзд диска через откалиброванное отношение 
+массы к светимости для исследуемой полосы $({\cal{M}}/L)_\mathrm{X}$, 
+оцененное по цветам \citep{Bell+03}
+$$
+\Sigma_\mathrm{d}(R) = ({\cal{M}}/L)_\mathrm{X} 
+I_\mathrm{d}^\mathrm{X}(R) \, .
+$$
+
+Данные, взятые вместе --- 
+кривая вращения $v_\mathrm{c}(R)$, 
+профили дисперсии скоростей звёзд $\sigma_\mathrm{R}(R)$
+и поверхностных плотностей газового и звёздного дисков 
+$\Sigma_\mathrm{g}(R)$ и $\Sigma_\mathrm{d}(R)$, --- 
+позволяют найти профиль критической поверхностной плотности газа, 
+превышение которой делает диск неустойчивым (\citealt{JS84,Efstathiou00})
+\begin{equation}
+\Sigma_\mathrm{cr,2} = \frac{\kappa c}{3.36 G g(a,b)} \, ,
+\label{2fluid}
+\end{equation}
+где $\kappa$ --- эпициклическая частота, определяемая по кривой 
+вращения
+$$
+\displaystyle \kappa = 
+\sqrt{2 \left(\frac{v_{\rm c}^2}{R^2} + 
+\frac{v_{\rm c}}{R} \frac{d v_{\rm c}}{dR} \right)} \, ,
+$$
+$c$ --- скорость звука в газе (или дисперсия скоростей газовых облаков), 
+которую можно считать постоянной и равной 6 км/с, 
+$a = \sigma_\mathrm{R}/c $ --- отношение дисперсии скоростей звёзд к 
+дисперсии скоростей в газе, 
+$b = \Sigma_\mathrm{d}/\Sigma_\mathrm{g}$ --- отношение поверхностных 
+плотностей звёздного и газового дисков, 
+а $g(a,b)$ --- функция, численно рассчитанная в работе \citet{Efstathiou00}.
+
+Особое внимание будет уделено галактикам, у которых распределение 
+нейтрального водорода демонстрирует кольцо, и тем галактикам, у которых 
+в области кольца наблюдается интенсивное звёздообразование.
+
+Предполагается
+
+\begin{enumerate}
+
+\item[1)]
+сравнив профили критической поверхностной плотностей газа, 
+определённые согласно критерию двухжидкостной неустойчивости 
+(\ref{2fluid}) и простому одножидкостному критерию \cite{GL_B65} 
+(аналог критерия \citep{Toomre64} для газового диска)
+\begin{equation}
+\Sigma_\mathrm{cr,1} = \frac{\kappa c}{3.36 G} \, ,
+\label{1fluid}
+\end{equation}
+сделать выводы о реальном динамическом статусе газовых дисков 
+конкретных галактик;
+
+\item[2)]
+отобрать галактики, для которых переооценка запаса прочности газового 
+диска на основе одножидкостного критерия, наиболее существенна;
+
+\item[3)]
+для этих галактик сопоставить области звёздообразования (профили яркости в 
+линии H$_\alpha$) с областями, где газовый диск неустойчив по критерию 
+двухжидкостной неустойчивости;
+
+\item[4)]
+уточнить выводы о роли гравитационной неустойчивости в регулировании 
+крупномасштабного звёздообразования.
+
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+   \bibitem[{{Bell} {et~al.}(2003){Bell}, {McIntosh},
+   {Katz}, \& {Weinberg}}]{Bell+03}
+   {Bell}, E.~F., {McIntosh}, D.~H., {Katz}, N., 
+   \& {Weinberg}, M.~D. 2003, ApJS, 149, 289
+
+   \bibitem[{{Efstathiou}(2000)}]{Efstathiou00}
+   {Efstathiou}, G. 2000, MNRAS, 317, 697
+
+   \bibitem[{{Goldreich} \& {Linden-Bell}(1965)}]{GL_B65}
+    {Goldreich}, P. \& {Linden-Bell}, D. 1965, MNRAS, 130, 97
+
+   \bibitem[{{Jog} \& {Solomon}(1984)}]{JS84}
+    {Jog}, C.~J. \& {Solomon}, P.~M. 1984, ApJ, 276, 114
+
+   \bibitem[{{Kennicutt}(1989)}]{Kennicutt89}
+   {Kennicutt}, Jr., R.~C. 1989, ApJ, 344, 685
+   
+   \bibitem[{{Kamphius} {et~al.}(1996){Kamphius}, {Sijbring}, \&
+   {van Albada}}]{Kamphius+96}
+   {Kamphius}, J.~J., {Sijbring}, D., \& {van Albada}, T.~S. 1996,
+   A\&AS, 116, 15
+   
+   \bibitem[{{Noordermeer} {et~al.}(2008){Noordermeer}, {Merrifield}, \&
+   {Arag{\'o}n-Salamanca}}]{NMA08}
+   {Noordermeer}, E., {Merrifield}, M.~R., \& {Arag{\'o}n-Salamanca}, A. 2008,
+   MNRAS, 388, 1381
+
+   \bibitem[{{Noordermeer} \& {van der Hulst}(2007)}]{NvdH07}
+   {Noordermeer}, E. \& {van der Hulst}, J.~M. 2007, MNRAS, 376, 1480
+
+   \bibitem[{{Noordermeer} {et~al.}(2005){Noordermeer}, {van der Hulst},
+   {Sancisi}, {Swaters}, \& {van Albada}}]{Noordermeer+05}
+   {Noordermeer}, E., {van der Hulst}, J.~M., {Sancisi}, R., 
+   {Swaters}, R.~A., \& {van Albada}, T.~S. 2005, A\&A, 442, 137
+
+   \bibitem[{{Sil'chenko} {et~al.}(2011){Sil'chenko}, {Chilingarian},
+   {Sotnikova}, \& {Afanasiev}}]{Sil'chenko+11}
+   {Sil'chenko}, O.~K., {Chilingarian}, I.~V., {Sotnikova}, N.~Ya., 
+   \& {Afanasiev}, V.~L. 2011, MNRAS, 414, 364
+
+   \bibitem[{{Toomre}(1964)}]{Toomre64}
+   {Toomre}, A. 1964, ApJ, 139, 1217
+
+   \bibitem[{{van der Hulst} {et~al.}(2001){van der Hulst}, {van Albada}, \&
+   {Sancisi}}]{vanderHulst+01}
+   {van der Hulst}, J.~M., {van Albada}, T.~S. \& {Sancisi}, R. 2001,
+   in Gas and Galaxy Evolution, ASP Conf. Ser. 240, 451
+	       
+\end{thebibliography}
+
+\end{document}

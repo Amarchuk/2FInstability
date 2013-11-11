@@ -1,0 +1,31 @@
+# UGC 9133 = NGC 5533
+# Noordermeer+2007 ionized gas + HI
+# PA =  24-45 deg
+# V_sys = 3858 km/s
+# inclination = 53 pm 2.5 deg (adopted by Noordermeer+2007, inside 200")
+# data are corrected for inclination
+# r"   v_r    dv
+  0    0
+  2  281  spline
+  6  279  spline
+ 10  279  spline
+ 14  278  spline
+ 18  280  spline
+ 22  283  spline
+ 26  284  spline
+ 30  287  spline
+ 34  288  spline
+ 38  288  spline
+ 40  287  spline
+ 50  283  spline
+ 60  277  spline
+ 70  272  spline
+ 80  267  spline
+ 90  266  spline
+100  261  spline
+150  238  spline
+200  244  spline
+250  232  spline
+300  224  spline
+350  224  spline
+385  227  spline

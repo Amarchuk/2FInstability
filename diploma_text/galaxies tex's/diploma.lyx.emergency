@@ -1,0 +1,5912 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{amsmath}
+\numberwithin{equation}{subsection}
+\end_preamble
+\use_default_options true
+\begin_modules
+eqs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Предметный указатель
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 30mm
+\topmargin 20mm
+\rightmargin 15mm
+\bottommargin 20mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontsize{14.0pt}{12.5pt}
+\backslash
+selectfont
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Математико-механический факультет
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Кафедра астрофизики
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+large{Марчук Александр Александрович} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large{Двухжидкостная неустойчивость и крупномасштабное звездообразование
+ в галактиках} 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+Дипломная работа 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{3cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Допущена к защите.
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Зав.
+ кафедрой:
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+д.ф.-м.н., проф.
+ В.А.
+ Гаген-Торн
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.5em} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Научный руководитель: 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+(должность, степень, звание) Фамилия И.О.
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.5em} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Рецензент: 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+(должность, степень, звание) Фамилия И.О.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+fill} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small     Санкт-Петербург
+\backslash
+
+\backslash
+2013 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontsize{14.0pt}{12.5pt}
+\backslash
+selectfont
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+SAINT-PETERSBURG STATE UNIVERSITY 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Mathematics 
+\backslash
+& Mechanics Faculty 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Chair of Astrophysics
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+large{Alexander Marchuk} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large{Two-fluid instability and large-scale star formation in disc galaxies}
+ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+Graduation Thesis 
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{3cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Admitted for defence.
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Head of the chair: 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+professor Vladimir Hagen-Thorn
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.5em} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Scientific supervisor: 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+(Position, title) Name Surname
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{1.5em} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Reviewer: 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+(Position, title) Name Surname
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+fill} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small    Saint-Petersburg 
+\backslash
+
+\backslash
+2013 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Введение
+\end_layout
+
+\begin_layout Subsection
+Крупномасштабное звёздообразование в галактиках
+\end_layout
+
+\begin_layout Standard
+здесь нужно дать "энергичный" обзор масштабов явления в галактиках разных
+ типов: темпы звёздообразования, локализация процесса, содержание газа в
+ галактиках, эффективность звёздообразования - темп на 1 массы газа, регуляция
+ процесса звёздообразования в масштабах всей галактики грав.неустойчивостью
+ газового диска).
+ За основу взять соответствующую главу в Binney&Merrifield + введение из
+ двух работ Kennicutt'а.
+ В конце подвести к тому, что связь неустойчивость-звёздообразование орошо
+ работает в центральных областях и вообще там, где много газа.
+ Но есть области, где это не проходит.
+ Могут работать и другие механизмы (в работе Leroy 2008 немного про это
+ есть) , но может всё дело в некорректности одножидкостного критерия и пара
+ слов о том, как присутствие вздного иска может изменить динамичесое состояние
+ газового.
+\end_layout
+
+\begin_layout Standard
+Галактики как отдельные звездные системы были открыты в двадцатых годах
+ 20 века Э.Хабблом.
+ Долгое время считалось, что они представляют собой что-то вроде островных
+ вселенных, каждая из которых сформировалась в результате коллапса изолированног
+о протогалактического облака и в дальнейшем эволюционировала в изоляции
+ от других звездных систем.
+ Наблюдаемые у галактик морфологические различия объяснялись разницей в
+ начальных условиях их формирования.
+\end_layout
+
+\begin_layout Standard
+(И все в таком духе с уклоном в важность проблемы звездообразования)
+\end_layout
+
+\begin_layout Subsubsection
+Закон Шмидта
+\end_layout
+
+\begin_layout Standard
+Часто текущий темп звёздообразования на масштабах всей галактики 
+\begin_inset Formula $\psi(t)$
+\end_inset
+
+ описывается эмпирическим законом Шмидта 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schmidt59"
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+\psi(t)=\frac{d{\cal M}_{s}}{dt}\propto\left(\Sigma_{g}\right)^{d}\:,\label{eq:schmidt}
+\end{equation}
+
+\end_inset
+
+где 
+\begin_inset Formula ${\cal M}_{\mathrm{s}}$
+\end_inset
+
+ --- масса звезд, 
+\begin_inset Formula $\Sigma_{g}$
+\end_inset
+
+ --- поверхностная плотность газа, 
+\begin_inset Formula $d\approx2$
+\end_inset
+
+.
+ Качественно этот закон обосновывается следующим образом.
+ Звёзды рождаются в газовых облаках, коллапсирующих под действием гравитационной
+ (джинсовской) неустойчивости.
+ Процессы охлаждения играют ключевую роль в такого рода сжатии.
+ Скорость охлаждения во многих случаях пропорциональна квадрату концентрации
+ частиц в газе 
+\begin_inset Formula $n_{g}^{2}$
+\end_inset
+
+ (ударное охлаждение), поэтому можно ожидать появления квадратичной (или
+ во всяком случае нелинейной) зависимости между скоростью звёздообразования
+ и поверхностной плотностью газа.
+\end_layout
+
+\begin_layout Subsection
+Краткая постановка задачи
+\end_layout
+
+\begin_layout Standard
+В дипломной работе будет исследована устойчивость газового диска конкретных
+ спиральных галактик на основе критерия двухжидкостной неустойчивости и
+ определены профили критической поверхностной плотности газа.
+ Эти профили будут сравниваться с наблюдаемым распределением газа HI
+\begin_inset Formula $+$
+\end_inset
+
+H
+\begin_inset Formula $_{2}$
+\end_inset
+
+.
+ Условия наступления неустойчивости будут проанализированы с точки зрения
+ идущего в галактиках крупномасштабного звёздообразования, индикатором которого
+ является излучение в линии H
+\begin_inset Formula $_{\alpha}$
+\end_inset
+
+.
+ Особое внимание будет уделено галактикам, у которых излучение в линии H
+\begin_inset Formula $_{\alpha}$
+\end_inset
+
+ наблюдается, а газовый диск в областях звёздообразования оказывается устойчивым
+ согласно стандартному критерию гравитационной неустойчивости.
+ Возможно, решение этой загадки будет найдено в рамках критерия двухжидкостной
+ неустойчивости.
+\end_layout
+
+\begin_layout Standard
+Для решения поставленной задачи будет отобран ряд галактик с известными
+ кривыми вращения как по линиям HI (газовые кривые вращения --- 
+\begin_inset Formula $v_{\mathrm{c}}(R)$
+\end_inset
+
+), так и по абсорбционным линиям (звёздные кривые вращения --- 
+\begin_inset Formula $v_{\varphi}(R)$
+\end_inset
+
+).
+ За основу будет взята выборка 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Noordermeer+05"
+
+\end_inset
+
+, объекты для которой были отобраны из обзора WHISP --- Westerbork HI survey
+ of spiral and irregular galaxies.
+ Выборка 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Noordermeer+05"
+
+\end_inset
+
+ включает 68 галактик с протяжёнными кривыми вращения и профилями поверхностной
+ плотности HI --- 
+\begin_inset Formula $\Sigma_{\mathrm{g}}(R)$
+\end_inset
+
+.
+ Данные по звёздной кинематике будут найдены в литературе.
+\end_layout
+
+\begin_layout Standard
+Кривые вращения совместно с известными по литературе профилями дисперсии
+ лучевых скоростей 
+\begin_inset Formula $\sigma_{\mathrm{los}}(R)$
+\end_inset
+
+ дадут возможность восстановить форму эллипсоида скоростей и профиль дисперсии
+ скоростей в радиальном направлении 
+\begin_inset Formula $\sigma_{\mathrm{R}}$
+\end_inset
+
+.
+ Кроме этого, для отобранных галактик будут собраны данные по декомпозиции
+ изображений галактик на балдж и диск.
+ Тем самым будут определены профили поверхностной яркости диска 
+\begin_inset Formula $I_{\mathrm{d}}(R)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Данные, взятые вместе --- кривая вращения 
+\begin_inset Formula $v_{\mathrm{c}}(R)$
+\end_inset
+
+, полученные профили дисперсии скоростей звёзд 
+\begin_inset Formula $\sigma_{\mathrm{R}}(R)$
+\end_inset
+
+ и поверхностные плотности газового и звёздного дисков 
+\begin_inset Formula $\Sigma_{\mathrm{g}}(R)$
+\end_inset
+
+ и 
+\begin_inset Formula $\Sigma_{\mathrm{d}}(R)$
+\end_inset
+
+, --- позволят найти профиль критической поверхностной плотности газа, превышени
+е которого делает диск неустойчивым.
+\end_layout
+
+\begin_layout Standard
+Особое внимание будет уделено галактикам, у которых распределение нейтрального
+ водорода демонстрирует кольцо, и тем галактикам, у которых в области кольца
+ наблюдается интенсивное звёздообразование.
+\end_layout
+
+\begin_layout Standard
+Предполагается
+\end_layout
+
+\begin_layout Enumerate
+сравнив профили критической поверхностной плотностей газа, определённые
+ согласно критерию двухжидкостной неустойчивости и простому одножидкостному
+ критерию сделать выводы о реальном динамическом статусе газовых дисков
+ конкретных галактик;
+\end_layout
+
+\begin_layout Enumerate
+отобрать галактики, для которых переооценка запаса прочности газового диска
+ на основе одножидкостного критерия, наиболее существенна;
+\end_layout
+
+\begin_layout Enumerate
+для этих галактик сопоставить области звёздообразования (профили яркости
+ в линии H
+\begin_inset Formula $_{\alpha}$
+\end_inset
+
+) с областями, где газовый диск неустойчив по критерию двухжидкостной неустойчив
+ости;
+\end_layout
+
+\begin_layout Enumerate
+уточнить выводы о роли гравитационной неустойчивости в регулировании крупномасшт
+абного звёздообразования.
+\end_layout
+
+\begin_layout Section
+Двухжидкостная неустойчивость.
+ Теория
+\end_layout
+
+\begin_layout Subsection
+Критерии гравитационной неустойчивости
+\end_layout
+
+\begin_layout Standard
+В астрофизике дисковых галактик известны различные механизмы, регулирующие
+ крупномасштабное звездообразование: гравитационная неустойчивость, разрушение
+ гигантских молекулярных облаков (ГМО) дифференциальным вращением (galactic
+ shear), а также тепловая неустойчивость и молекуляризация образующихся
+ в результате этого холодных облаков.
+ Все эти процессы относятся к пороговым.
+ Они включают механизм звёздообразования при достижении газом определённых
+ значений физических параметров.
+ 
+\end_layout
+
+\begin_layout Standard
+Самое обширное исследование связи крупномасштабного звёздообразования с
+ различными процессами в газовом диске было проведено 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Leroy+08"
+
+\end_inset
+
+.
+ Рассматривалась выборка 23 близких спиральных и неправильных галактик.
+ Использовались очень хорошие наблюдательные данные: карты HI были взяты
+ из обзора THINGS (The HI Nearby Galaxy Survey; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Walter+08"
+
+\end_inset
+
+), а данные по H
+\begin_inset Formula $_{2}$
+\end_inset
+
+ и CO --- из обзора HERACLES (HERA CO-Line Extragalactic Survey; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Leroy+08"
+
+\end_inset
+
+) и BIMA SONG (Berkeley-Illinois-Maryland Association Survey of Nearby Galaxies;
+ 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Helfer+03"
+
+\end_inset
+
+).
+ Для оценок темпа звёздообразования использовались наблюдения в далёком
+ УФ диапазоне со спутника GALEX (Galaxy Evolution Explorer; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "GildePaz+07"
+
+\end_inset
+
+) и ИК наблюдения на длине волны 24 
+\begin_inset Formula $\mu$
+\end_inset
+
+m из обзора SINGS (the Spitzer Infrared Nearby Galaxies Survey; 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "Kennicutt+03"
+
+\end_inset
+
+).
+ Профили поверхностной плотности звёзд определялись на основе данных SINGS
+ на длине волны 
+\begin_inset Formula $3.6~\mu$
+\end_inset
+
+m.
+ Кинематические данные (кривые вращения) брались из обзора THINGS.
+\end_layout
+
+\begin_layout Standard
+Проведённое исследование не выявило ведущий процесс (из рассмотренных трёх),
+ который бы полностью регулировал крупномасштабное звёздообразование.
+ Однако еще в работе 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kennicutt89"
+
+\end_inset
+
+ было показано, и в последующем подтверждено, что применение механизма только
+ гравитационной неустойчивости для большого количества галактик согласуется
+ с наблюдательными данными.
+ По этой и другим причинам такой механизм обычно рассматривается в качестве
+ основного.
+ Данная работа не является исключением.
+ Как будет показано далее, гравитационная неустойчивость применительно к
+ галактикам не является каким-то одним общим законом, а последовательно
+ проходит ряд усложняющихся моделей и допускает различные трактовки.
+ В корректном рассмотрении этих теорий и различий между ними и будет заключаться
+ данный раздел.
+ Однако помимо отличий, есть и ряд общих для всех механизмов моментов, которые
+ необходимо отметить.
+\end_layout
+
+\begin_layout Standard
+Звёзды рождаются в газовых облаках, коллапсирующих под действием гравитационной
+ (джинсовской) неустойчивости.
+ Джинсовский механизм запускается возмущениями, которые обычно рассматривают
+ в виде 
+\begin_inset Formula $e^{i\omega t}\text{,}$
+\end_inset
+
+ где 
+\begin_inset Formula $\omega$
+\end_inset
+
+ --- частота возмущения.
+ Как самый простой случай рассматривают радиальные осесимметричные возмущения,
+ которые потом исправляются за возмущения более высоких мод.
+ Галактика также полагается осесимметричной.
+ Тогда для каждой рассматриваемой физической модели газового и звездного
+ дисков можно написать свою дисперсионную зависимость вида 
+\begin_inset Formula $\omega^{2}(k)$
+\end_inset
+
+, где 
+\begin_inset Formula $k$
+\end_inset
+
+ - волновое число возмущения.
+ Если для дисперсионного уравнения существуют такие волновые числа 
+\begin_inset Formula $k$
+\end_inset
+
+, где 
+\begin_inset Formula $\omega^{2}(k)<0$
+\end_inset
+
+, то 
+\begin_inset Formula $\omega$
+\end_inset
+
+ очевидным образом получается комплексным и возмущение будет нарастать экспоненц
+иально.
+ Такое состояние и будет состоянием неустойчивости, при котором должно наблюдать
+ся звездообразование.
+ 
+\end_layout
+
+\begin_layout Standard
+Итак, чтобы найти возмущения, при которых наблюдается гравитационная неустойчиво
+сть, нам необходимо решить неравенство вида 
+\begin_inset Formula $\omega^{2}(k)<0$
+\end_inset
+
+ относительно 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ Это неравенство называется 
+\shape italic
+критерием гравитационной неустойчивости
+\shape default
+.
+ В данной работе мы не будем рассматривать вывод и получающиеся дисперсионные
+ уравнения, а только следующие из них критерии неустойчивости и их решения.
+\end_layout
+
+\begin_layout Subsection
+Простой одножидкостный критерий 
+\end_layout
+
+\begin_layout Standard
+Самый простой критерий гравитационной неустойчивости (называемый также 
+\shape italic
+критерий Тумре
+\shape default
+ или 
+\shape italic
+одножидкостный критерий
+\shape default
+) получается из анализа бесстолкновительного уравнения Больцмана.
+ Точная оценка минимальной дисперсии скоростей в радиальном направлении,
+ необходимой для локальной устойчивости звёздного диска относительно осесимметри
+чных возмущений впервые была описана в 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Toomre64"
+
+\end_inset
+
+.
+ Для случая бесконечно тонкого звездного диска: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma_{R}^{min}=\frac{3.36G\Sigma_{s}}{\kappa}\,\text{,}\label{eq:toomre_disp}
+\end{equation}
+
+\end_inset
+
+где 
+\begin_inset Formula $\Sigma_{s}$
+\end_inset
+
+ --- поверхностная плотность звёзд диска, а 
+\begin_inset Formula ${\displaystyle \kappa=\frac{3}{R}\frac{\partial\Phi}{\partial R}+\frac{\partial^{2}\Phi}{\partial R^{2}}}$
+\end_inset
+
+ --- эпициклическая частота, 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ --- гравитационный потенциал, определяемый всеми подсистемами галактики.
+ 
+\end_layout
+
+\begin_layout Standard
+Критерий (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:toomre_disp"
+
+\end_inset
+
+) можно представить в более удобном виде --- через критическое значение
+ поверхностной плотности звезд 
+\begin_inset Formula 
+\begin{equation}
+\Sigma_{s}^{cr}=\frac{\kappa\sigma_{R}}{3.36G}.\label{eq:toomre_dens}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если поверхностная плотность звёзд диска 
+\begin_inset Formula $\Sigma_{s}>\Sigma_{s}^{cr}$
+\end_inset
+
+, то диск неустойчив относительно рассматриваемых осесимметричных возмущений.
+ Этот красивый теоретический результат является одним из основных результатов
+ работы 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Toomre64"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Для газового диска значения критической плотности получаются аналогичным
+ образом из анализа гидродинамических уравнений 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GL_B65"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Sigma_{g}^{cr}=\frac{\kappa c_{g}}{\pi G}\,,\label{eq:GL_dens}
+\end{equation}
+
+\end_inset
+
+где 
+\begin_inset Formula $c_{g}$
+\end_inset
+
+ --- скорость звука в газе.
+ Фактически выражения (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:toomre_dens"
+
+\end_inset
+
+) и (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+) отличаются только коэффициентами: 3.36 --- в формуле
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:toomre_dens"
+
+\end_inset
+
+) и 
+\begin_inset Formula $\pi$
+\end_inset
+
+ --- в выражении
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Представляется удобным составить и использовать безразмерный параметр 
+\begin_inset Formula $\frac{\Sigma^{cr}}{\Sigma}$
+\end_inset
+
+, называемый также числом Тумре 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ Этот параметр показывает запас прочности диска относительно роста возмущений
+ плотности.
+ Для звёздного диска 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{s}=\frac{\Sigma_{s}^{cr}}{\Sigma_{s}}=\frac{\sigma_{R}}{\sigma_{R}^{min}}=\frac{\kappa\sigma_{R}}{3.36G\Sigma_{s}}\,.\label{eq:toomre_par}
+\end{equation}
+
+\end_inset
+
+Аналогично для газа: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{g}=\frac{\Sigma_{g}^{cr}}{\Sigma_{g}}=\frac{\kappa c_{g}}{\pi G\Sigma_{g}}\,.\label{eq:toomre_par_gas}
+\end{equation}
+
+\end_inset
+
+Итого в случае одножидкостного критерия для устойчивости относительно осесимметр
+ичных возмущений необходимо выполнение неравенства
+\emph on
+ 
+\emph default
+
+\begin_inset Formula $Q>1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Одножидкостный критерий и физическое обоснование закона Шмидта
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kennicutt89"
+
+\end_inset
+
+ исследовал закон Шмидта и связь одножидкостного критерия с этим законом
+ для большой выборки галактик.
+ Индикатором звёздообразования служила интенсивность излучения в линии 
+\begin_inset Formula $\mathrm{H}_{\alpha}$
+\end_inset
+
+.
+ Для скорости звука в газе 
+\begin_inset Formula $c_{g}$
+\end_inset
+
+ бралось значение 
+\begin_inset Formula $\sim6$
+\end_inset
+
+ км/с.
+ Для тех областей галактик, в которых газа много, он получил 
+\begin_inset Formula 
+\begin{equation}
+I(\mathrm{H}_{\alpha})\propto\Sigma_{g}^{1.3}\,.\label{eq:schmidt2}
+\end{equation}
+
+\end_inset
+
+На больших расстояниях от центра галактики интенсивность излучения 
+\begin_inset Formula $I(\mathrm{H}_{\alpha})$
+\end_inset
+
+ быстро падает ниже величины, предсказываемой соотношением (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:schmidt2"
+
+\end_inset
+
+).
+ Радиус области, где найденный эмпирический закон выполняется и наблюдается
+ значительное звездообразование, совпадает с радиусом области, где величина
+ поверхностной плотности газа 
+\begin_inset Formula $\Sigma_{g}$
+\end_inset
+
+ лежит выше значения 
+\begin_inset Formula 
+\begin{equation}
+\Sigma_{g}^{cr89}=\alpha\frac{\kappa c_{g}}{\pi G}\:.\label{eq:kennicutt89}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Без множителя 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ критерий
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:kennicutt89"
+
+\end_inset
+
+) фактически совпадает с критерием
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+), предсказываемым моделью одножидкостной неустойчивости.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kennicutt89"
+
+\end_inset
+
+ эмпирически получил значение коэффициента 
+\begin_inset Formula $\alpha=0.67$
+\end_inset
+
+ и дал физическое объяснение этому.
+ Оно заключается в следующем: классический критерий Тумре (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:toomre_dens"
+
+\end_inset
+
+), также как и критерий
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+), применимы только для осесимметричных возмущений.
+ Так как в диске всегда присутствуют возмущения и других мод (неосесимметричные)
+, то диску нужно иметь больший запас прочности, чтобы оставаться устойчивым.
+ Поэтому эмпирически полученный множитель 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ исправляет критерий
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+) за возмущения других мод.
+\end_layout
+
+\begin_layout Standard
+В последующем полученная пороговая связь между скоростью звёздообразования
+ и гравитационной неустойчивостью звёздного диска неоднократно исследовалась
+ и подтверждалась во многих работах.
+ В статье 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MK01"
+
+\end_inset
+
+ изучались области звёздообразования по 
+\begin_inset Formula $\mathrm{H}_{\alpha}$
+\end_inset
+
+ CCD фотометрии в 32 близких галактиках с хорошо измеренными кривыми вращения
+ и известными значениями профилей поверхностной плотности HI и H
+\begin_inset Formula $_{2}$
+\end_inset
+
+.
+ Практически для всех галактик резкий обрыв на профиле излучения в линии
+ 
+\begin_inset Formula $\mathrm{H}_{\alpha}$
+\end_inset
+
+ наблюдался в тех областях, где газовый диск становился устойчивым согласно
+ критерию (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:kennicutt89"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Таким образом Kinnicutt убедительно продемонстрировал в своих работах 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kennicutt89"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "MK01"
+
+\end_inset
+
+, что примерно в половине наблюдаемых случаев простой одножидкостный критерий
+ хорошо согласуется с наблюдаемым звездообразованием и что при 
+\begin_inset Formula $\Sigma_{g}>\Sigma_{g}^{cr89}$
+\end_inset
+
+ диск гравитационно неустойчив относительно неосесимметричных возмущений.
+ Также было подтверждено, что в тех областях, где газовый диск неустойчив,
+ существует нелинейная зависимость закона Шмидта (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:schmidt2"
+
+\end_inset
+
+) между скоростью звёздообразования и поверхностной плотностью газа.
+ 
+\end_layout
+
+\begin_layout Subsection
+Критерий гравитационной неустойчивости в двухжидкостном приближении
+\end_layout
+
+\begin_layout Subsubsection
+Гидродинамическое приближение
+\end_layout
+
+\begin_layout Standard
+Основная идея более сложной модели, называемой 
+\shape italic
+двухжидкостной
+\shape default
+ заключается в следующем.
+ В присутствии звёздного диска газовый диск, будучи маржинально (на пределе)
+ устойчивым сам по себе, тем не менее может перейти в неустойчивое состояние.
+ В сугубо 
+\shape italic
+гидродинамическом приближении
+\shape default
+ задача о неустойчивости двух жидкостей была рассмотрена 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "JS84"
+
+\end_inset
+
+.
+ Было выведено дисперсионное уравнение для осесимметричных возмущений, а
+ критерий неустойчивости сформулирован в следующем виде 
+\begin_inset Formula 
+\begin{equation}
+\frac{2\,\pi\, G\, k\,\Sigma_{s}}{\kappa+k^{2}\sigma_{s}}+\frac{2\,\pi\, G\, k\,\Sigma_{g}}{\kappa+k^{2}c_{g}}>1\label{eq:2fluidJS1}
+\end{equation}
+
+\end_inset
+
+для всех волновых чисел 
+\begin_inset Formula $k$
+\end_inset
+
+ (??).
+ В выражении (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS1"
+
+\end_inset
+
+) 
+\begin_inset Formula $\sigma_{s}$
+\end_inset
+
+ --- дисперсия скоростей звёзд в радиальном направлении.
+ Введем новые обозначения: безразмерный параметр Тумре для газового диска
+ 
+\begin_inset Formula $Q_{g}$
+\end_inset
+
+ по формуле (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:toomre_par_gas"
+
+\end_inset
+
+), безразмерный параметр Тумре для звёздного диска
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Введенный по аналогии с 
+\begin_inset Formula $Q_{g}$
+\end_inset
+
+ параметр Тумре отличается от значения, даваемого выражением
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:toomre_par"
+
+\end_inset
+
+) для бесстолкновительных систем.
+ Это означает, что при введённых обозначениях однокомпонентный звёздный
+ диск неустойчив, когда 
+\begin_inset Formula $Q_{s}<3.36/\pi=1.07$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula ${\displaystyle Q_{\mathrm{s}}\equiv\frac{\kappa\,\sigma_{s}}{\pi\, G\,\Sigma_{s}}}$
+\end_inset
+
+, безразмерное волновое число 
+\begin_inset Formula ${\displaystyle \bar{k}\equiv\frac{k\,\sigma_{s}}{\kappa}}$
+\end_inset
+
+, отношение скорости звука в газе к дисперсии скоростей звёзд 
+\begin_inset Formula ${\displaystyle s\equiv\frac{c_{g}}{\sigma_{s}}}$
+\end_inset
+
+.
+ С учётом введённых обозначений преобразуем неравенство
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS1"
+
+\end_inset
+
+) и запишем выражение для 
+\shape italic
+эффективного параметра Тумре
+\shape default
+ 
+\begin_inset Formula $Q_{eff}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{Q_{eff}}=\frac{2}{Q_{s}}\frac{\bar{k}}{1+\bar{k}^{2}}+\frac{2}{Q_{g}}s\frac{\bar{k}}{1+\bar{k}^{2}s^{2}}>1\,.\label{eq:2fluidJS2}
+\end{equation}
+
+\end_inset
+
+Тогда условие двухжидкостной неустойчивости сведётся к следующему неравенству
+ 
+\begin_inset Formula 
+\[
+Q_{eff}<1
+\]
+
+\end_inset
+
+для (??) некоторых значений безразмерного волнового числа 
+\begin_inset Formula $\bar{k}$
+\end_inset
+
+.
+ Основной результат работы 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "JS84"
+
+\end_inset
+
+ состоит в том, что при определённых условиях, даже если 
+\begin_inset Formula $Q_{g}>1$
+\end_inset
+
+ (газовый диск устойчив) и 
+\begin_inset Formula $Q_{s}>1$
+\end_inset
+
+ (звёздный диск устойчив), совместный звёздно-газовый диск может оказаться
+ неустойчивым.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Elmegreen95"
+
+\end_inset
+
+ показал, что условие 
+\begin_inset Formula $Q_{eff}=1$
+\end_inset
+
+ сводится к решению кубического уравнения относительно 
+\begin_inset Formula $\bar{k}$
+\end_inset
+
+.
+ Также было продемонстрировано, что неравенство (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS2"
+
+\end_inset
+
+) можно переформулировать в эквивалентное утверждение: максимум выражения,
+ стоящего слева и являющегося функцией 
+\begin_inset Formula $\bar{k}$
+\end_inset
+
+, оказывается больше
+\begin_inset space ~
+\end_inset
+
+1.
+ У этого выражения, как правило, оказывается один максимум (один действительный
+ корень для кубического уравнения).
+ Однако, для некоторых значений параметров 
+\begin_inset Formula $s$
+\end_inset
+
+ и 
+\begin_inset Formula ${\displaystyle q\equiv\frac{Q_{g}}{Q_{s}}}$
+\end_inset
+
+ может существовать два максимума (два действительных корня соответствующего
+ кубического уравнения --- 
+\begin_inset Formula $\bar{k}_{m1}$
+\end_inset
+
+ и 
+\begin_inset Formula $\bar{k}_{m2}$
+\end_inset
+
+).
+ В этом случае условие (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS2"
+
+\end_inset
+
+) должно выполняться для 
+\begin_inset Formula $\bar{k}_{m}$
+\end_inset
+
+, дающего больший максимум.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "BR88"
+
+\end_inset
+
+ в ходе численных экспериментов показали, что у выражения, стоящего в левой
+ части (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS2"
+
+\end_inset
+
+), имеется один максимум, если 
+\begin_inset Formula $s^{2}>0.0294$
+\end_inset
+
+ и 
+\begin_inset Formula $\Sigma_{g}/\Sigma_{s}>0.172$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "WS94"
+
+\end_inset
+
+ предложили простую аппроксимационную формулу для эффективного значения
+ параметра Тумре 
+\begin_inset Formula $Q_{eff}$
+\end_inset
+
+ в виде 
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{Q_{eff}}=\frac{1}{Q_{s}}+\frac{1}{Q_{g}}\,.\label{eq:WS}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jog96"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RW11"
+
+\end_inset
+
+ раскритиковали это выражение.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RW11"
+
+\end_inset
+
+ показали, что использование этой формулы может приводить к ошибкам в оценках
+ 
+\begin_inset Formula $Q_{eff}$
+\end_inset
+
+ до 50%.
+ Они также привели и обосновали свою аппроксимационную формулу, дающую погрешнос
+ть не более 9%.
+ Если известны значения 
+\begin_inset Formula $\sigma_{s}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{g}$
+\end_inset
+
+, 
+\begin_inset Formula $\kappa$
+\end_inset
+
+, 
+\begin_inset Formula $\Sigma_{s}$
+\end_inset
+
+ и 
+\begin_inset Formula $\Sigma_{g}$
+\end_inset
+
+, то можно сделать с помощью рассчитанных аппроксимаций оценку 
+\begin_inset Formula $Q_{\mathrm{eff}}$
+\end_inset
+
+ для данной области диска и определить, устойчив или неустойчив диск локально
+ в этой области.
+ 
+\end_layout
+
+\begin_layout Standard
+На самом деле все эти аппроксимации имеют не слишком большое значение.
+ Во-первых, современные вычислительные средства легко позволяют численно
+ находить значение 
+\begin_inset Formula $Q_{\mathrm{eff}}$
+\end_inset
+
+ в зависимости от заданных параметров.
+ Во-вторых, критерий (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS1"
+
+\end_inset
+
+) был сформулирован в гидродинамическом приближении.
+ Для звёздного диска это приближение верно только для длинноволновых возмущений.
+ В общем случае для описания звёздного диска нужно брать бесстолкновительное
+ уравнение Больцмана (как это сделано в работе 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Toomre64"
+
+\end_inset
+
+, а не гидродинамические уравнения.
+\end_layout
+
+\begin_layout Standard
+Было бы удобно записать формулировку полученного критерия (как и раньше)
+ в терминах критической поверхностной плотности.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Efstathiou00"
+
+\end_inset
+
+ записал такое выражение для газа в присутствии звёздного диска аналогично
+ выражению (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+) 
+\begin_inset Formula 
+\begin{equation}
+\Sigma_{g}^{cr,2}=\frac{\kappa c_{g}}{\pi\, G\, g(s^{-1},\nicefrac{\Sigma_{s}}{\Sigma_{g}})}\,,\label{eq:2fluid}
+\end{equation}
+
+\end_inset
+
+где 
+\begin_inset Formula $g(a,b)$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+---
+\begin_inset space ~
+\end_inset
+
+функция, численно рассчитанная в работе Efstathiou (её вычисление опять
+ сводится к решению кубического уравнения).
+ Так как значение 
+\begin_inset Formula $g(a,b)>1$
+\end_inset
+
+ для любых значений 
+\begin_inset Formula $a$
+\end_inset
+
+ и 
+\begin_inset Formula $b$
+\end_inset
+
+, то неустойчивость в присутствии звёздного диска наступает при меньших
+ значениях поверхностной плотности газового диска, чем по критерию (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:GL_dens"
+
+\end_inset
+
+).
+ Это существенно для астрофизических приложений в контексте исследования
+ динамического статуса галактических дисков и процесса крупномасштабного
+ звёздообразования.
+\end_layout
+
+\begin_layout Standard
+В итоге, результаты работ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "JS84"
+
+\end_inset
+
+ и др.
+ предоставляют теоретическую базу для возможности с помощью двухжидкостной
+ модели объяснить наблюдаемое звездообразование в областях галактик, где
+ простой одножидкостный критерий (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:kennicutt89"
+
+\end_inset
+
+) дает устойчивые решения.
+ Однако предложенное гидродинамическое приближение нельзя полагать слишком
+ хорошим.
+\end_layout
+
+\begin_layout Subsubsection
+кинетическое приближение
+\end_layout
+
+\begin_layout Standard
+Если для описания звёздного диска взять бесстолкновительное уравнение Больцмана,
+ то при этом изменяется форма соответствующего дисперсионного уравнения
+ и полученный критерий неустойчивости будет отличаться от (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS2"
+
+\end_inset
+
+).
+ Корректное рассмотрение этого случая двухжидкостной неустойчивости (
+\shape italic
+кинематическое приближение
+\shape default
+) провёл 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rafikov01"
+
+\end_inset
+
+ и получил следующее выражение для критерия гравитационной неустойчивости
+ 
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{Q_{eff}}=\frac{2}{Q_{s}}\frac{1}{\bar{k}}\left[1-e^{-\bar{k}^{2}}I_{0}(\bar{k}^{2})\right]+\frac{2}{Q_{g}}s\frac{\bar{k}}{1+\bar{k}^{2}s^{2}}>1\,,\label{eq:rafikov}
+\end{equation}
+
+\end_inset
+
+где 
+\begin_inset Formula $I_{0}(\bar{k}^{2})$
+\end_inset
+
+ --- модифицированная функция Бесселя первого рода.
+ 
+\end_layout
+
+\begin_layout Standard
+Условие выполнения этого неравенства уже не сводится к решению кубического
+ уравнения и должно находиться численно.
+ Для этого нужно при заданных параметрах 
+\begin_inset Formula $\sigma_{s}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{g}$
+\end_inset
+
+, 
+\begin_inset Formula $\kappa$
+\end_inset
+
+, 
+\begin_inset Formula $\Sigma_{s}$
+\end_inset
+
+ и 
+\begin_inset Formula $\Sigma_{g}$
+\end_inset
+
+ (соответственно при заданных значениях 
+\begin_inset Formula $Q_{s}$
+\end_inset
+
+, 
+\begin_inset Formula $Q_{g}$
+\end_inset
+
+ и 
+\begin_inset Formula $s=\sigma_{g}/c_{s}$
+\end_inset
+
+) найти все максимумы выражения в левой части.
+ Это можно сделать если производную от левой части приравнять нулю и численно
+ решать получившееся уравнение 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Отметим, что функции Бесселя 
+\begin_inset Formula $I_{0}(x)$
+\end_inset
+
+ и ее производная 
+\begin_inset Formula $I_{1}(x)$
+\end_inset
+
+ растут как 
+\begin_inset Formula $exp(x^{2})$
+\end_inset
+
+ и в рассчетах дают большую ошибку.
+ В ряде математических библиотек есть нормированные б
+\size normal
+есселевы функции (в 
+\family typewriter
+python
+\family default
+ это 
+\family typewriter
+scipy.special.i0e
+\family default
+), следует пользоваться ими в случае наличия.
+\end_layout
+
+\end_inset
+
+, после чего убедиться, что самое максимальное значение больше 1.
+ Как уже отмечалось выше, это будет означать, что существуют возмущения
+ определённых длин волн, относительно которых звёздно-газовый диск неустойчив.
+ В противном случае диск устойчив.
+\end_layout
+
+\begin_layout Subsubsection
+Учет конечной толщины звездного и газового дисков
+\end_layout
+
+\begin_layout Standard
+Рассмотренные выше критерии верны для бесконечно тонких дисков.
+ Однако для более реалистичных моделей необходимо учитывать конечную толщину
+ газового и звёздного дисков.
+ Эффект конечной толщины проявляется в том, что за счет рассеяния вещества
+ по высоте уменьшается плотность вблизи 
+\begin_inset Formula $z=0$
+\end_inset
+
+, и, как следствие, уменьшается гравитационный потенциал.
+ По этой причине диск приобретает дополнительный запас прочности относительно
+ возмущений плотности.
+ 
+\end_layout
+
+\begin_layout Standard
+В своей первой работе 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "JS84"
+
+\end_inset
+
+ показали, как следует модифицировать дисперсионное уравнение и соответствующий
+ критерий неустойчивости (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS1"
+
+\end_inset
+
+).
+ Если обозначить характерный вертикальный масштаб звёздного диска через
+ 
+\begin_inset Formula $2h_{z}^{s}$
+\end_inset
+
+, а газового --- через 
+\begin_inset Formula $2h_{z}^{g}$
+\end_inset
+
+, то условие неустойчивости следует переписать в виде 
+\begin_inset Formula 
+\begin{equation}
+\frac{2\,\pi\, G\, k\,\Sigma_{s}}{\kappa+k^{2}\sigma_{s}}\,\left\{ \frac{1-\exp(-k\, h_{z}^{s})}{k\, h_{z}^{s}}\right\} +\frac{2\,\pi\, G\, k\,\Sigma_{g}}{\kappa+k^{2}c_{g}}\,\left\{ \frac{1-\exp(-k\, h_{z}^{g})}{k\, h_{z}^{g}}\right\} >1\,,\label{eq:2fluidJS1z}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Romeo92"
+
+\end_inset
+
+ подробно проанализировал эффект конечной толщины, а 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Elmegreen95"
+
+\end_inset
+
+ в приближении, предложенном 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "JS84"
+
+\end_inset
+
+, рассмотрел несколько примеров и показал, что конечная толщина звёздного
+ и газового дисков увеличивает значение эффективного параметра Тумре примерно
+ на 20%, давая дополнительный запас прочности диску.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Romeo94"
+
+\end_inset
+
+ рассмотрел этот вопрос в деталях и предложил простой поправочный коэффициент
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ для оценки параметра устойчивости диска
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T\approx0.8+0.7\left(\frac{\sigma_{z}}{\sigma_{R}}\right),
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $\sigma_{z}$
+\end_inset
+
+ --- дисперсия скоростей в вертикальном направлении, а 
+\begin_inset Formula $\sigma_{R}$
+\end_inset
+
+ --- дисперсия скоростей в радиальном направлении.
+ Как показано в работе, формула применима для значений отношения дисперсий
+ в пределах 
+\begin_inset Formula $0.5\leq\sigma_{z}/\sigma_{R}\leq1$
+\end_inset
+
+.
+ Обычно это справедливо для звёздных дисков (в окрестности Солнца это отношение
+ равно 
+\begin_inset Formula $0.53\pm0.07$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "DB98"
+
+\end_inset
+
+).
+ Очевидно, что для газового диска это отношение следует брать равным
+\begin_inset space ~
+\end_inset
+
+1 (здесь справедлива изотропность).
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RW11"
+
+\end_inset
+
+ предложили удобную аппроксимационную формулу для 
+\begin_inset Formula $Q_{\mathrm{eff}}$
+\end_inset
+
+, дающую погрешность не более 15% по сравнению с численной оценкой, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[     
+\backslash
+frac{1}{Q_{eff}}=  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{cases}     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frac{W}{T_{s}Q_{s}} + 
+\backslash
+frac{1}{T_{g}Q_{g}},& 
+\end_layout
+
+\begin_layout Plain Layout
+
+T_{s}Q_{s} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+geq 
+\end_layout
+
+\begin_layout Plain Layout
+
+T_{g}Q_{g}
+\backslash
+
+\backslash
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frac{1}{T_{s}Q_{s}} + 
+\backslash
+frac{W}{T_{g}Q_{g}},              & 
+\end_layout
+
+\begin_layout Plain Layout
+
+T_{s}Q_{s} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+leq
+\end_layout
+
+\begin_layout Plain Layout
+
+T_{g}Q_{g}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{cases} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Все выше сказанное относится к критерию (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2fluidJS1z"
+
+\end_inset
+
+), который был выведен для случая гидродинамического приближения.
+ Для использования более корректного кинематического приближения в данной
+ работе мы будем рассматривать критерий вида (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rafikov"
+
+\end_inset
+
+), исправленный соответсвующим образом за конечную толщину диска
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{2}{Q_{s}}\frac{1}{\bar{k}}\left[1-e^{-\bar{k}^{2}}I_{0}(\bar{k}^{2})\right]\,\left\{ \frac{1-\exp(-k\, h_{z}^{s})}{k\, h_{z}^{s}}\right\} +\frac{2}{Q_{g}}s\frac{\bar{k}}{1+\bar{k}^{2}s^{2}}\,\left\{ \frac{1-\exp(-k\, h_{z}^{g})}{k\, h_{z}^{g}}\right\} >1\,\text{.}\label{eq:rafikovZ}
+\end{equation}
+
+\end_inset
+
+Чтобы не усложнять черезмерно формулу, здесь использованны одновременно
+ и безразмерное волновое число 
+\begin_inset Formula $\bar{k}$
+\end_inset
+
+ и обычное волновое число 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ В данном случае это упрощает запись, однако следует быть аккуратным и разницу
+ между ними иметь в виду при получении аналитической производной от левой
+ части выражения.
+\end_layout
+
+\begin_layout Subsection
+Существующие астрофизические приложения
+\end_layout
+
+\begin_layout Standard
+Но важным результатом является вывод, что при рассмотрении динамического
+ статуса газового диска (устойчив он гравитационно или нет) влиянием звёзд
+ (по схеме 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "JS84"
+
+\end_inset
+
+) пренебрегать нельзя.
+ Если это влияние учитывать, то для большей части рассмотренных галактик
+ газовый диск оказывается лишь маржинально устойчивым со значение 
+\begin_inset Formula $Q_{\mathrm{eff}}=1.3-2.5$
+\end_inset
+
+.
+ При этом значение 
+\begin_inset Formula $Q_{\mathrm{eff}}$
+\end_inset
+
+ лишь слабо возрастает по направлении к периферии в отличие от величины
+ 
+\begin_inset Formula $Q_{\mathrm{g}}$
+\end_inset
+
+, которая растёт быстро.
+\end_layout
+
+\begin_layout Standard
+Работа 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Leroy+08"
+
+\end_inset
+
+ по-своему выдающаяся (статья занимает 64 страницы), однако учёт кинематических
+ эффектов в ней сделан не вполне корректно, а эффекты конечной толщины дисков
+ вообще не учитывались.
+ Да и использование гидродинамического приближения при рассмотрении звёздного
+ диска нельзя считать оправданным.
+\end_layout
+
+\begin_layout Section
+Постановка задачи и методика 
+\end_layout
+
+\begin_layout Subsection
+Объекты, для которых простой критерий не работает
+\end_layout
+
+\begin_layout Subsection
+Двухжидкостный критерий с полными данными
+\end_layout
+
+\begin_layout Subsubsection
+Общая схема решения критерия неустойчивости
+\end_layout
+
+\begin_layout Standard
+Эпициклическую частоту можно выразить через круговую скорость вращения 
+\begin_inset Formula $v_{\mathrm{c}}(R)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+{\displaystyle \kappa=\sqrt{2\left(\frac{v_{\mathrm{c}}^{2}}{R^{2}}+\frac{v_{\mathrm{c}}}{R}\frac{dv_{\mathrm{c}}}{dR}\right)}\,\text{}.}
+\]
+
+\end_inset
+
+Если известна кривая вращения, то её можно аналитически сгладить и, вычислив
+ производную, получить профиль 
+\begin_inset Formula $\kappa(R)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Восстановление эллипсоида скоростей из ассиметричного сдвига
+\end_layout
+
+\begin_layout Subsubsection
+Восстановление из дисперсии скоростей
+\end_layout
+
+\begin_layout Subsubsection
+Восстановление профиля толщины звездного диска
+\end_layout
+
+\begin_layout Subsubsection
+Общая методика решения уравнения неустойчивости
+\end_layout
+
+\begin_layout Subsubsection
+Методика определения ошибок
+\end_layout
+
+\begin_layout Subsubsection
+Необходимые наблюдательные данные
+\end_layout
+
+\begin_layout Subsection
+Корректная постановка задачи
+\end_layout
+
+\begin_layout Section
+Наблюдательные данные
+\end_layout
+
+\begin_layout Subsection
+Выборка галактик
+\end_layout
+
+\begin_layout Subsection
+Особенности
+\end_layout
+
+\begin_layout Subsubsection
+NGC 338
+\end_layout
+
+\begin_layout Subsubsection
+NGC 1167
+\end_layout
+
+\begin_layout Subsubsection
+NGC 2273
+\end_layout
+
+\begin_layout Subsubsection
+NGC 2985
+\end_layout
+
+\begin_layout Subsubsection
+NGC 3898
+\end_layout
+
+\begin_layout Subsubsection
+NGC 5533
+\end_layout
+
+\begin_layout Subsubsection
+NGC 7117
+\end_layout
+
+\begin_layout Section
+Результаты
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Quotes eld
+\end_inset
+
+Хорошие
+\begin_inset Quotes erd
+\end_inset
+
+ галактики
+\end_layout
+
+\begin_layout Subsection
+Галактики с противоречивой фотометрией
+\end_layout
+
+\begin_layout Subsection
+Выводы
+\end_layout
+
+\begin_layout Section
+Заключение
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+refname{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Список литературы
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Bertin} \\& {Romeo}(1988)}"
+key "BR88"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Bertin
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, G.
+ & 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Romeo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+ B.
+ 1988, A&A, 195, 105
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Binney} \\& {Tremaine}(1987)}"
+key "BT87"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Binney
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+ & 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Tremaine
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, S.
+ 1987, Galactic Dynamics, (Princeton, NY, Princeton University Press)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Boissier et al.}(2003)}"
+key "Boissier+03"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Boissier
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, S., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Prantzos
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, N., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Boselli
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gavazzi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ G.
+ 2003, MNRAS, 346, 1215
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Bottema}(1993)}"
+key "Bottema93"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Bottema
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+ 1993, A&A, 275, 16
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Braun}(1997)}"
+key "Braun97"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Braun
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+ 1997, ApJ, 484, 637
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Cuillandre et al.}(2001)}"
+key "Cuillandre+01"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Cuillandre
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Lequeux
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Allen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+\begin_inset space ~
+\end_inset
+
+J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Mellier
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, Y., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Bertin
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, E.
+ 2001, ApJ, 554, 190
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Dehnen} \\& {Binney}(1998)}"
+key "DB98"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Dehnen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ W., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Binney
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ J.
+\begin_inset space ~
+\end_inset
+
+J., 1998, MNRAS, 298, 387
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Efstathiou}(2000)}"
+key "Efstathiou00"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Efstathiou
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, G.
+ 2000, MNRAS, 317, 697
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Elmegreen}(1995)}"
+key "Elmegreen95"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Elmegreen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, B.
+\begin_inset space ~
+\end_inset
+
+G.
+ 1995, MNRAS, 275, 944
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Helfer et al.}(2003)}"
+key "Helfer+03"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Helfer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, T.
+\begin_inset space ~
+\end_inset
+
+T., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Thornley
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, M.
+\begin_inset space ~
+\end_inset
+
+D., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Regan
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, M.
+\begin_inset space ~
+\end_inset
+
+W., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Wong
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, T., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Sheth
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, K., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Vogel
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, S.
+\begin_inset space ~
+\end_inset
+
+N., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Blitz
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, L., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Bock
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, D.
+\begin_inset space ~
+\end_inset
+
+C.-J.
+ 2003, ApJS, 145, 259
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Ferguson et al.}(1998)}"
+key "Ferguson+98"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Ferguson
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+M.
+\begin_inset space ~
+\end_inset
+
+N., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Wyse
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+\begin_inset space ~
+\end_inset
+
+F.
+\begin_inset space ~
+\end_inset
+
+G., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gallagher
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+\begin_inset space ~
+\end_inset
+
+S., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Hunter
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ D.
+\begin_inset space ~
+\end_inset
+
+A.
+ 1998, ApJ, 506, L19
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Gerssen et al.}(1997)}"
+key "G+97"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gerssen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kuijken
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ K., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Merrifield
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ M.
+ 1997, MNRAS, 288, 618
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Gerssen et al.}(2000)}"
+key "G+00"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gerssen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kuijken
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ K., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Merrifield
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ M.
+ 2000, MNRAS, 317, 545
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Gerssen} \\& {Shapiro Griffin}(2012)}"
+key "GSh12"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gerssen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Shapiro Griffin
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ K.
+ 2012, MNRAS, 423, 2726
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Gil de Paz et al.}(2007)}"
+key "GildePaz+07"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gil de Paz
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A., et al.
+ 2007, ApJS, 173, 185
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Goldreich} \\& {Linden-Bell}(1965)}"
+key "GL_B65"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Goldreich
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, P.
+ & 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Linden-Bell
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, D.
+ 1965, MNRAS, 130, 97
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Jog}(1996)}"
+key "Jog96"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Jog
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, C.
+\begin_inset space ~
+\end_inset
+
+J.
+ 1996, MNRAS, 278, 209
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Jog} \\& {Solomon}(1984)}"
+key "JS84"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Jog
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, C.
+\begin_inset space ~
+\end_inset
+
+J.
+ & 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Solomon
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, P.
+\begin_inset space ~
+\end_inset
+
+M.
+ 1984, ApJ, 276, 114
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Kamphius} {et~al.}(1996)}"
+key "Kamphius+96"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kamphius
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+\begin_inset space ~
+\end_inset
+
+J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Sijbring
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, D., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van Albada
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, T.
+\begin_inset space ~
+\end_inset
+
+S.
+ 1996, A&AS, 116, 15
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Kennicutt}(1989)}"
+key "Kennicutt89"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kennicutt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, Jr., R.
+\begin_inset space ~
+\end_inset
+
+C.
+ 1989, ApJ, 344, 685
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Kennicutt et al.}(2003)}"
+key "Kennicutt+03"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kennicutt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, Jr., R.
+\begin_inset space ~
+\end_inset
+
+C., Jr., et al.
+ 2003, PASP, 115, 928
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Kregel et al.}(2002)}"
+key "Kregel+02"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kregel
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, M., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van der Kruit
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, P.
+\begin_inset space ~
+\end_inset
+
+C., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+de Grijs
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+ 2002, MNRAS, 334, 646
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Li et al.}(2005)}"
+key "Li+05"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Li
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, Y., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Mac Low
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ M.-M., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Klessen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ R.
+\begin_inset space ~
+\end_inset
+
+S.
+ 2005, ApJ, 626, 823
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Leroy et al.}(2008)}"
+key "Leroy+08"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Leroy
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+K., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Walter
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, F., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Brinks
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, E., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+de Block
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ W.
+\begin_inset space ~
+\end_inset
+
+J.
+\begin_inset space ~
+\end_inset
+
+G., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Madore
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ B., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Thornley
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ M.
+\begin_inset space ~
+\end_inset
+
+D.
+ 2008, AJ, 136, 2782
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Martin} \\& {Kennicutt}(2001)}"
+key "MK01"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Martin
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, K.
+\begin_inset space ~
+\end_inset
+
+L., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kennicutt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, Jr., R.
+\begin_inset space ~
+\end_inset
+
+C.
+ 2001, ApJ, 555, 301
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Noordermeer} {et~al.} (2005)}"
+key "Noordermeer+05"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Noordermeer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, E., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van der Hulst
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+\begin_inset space ~
+\end_inset
+
+M., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Sancisi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Swaters
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+\begin_inset space ~
+\end_inset
+
+A., & 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van Albada
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, T.
+\begin_inset space ~
+\end_inset
+
+S.
+ 2005, A&A, 442, 137
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Noordermeer et~al.}(2008)}"
+key "N+08"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Noordermeer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, E., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Merrifield
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, M.
+\begin_inset space ~
+\end_inset
+
+R., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Arag
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ó
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+n-Salamanca
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+ 2008, MNRAS, 388, 1381
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Rafikov}(2001)}"
+key "Rafikov01"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Rafikov
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+\begin_inset space ~
+\end_inset
+
+R.
+ 2001, MNRAS, 323, 445
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Romeo}(1992)}"
+key "Romeo92"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Romeo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+B.
+ 1992, MNRAS, 256, 307
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Romeo}(1994)}"
+key "Romeo94"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Romeo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+B.
+ 1994, A&A, 286, 799
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Romeo} \\& {Weigert}(2011)}"
+key "RW11"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Romeo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+B., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Weigert
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+ 2011, MNRAS, 416, 1191
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Shapiro et al.}(2012)}"
+key "Sh+03"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Shapiro
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, K.
+\begin_inset space ~
+\end_inset
+
+L., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gerssen
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van der Marel
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ R.
+\begin_inset space ~
+\end_inset
+
+P.
+ 2003, AJ, 126, 2707
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Schaye}(2004)}"
+key "Schaye04"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Schaye
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+ 2004, ApJ, 609, 667
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Schmidt}(1959)}"
+key "Schmidt59"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Schmidt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, M.
+ 1959, ApJ, 129, 243
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Sil'chenko} {et~al.}(2011)}"
+key "Silchenko+11"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Sil'chenko
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, O.
+\begin_inset space ~
+\end_inset
+
+K., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Chilingarian
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, I.
+\begin_inset space ~
+\end_inset
+
+V., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Sotnikova
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, N.
+\begin_inset space ~
+\end_inset
+
+Ya., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Afanasiev
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, V.
+\begin_inset space ~
+\end_inset
+
+L.
+ 2011, MNRAS, 414, 364
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Thilker}(2005)}"
+key "Thilker+05"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Thilker
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, D.
+\begin_inset space ~
+\end_inset
+
+A., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Bianchi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, L., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Boissier
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, S., et al.
+ 2005, ApJ, 619, L79
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Toomre}(1964)}"
+key "Toomre64"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Toomre
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+ 1964, ApJ, 139, 1217
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{van der Hulst} {et~al.}(2001)}"
+key "vanderHulst+01"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van der Hulst
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+\begin_inset space ~
+\end_inset
+
+M., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van Albada
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, T.
+\begin_inset space ~
+\end_inset
+
+S.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Sancisi
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+ 2001, in Gas and Galaxy Evolution, ASP Conf.
+ Ser.
+ 240, 451
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{van Zee et al.}(1997)}"
+key "vanZee+97"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+van Zee
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, L., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Haynes
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, M.
+\begin_inset space ~
+\end_inset
+
+P., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Salzer
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+\begin_inset space ~
+\end_inset
+
+J., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Broeils
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+H.
+ 1997, AJ, 113, 1618
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Walter et al.}(2008)}"
+key "Walter+08"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Walter
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ F.
+ et al.
+ 2008, AJ, 136, 2563
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Wang} \\& {Silk}(1994)}"
+key "WS94"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Wang
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, B., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Silk
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, J.
+ 1994, ApJ, 427, 759
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Yang et al.}(2007)}"
+key "Yang+07"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Yang
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, C.-C., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Gruendl
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, R.
+\begin_inset space ~
+\end_inset
+
+A., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Chu
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, Y.-H., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Mac Low
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ M.-M., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Fukui
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Y.
+ 2007, ApJ, 671, 374
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Zasov et al.}(2008)}"
+key "Zasov+08"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Zasov
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+V., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Moiseev
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.,V., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Khoperskov
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.V., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Smirnova
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, E.
+\begin_inset space ~
+\end_inset
+
+A.
+ 2008, Astronomy Reports, 52, 79
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "{{Zasov et al.}(2012)}"
+key "Zasov+12"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Zasov
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.
+\begin_inset space ~
+\end_inset
+
+V., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Khoperskov
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, A.V., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Katkov
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, I.
+\begin_inset space ~
+\end_inset
+
+Y., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Afanasiev
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, V.
+\begin_inset space ~
+\end_inset
+
+L., 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Kaisin
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, S.
+\begin_inset space ~
+\end_inset
+
+S.
+ 2012, Astrophysical Bulletin, 67, 362
+\end_layout
+
+\end_body
+\end_document
