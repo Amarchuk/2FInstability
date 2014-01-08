@@ -10,6 +10,8 @@ import math
 import inspect
 import Tkinter
 from PIL import ImageTk, Image
+from utils import strutils as infoutils
+from utils.bcolors import *
 
 
 class Galaxy():
@@ -37,12 +39,10 @@ class Galaxy():
             setattr(self, param, params.pop(param, getattr(self, param)))
 
     def print_info(self):
-        print "\nGalaxy:", self.name
-        if self.description != "":
-            print "Description:", self.description
+        infoutils.print_header("Galaxy", self.name, self.description, 0)
         for param in self.params:
             if param not in ("name","description"):
-                print param + ":", getattr(self, param)
+                infoutils.print_simple_param(1, param, getattr(self, param))
 
 
     def add_param(self, new_param, value=None):
@@ -51,8 +51,6 @@ class Galaxy():
 
 
 if __name__ == "__main__":
-    a = Galaxy()
-    a.print_info()
     b = Galaxy(name="NGC1", path = "some/path", incl = "60.0", delta_incl = "0.0",
                description = "Really cool galaxy\n with many-many\n cool observations available")
     b.print_info()
