@@ -2,12 +2,12 @@ __author__  =  'amarch'
 # -*- coding: utf-8 -*-
 
 
-from velocityEllipsoidReconstr import *
-from rotateAndFitStarRC import *
+import sys
+
+from core.rotateAndFitStarRC import *
 from instabCriteriaSolution import *
 from plotFinal import *
-import sys
-import time
+
 
 def mainf(**kwargs):
     ''''''

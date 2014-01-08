@@ -1,14 +1,8 @@
 __author__ = 'amarch'
 # -*- coding: utf-8 -*-
 
-from velocityEllipsoidReconstr import *
-from rotateAndFitStarRC import *
-from instabCriteriaSolution import *
-from plotFinal import *
-import sys
-import time
-import os
 import shutil
+
 from main import *
 
 
@@ -19,10 +13,14 @@ def correctGasData(r_g1, v_g1, dv_g1):
     v_g = v_g1
     dv_g = dv_g1
 
+    #    r_g = r_g[:-10]
+    #    v_g = v_g[:-10]
+    #    dv_g = dv_g[:-10]
+
     #Если необходимо выпрямить апроксимацию на краю - можно добавить несколько последних точек,
     #это должно помочь сгладить. Или обрезать по upperBord.
 
-    #    upperBord = 200
+    #    upperBord = 100
     #    r_g, v_g, dv_g = zip(*(filter(lambda x: x[0] < upperBord, zip(r_g, v_g, dv_g))))
     #    r_g = list(r_g)
     #    v_g = list(v_g)
@@ -40,24 +38,27 @@ def correctGasData(r_g1, v_g1, dv_g1):
     #    v_g = v_g + v_points * multiplate
     #    dv_g = dv_g + dv_points * multiplate
 
-
-#    correction = lstqBend(r_g, v_g)
-    correction = 4952/math.sin(36*math.pi/180)
-    v_g = map(lambda x: abs(x - correction), v_g)
-    r_g, v_g, dv_g = map(list, zip(*sorted(zip(r_g, v_g, dv_g))))
-
-#    add_points = 5
-#    r_points = [32]
-#    v_points = [285]
-#    dv_points = [1]
+    #    add_points = 5
+    #    r_points = [5]
+    #    v_points = [274]
+    #    dv_points = [5]
+    #
+    #    r_g = r_g + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
+    #    v_g = v_g + v_points * add_points
+    #    dv_g = dv_g + dv_points * add_points
+    #
+#    add_points = 2
+#    r_points = [4]
+#    v_points = [216]
+#    dv_points = [0.5]
 #
 #    r_g = r_g + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
 #    v_g = v_g + v_points * add_points
 #    dv_g = dv_g + dv_points * add_points
 #
-#    add_points = 54
-#    r_points = [46]
-#    v_points = [268]
+#    add_points = 50
+#    r_points = [47]
+#    v_points = [350]
 #    dv_points = [1]
 #
 #    r_g = r_g + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
@@ -73,6 +74,10 @@ def correctStarData(r_ma1, v_ma1, dv_ma1):
     r_ma = r_ma1
     v_ma = v_ma1
     dv_ma = dv_ma1
+
+    #    r_ma = r_ma[1:-1]
+    #    v_ma = v_ma[1:-1]
+    #    dv_ma = dv_ma[1:-1]
 
     #Если необходимо выпрямить апроксимацию на краю - можно добавить несколько последних точек,
     #это должно помочь сгладить. Или обрезать по upperBord.
@@ -94,10 +99,19 @@ def correctStarData(r_ma1, v_ma1, dv_ma1):
     #    v_ma = v_ma + v_points * multiplate
     #    dv_ma = dv_ma + dv_points * multiplate
 
-    add_points = 50
-    r_points = [36]
-    v_points = [340]
-    dv_points = [2]
+    #    add_points = 126
+    #    r_points = [16.5]
+    #    v_points = [156]
+    #    dv_points = [2]
+    #
+    #    r_ma = r_ma + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
+    #    v_ma = v_ma + v_points * add_points
+    #    dv_ma = dv_ma + dv_points * add_points
+    #
+    add_points = 60
+    r_points = [32]
+    v_points = [214]
+    dv_points = [1]
 
     r_ma = r_ma + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
     v_ma = v_ma + v_points * add_points
@@ -137,13 +151,13 @@ def correctSigmaLosMaj(r_ma1, sig_los_ma1, dsig_los_ma1):
     #    dsig_los_ma = dsig_los_ma + dsig_points * multiplate
 
     add_points = 90
-    r_points = [7]
-    v_points = [238]
-    dv_points = [1]
+    r_points = [19.67]
+    v_points = [125.0]
+    dv_points = [2]
 
-#    Экспоненциальные точки
+    #Экспоненциальные точки
     r_ma = r_ma + [i[0] + i[1] for i in zip(r_points * add_points, arange(1, add_points + 1, 1))]
-    sig_los_ma = sig_los_ma + [220 * math.exp(-x / 43.0) for x in
+    sig_los_ma = sig_los_ma + [125.0 * math.exp(-x / 123.0) for x in
                                [i[0] + i[1] for i in zip(r_points * add_points, arange(1, add_points + 1, 1))]]
     dsig_los_ma = dsig_los_ma + dv_points * add_points
 
@@ -156,149 +170,234 @@ def correctSigmaLosMin(r_ma1, sig_los_ma1, dsig_los_ma1):
     r_ma, sig_los_ma, dsig_los_ma = map(list, zip(*sorted(zip(r_ma1, sig_los_ma1, dsig_los_ma1))))
 
     # Можно обрезать в случае плохих краев
-#    r_ma = r_ma[1:-1]
-#    sig_los_ma = sig_los_ma[1:-1]
-#    dsig_los_ma = dsig_los_ma[1:-1]
+    #    r_ma = r_ma[1:-1]
+    #    sig_los_ma = sig_los_ma[1:-1]
+    #    dsig_los_ma = dsig_los_ma[1:-1]
 
     # Если не сошлось - надо исправить начальное приближение гауссианы ниже:
     x0 = array([0, 10, 5, 10])
 
     #Если необходимо выпрямить апроксимацию на краю - можно добавить несколько последних точек,
     #это должно помочь сгладить.
-#    multiplate = 10
-#    addition_points = 1
-#    r_points = heapq.nlargest(addition_points, r_ma)
-#    sig_points = []
-#    dsig_points = []
-#    for po in r_points:
-#        sig_points.append(sig_los_ma[r_ma.index(po)])
-#        dsig_points.append(dsig_los_ma[r_ma.index(po)])
-#    r_ma = r_ma + [i[0] + scale * i[1] for i in
-#                   zip(r_points * multiplate, arange(1, 5 * (multiplate * addition_points) + 1, 5))]
-#    sig_los_ma = sig_los_ma + sig_points * multiplate
-#    dsig_los_ma = dsig_los_ma + dsig_points * multiplate
+    #    multiplate = 10
+    #    addition_points = 1
+    #    r_points = heapq.nlargest(addition_points, r_ma)
+    #    sig_points = []
+    #    dsig_points = []
+    #    for po in r_points:
+    #        sig_points.append(sig_los_ma[r_ma.index(po)])
+    #        dsig_points.append(dsig_los_ma[r_ma.index(po)])
+    #    r_ma = r_ma + [i[0] + scale * i[1] for i in
+    #                   zip(r_points * multiplate, arange(1, 5 * (multiplate * addition_points) + 1, 5))]
+    #    sig_los_ma = sig_los_ma + sig_points * multiplate
 
     return r_ma, sig_los_ma, dsig_los_ma, x0
 
 
 startTime = time.time()
 
-
-
 if __name__ == "__main__":
     plt.rcParams.update({'font.size': 16})
 
-    path = '/home/amarch/Documents/RotationCurves/Diploma/TwoFluidInstAllDataFromSotn17Feb/Sample/RC/U2487_N1167'
-    name = 'U2487_N1167'
-    incl = 36
+    path = '/home/amarch/Documents/RotationCurves/Diploma/TwoFluidInstAllDataFromSotn17Feb/Sample/RC/U9133_N5533'
+    name = 'U9133_N5533'
+    incl = 53
     scale = 1
-    resolution = 330 #pc/arcsec
-    h_disc = 24.2  # R-band
+    resolution = 260 #pc/arcsec according to ApJ 142 145(31pp) 2011
+    h_disc = 34.4  # R-band
     M_R = 11.69
-    M_B = 13.40
-    mu0_c_R = 20.12
-    r_eff_bulge = 6.7
-    pol_degree_star = 15
-    pol_degree_gas = 8
-    sig_pol_deg = 10
-    sig_pol_deg_mi = 8
-    Rmin = 29
-    Rmax = 75
-    gas_corr_by_incl = False
+    M_B = 12.93
+    mu0_c_R = 21.27
+    r_eff_bulge = 9.9
+    pol_degree_star = 12
+    pol_degree_gas = 5
+    sig_pol_deg = 8
+    sig_pol_deg_mi = 12
+    Rmin = 30
+    Rmax = 85
     M_to_L = mass_to_light(M_B - M_R)
-    di = 2
+    gas_corr_by_incl = True
+    di = 2.5
     monte_carlo_realizations = 1
-    peculiarities = [59,61]
-    maxDisc = 4
+    peculiarities = [ 10.0, 50.0]
+    maxDisc = 5
     sig_wings = r_eff_bulge # откуда крылья для дисперсий фитировать
     use_minor = False # используется ли дисперсия по малой оси
 
-    if not os.path.exists(path+'/EQUAL_BELL/'):
-        os.makedirs(path+'/EQUAL_BELL/')
-    else:
-        for f in os.listdir(path+'/EQUAL_BELL/'):
-            os.remove(path+'/EQUAL_BELL/'+f)
-    shutil.copy2(path+'/v_stars_ma.dat', path+'/EQUAL_BELL/v_stars_ma.dat')
-    shutil.copy2(path+'/v_gas_ma.dat', path+'/EQUAL_BELL/v_gas_ma.dat')
-    shutil.copy2(path+'/gas_density.dat', path+'/EQUAL_BELL/gas_density.dat')
-    if os.path.exists(path+'/v_stars_mi.dat'):
-        shutil.copy2(path+'/v_stars_mi.dat', path+'/EQUAL_BELL/v_stars_mi.dat')
 
-    #EQUAL и Белл
-    mainf(PATH=path+'/EQUAL_BELL',
-        NAME=name,
-        INCL=incl,
-        SCALE=scale,
-        RESOLUTION=resolution,
-        H_DISC=h_disc,
-        MR=M_R,
-        MB=M_B,
-        MU0=mu0_c_R,
-        R_EFF_B=r_eff_bulge,
-        DEG_STAR=pol_degree_star,
-        DEG_GAS=pol_degree_gas,
-        SIG_MA_DEG=sig_pol_deg,
-        SIG_MI_DEG=sig_pol_deg_mi,
-        RMIN=Rmin,
-        RMAX=Rmax,
-        GAS_CORR=gas_corr_by_incl,
-        M_TO_L=M_to_L,
-        DI=di,
-        MONTE_CARLO=monte_carlo_realizations,
-        CORRECTION_GAS=correctGasData,
-        CORRECTION_STAR=correctStarData,
-        CORRECTION_SIG_MA=correctSigmaLosMaj,
-        CORRECTION_SIG_MI=correctSigmaLosMin,
-        SURF_DENS_STAR=surfaceDensityStarR,
-        METHOD='EQUAL',
-        PECULIARITIES=peculiarities,
-        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=1)
+#    if not os.path.exists(path+'/AD_BELL/'):
+#        os.makedirs(path+'/AD_BELL/')
+#    else:
+#        for f in os.listdir(path+'/AD_BELL/'):
+#            os.remove(path+'/AD_BELL/'+f)
+#    shutil.copy2(path+'/v_stars_ma.dat', path+'/AD_BELL/v_stars_ma.dat')
+#    shutil.copy2(path+'/v_gas_ma.dat', path+'/AD_BELL/v_gas_ma.dat')
+#    shutil.copy2(path+'/gas_density.dat', path+'/AD_BELL/gas_density.dat')
+#    if os.path.exists(path+'/v_stars_mi.dat'):
+#        shutil.copy2(path+'/v_stars_mi.dat', path+'/AD_BELL/v_stars_mi.dat')
+#
+#    #AD и Белл
+#    mainf(PATH=path+'/AD_BELL',
+#        NAME=name,
+#        INCL=incl,
+#        SCALE=scale,
+#        RESOLUTION=resolution,
+#        H_DISC=h_disc,
+#        MR=M_R,
+#        MB=M_B,
+#        MU0=mu0_c_R,
+#        R_EFF_B=r_eff_bulge,
+#        DEG_STAR=pol_degree_star,
+#        DEG_GAS=pol_degree_gas,
+#        SIG_MA_DEG=sig_pol_deg,
+#        SIG_MI_DEG=sig_pol_deg_mi,
+#        RMIN=Rmin,
+#        RMAX=Rmax,
+#        GAS_CORR=gas_corr_by_incl,
+#        M_TO_L=M_to_L,
+#        DI=di,
+#        MONTE_CARLO=monte_carlo_realizations,
+#        CORRECTION_GAS=correctGasData,
+#        CORRECTION_STAR=correctStarData,
+#        CORRECTION_SIG_MA=correctSigmaLosMaj,
+#        CORRECTION_SIG_MI=correctSigmaLosMin,
+#        SURF_DENS_STAR=surfaceDensityStarR,
+#        METHOD='AD',
+#        PECULIARITIES=peculiarities,
+#        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=1)
+#
+#    renameFilesByMethod(path+'/AD_BELL/', 'AD_BELL')
+#
+#
+#    if not os.path.exists(path+'/AD_MAX/'):
+#        os.makedirs(path+'/AD_MAX/')
+#    else:
+#        for f in os.listdir(path+'/AD_MAX/'):
+#            os.remove(path+'/AD_MAX/'+f)
+#    shutil.copy2(path+'/v_stars_ma.dat', path+'/AD_MAX/v_stars_ma.dat')
+#    shutil.copy2(path+'/v_gas_ma.dat', path+'/AD_MAX/v_gas_ma.dat')
+#    shutil.copy2(path+'/gas_density.dat', path+'/AD_MAX/gas_density.dat')
+#    if os.path.exists(path+'/v_stars_mi.dat'):
+#        shutil.copy2(path+'/v_stars_mi.dat', path+'/AD_MAX/v_stars_mi.dat')
+#
+#    #AD и Белл
+#    mainf(PATH=path+'/AD_MAX',
+#        NAME=name,
+#        INCL=incl,
+#        SCALE=scale,
+#        RESOLUTION=resolution,
+#        H_DISC=h_disc,
+#        MR=M_R,
+#        MB=M_B,
+#        MU0=mu0_c_R,
+#        R_EFF_B=r_eff_bulge,
+#        DEG_STAR=pol_degree_star,
+#        DEG_GAS=pol_degree_gas,
+#        SIG_MA_DEG=sig_pol_deg,
+#        SIG_MI_DEG=sig_pol_deg_mi,
+#        RMIN=Rmin,
+#        RMAX=Rmax,
+#        GAS_CORR=gas_corr_by_incl,
+#        M_TO_L=maxDisc,
+#        DI=di,
+#        MONTE_CARLO=monte_carlo_realizations,
+#        CORRECTION_GAS=correctGasData,
+#        CORRECTION_STAR=correctStarData,
+#        CORRECTION_SIG_MA=correctSigmaLosMaj,
+#        CORRECTION_SIG_MI=correctSigmaLosMin,
+#        SURF_DENS_STAR=surfaceDensityStarR,
+#        METHOD='AD',
+#        PECULIARITIES=peculiarities,
+#        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=2)
+#
+#    renameFilesByMethod(path+'/AD_MAX/', 'AD_MAX')
+#
+#    if not os.path.exists(path+'/EQUAL_BELL/'):
+#        os.makedirs(path+'/EQUAL_BELL/')
+#    else:
+#        for f in os.listdir(path+'/EQUAL_BELL/'):
+#            os.remove(path+'/EQUAL_BELL/'+f)
+#    shutil.copy2(path+'/v_stars_ma.dat', path+'/EQUAL_BELL/v_stars_ma.dat')
+#    shutil.copy2(path+'/v_gas_ma.dat', path+'/EQUAL_BELL/v_gas_ma.dat')
+#    shutil.copy2(path+'/gas_density.dat', path+'/EQUAL_BELL/gas_density.dat')
+#    if os.path.exists(path+'/v_stars_mi.dat'):
+#        shutil.copy2(path+'/v_stars_mi.dat', path+'/EQUAL_BELL/v_stars_mi.dat')
+#
+#    #EQUAL и Белл
+#    mainf(PATH=path+'/EQUAL_BELL',
+#        NAME=name,
+#        INCL=incl,
+#        SCALE=scale,
+#        RESOLUTION=resolution,
+#        H_DISC=h_disc,
+#        MR=M_R,
+#        MB=M_B,
+#        MU0=mu0_c_R,
+#        R_EFF_B=r_eff_bulge,
+#        DEG_STAR=pol_degree_star,
+#        DEG_GAS=pol_degree_gas,
+#        SIG_MA_DEG=sig_pol_deg,
+#        SIG_MI_DEG=sig_pol_deg_mi,
+#        RMIN=Rmin,
+#        RMAX=Rmax,
+#        GAS_CORR=gas_corr_by_incl,
+#        M_TO_L=M_to_L,
+#        DI=di,
+#        MONTE_CARLO=monte_carlo_realizations,
+#        CORRECTION_GAS=correctGasData,
+#        CORRECTION_STAR=correctStarData,
+#        CORRECTION_SIG_MA=correctSigmaLosMaj,
+#        CORRECTION_SIG_MI=correctSigmaLosMin,
+#        SURF_DENS_STAR=surfaceDensityStarR,
+#        METHOD='EQUAL',
+#        PECULIARITIES=peculiarities,
+#        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=3)
+#
+#    renameFilesByMethod(path+'/EQUAL_BELL/', 'EQUAL_BELL')
 
-    renameFilesByMethod(path+'/EQUAL_BELL/', 'EQUAL_BELL')
 
-
-    if not os.path.exists(path+'/HALF_MAX/'):
-        os.makedirs(path+'/HALF_MAX/')
-    else:
-        for f in os.listdir(path+'/HALF_MAX/'):
-            os.remove(path+'/HALF_MAX/'+f)
-    shutil.copy2(path+'/v_stars_ma.dat', path+'/HALF_MAX/v_stars_ma.dat')
-    shutil.copy2(path+'/v_gas_ma.dat', path+'/HALF_MAX/v_gas_ma.dat')
-    shutil.copy2(path+'/gas_density.dat', path+'/HALF_MAX/gas_density.dat')
-    if os.path.exists(path+'/v_stars_mi.dat'):
-        shutil.copy2(path+'/v_stars_mi.dat', path+'/HALF_MAX/v_stars_mi.dat')
-
-    #HALF и Макс. диск
-    mainf(PATH=path+'/HALF_MAX',
-        NAME=name,
-        INCL=incl,
-        SCALE=scale,
-        RESOLUTION=resolution,
-        H_DISC=h_disc,
-        MR=M_R,
-        MB=M_B,
-        MU0=mu0_c_R,
-        R_EFF_B=r_eff_bulge,
-        DEG_STAR=pol_degree_star,
-        DEG_GAS=pol_degree_gas,
-        SIG_MA_DEG=sig_pol_deg,
-        SIG_MI_DEG=sig_pol_deg_mi,
-        RMIN=Rmin,
-        RMAX=Rmax,
-        GAS_CORR=gas_corr_by_incl,
-        M_TO_L=maxDisc,
-        DI=di,
-        MONTE_CARLO=monte_carlo_realizations,
-        CORRECTION_GAS=correctGasData,
-        CORRECTION_STAR=correctStarData,
-        CORRECTION_SIG_MA=correctSigmaLosMaj,
-        CORRECTION_SIG_MI=correctSigmaLosMin,
-        SURF_DENS_STAR=surfaceDensityStarR,
-        METHOD='HALF',
-        PECULIARITIES=peculiarities,
-        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=2)
-
-    renameFilesByMethod(path+'/HALF_MAX/', 'HALF_MAX')
+#    if not os.path.exists(path+'/HALF_MAX/'):
+#        os.makedirs(path+'/HALF_MAX/')
+#    else:
+#        for f in os.listdir(path+'/HALF_MAX/'):
+#            os.remove(path+'/HALF_MAX/'+f)
+#    shutil.copy2(path+'/v_stars_ma.dat', path+'/HALF_MAX/v_stars_ma.dat')
+#    shutil.copy2(path+'/v_gas_ma.dat', path+'/HALF_MAX/v_gas_ma.dat')
+#    shutil.copy2(path+'/gas_density.dat', path+'/HALF_MAX/gas_density.dat')
+#    if os.path.exists(path+'/v_stars_mi.dat'):
+#        shutil.copy2(path+'/v_stars_mi.dat', path+'/HALF_MAX/v_stars_mi.dat')
+#
+#    #HALF и Макс. диск
+#    mainf(PATH=path+'/HALF_MAX',
+#        NAME=name,
+#        INCL=incl,
+#        SCALE=scale,
+#        RESOLUTION=resolution,
+#        H_DISC=h_disc,
+#        MR=M_R,
+#        MB=M_B,
+#        MU0=mu0_c_R,
+#        R_EFF_B=r_eff_bulge,
+#        DEG_STAR=pol_degree_star,
+#        DEG_GAS=pol_degree_gas,
+#        SIG_MA_DEG=sig_pol_deg,
+#        SIG_MI_DEG=sig_pol_deg_mi,
+#        RMIN=Rmin,
+#        RMAX=Rmax,
+#        GAS_CORR=gas_corr_by_incl,
+#        M_TO_L=maxDisc,
+#        DI=di,
+#        MONTE_CARLO=monte_carlo_realizations,
+#        CORRECTION_GAS=correctGasData,
+#        CORRECTION_STAR=correctStarData,
+#        CORRECTION_SIG_MA=correctSigmaLosMaj,
+#        CORRECTION_SIG_MI=correctSigmaLosMin,
+#        SURF_DENS_STAR=surfaceDensityStarR,
+#        METHOD='HALF',
+#        PECULIARITIES=peculiarities,
+#        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=4)
+#
+#    renameFilesByMethod(path+'/HALF_MAX/', 'HALF_MAX')
 
     if not os.path.exists(path+'/HALF_BELL/'):
         os.makedirs(path+'/HALF_BELL/')
@@ -339,7 +438,7 @@ if __name__ == "__main__":
         SURF_DENS_STAR=surfaceDensityStarR,
         METHOD='HALF',
         PECULIARITIES=peculiarities,
-        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=3)
+        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=5)
 
     renameFilesByMethod(path+'/HALF_BELL/', 'HALF_BELL')
 
@@ -354,83 +453,78 @@ if __name__ == "__main__":
     if os.path.exists(path+'/v_stars_mi.dat'):
         shutil.copy2(path+'/v_stars_mi.dat', path+'/EQUAL_MAX/v_stars_mi.dat')
 
-    #EQUAL и Макс диск
-    mainf(PATH=path+'/EQUAL_MAX',
-        NAME=name,
-        INCL=incl,
-        SCALE=scale,
-        RESOLUTION=resolution,
-        H_DISC=h_disc,
-        MR=M_R,
-        MB=M_B,
-        MU0=mu0_c_R,
-        R_EFF_B=r_eff_bulge,
-        DEG_STAR=pol_degree_star,
-        DEG_GAS=pol_degree_gas,
-        SIG_MA_DEG=sig_pol_deg,
-        SIG_MI_DEG=sig_pol_deg_mi,
-        RMIN=Rmin,
-        RMAX=Rmax,
-        GAS_CORR=gas_corr_by_incl,
-        M_TO_L=maxDisc,
-        DI=di,
-        MONTE_CARLO=monte_carlo_realizations,
-        CORRECTION_GAS=correctGasData,
-        CORRECTION_STAR=correctStarData,
-        CORRECTION_SIG_MA=correctSigmaLosMaj,
-        CORRECTION_SIG_MI=correctSigmaLosMin,
-        SURF_DENS_STAR=surfaceDensityStarR,
-        METHOD='EQUAL',
-        PECULIARITIES=peculiarities,
-        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=4)
+#    #EQUAL и Макс диск
+#    mainf(PATH=path+'/EQUAL_MAX',
+#        NAME=name,
+#        INCL=incl,
+#        SCALE=scale,
+#        RESOLUTION=resolution,
+#        H_DISC=h_disc,
+#        MR=M_R,
+#        MB=M_B,
+#        MU0=mu0_c_R,
+#        R_EFF_B=r_eff_bulge,
+#        DEG_STAR=pol_degree_star,
+#        DEG_GAS=pol_degree_gas,
+#        SIG_MA_DEG=sig_pol_deg,
+#        SIG_MI_DEG=sig_pol_deg_mi,
+#        RMIN=Rmin,
+#        RMAX=Rmax,
+#        GAS_CORR=gas_corr_by_incl,
+#        M_TO_L=maxDisc,
+#        DI=di,
+#        MONTE_CARLO=monte_carlo_realizations,
+#        CORRECTION_GAS=correctGasData,
+#        CORRECTION_STAR=correctStarData,
+#        CORRECTION_SIG_MA=correctSigmaLosMaj,
+#        CORRECTION_SIG_MI=correctSigmaLosMin,
+#        SURF_DENS_STAR=surfaceDensityStarR,
+#        METHOD='EQUAL',
+#        PECULIARITIES=peculiarities,
+#        SIG_WINGS = sig_wings, 		USE_MINOR = use_minor, 		RUN=6)
+#
+#    renameFilesByMethod(path+'/EQUAL_MAX/', 'EQUAL_MAX')
 
-    renameFilesByMethod(path+'/EQUAL_MAX/', 'EQUAL_MAX')
 
-
-    #    #Логгирование в файл
+#    #Логгирование в файл
 #    sys.stdout = Tee(path + "/log_" + name + '.txt', 'w')
 #
-#    # Работа с фотометрией в I полосе.
+#    # Работа с фотометрией в R полосе.
 #    poly_star, poly_gas, star_data, gas_data = bendStarRC(correctGasData, correctStarData, path, incl, 0.0, False,
 #        pol_degree_star, pol_degree_gas, name,
 #        scale, gas_corr_by_incl, False)
 #    h_disc *= scale
 #    R1, R2 = correctDistanceInterval(path, scale)
-#    R1 = 10
-#    R2 = 75
+#    R2 = 90
 #    evaluateSigLosWingsExpScale(path, r_eff_bulge)
 #    sigLosGaussParams, sigMajData = fitGaussSigLosMaj(correctSigmaLosMaj, path, scale, incl)
 #    sigLosPolyParams = fitPolySigLosMaj(correctSigmaLosMaj, path, scale, incl, sig_pol_deg, False, min(Rmax, R2))
 #    sigLosSinhParams = fitSechSigLosMaj(correctSigmaLosMaj, path, scale, incl)
-##    sigLosGaussParamsMi, sigMiData = fitGaussSigLosMin(correctSigmaLosMin, path, scale, incl)
-##    sigLosPolyParamsMi = fitPolySigLosMin(correctSigmaLosMin, path, scale, incl, sig_pol_deg_mi, False, min(Rmax, R2))
-#    eval_SigPhi_to_sigR(poly_star, R1, R2, (R2 - R1) / 1000.0, path)
+#    ##    #    sigLosGaussParamsMi, sigMiData = fitGaussSigLosMin(correctSigmaLosMin, path, scale, incl)
+#    ##    #    sigLosPolyParamsMi = fitPolySigLosMin(correctSigmaLosMin, path, scale, incl, sig_pol_deg_mi, False, min(Rmax,R2))
+#    eval_SigPhi_to_sigR(poly_star, R1, R2, 0.1, path)
 #    evalEpyciclicFreq(poly_gas, arange(R1 + 2, R2, 0.1), path, resolution, h_disc)
-#    #M_to_L = mass_to_light_Iband(M_B - M_R)
-#    print '#!!!!!!!!!!!!# Mass-to-light ratio in I band (M/L) = ', M_to_L
+#    print '#!!!!!!!!!!!!# Mass-to-light ratio in R band (M/L) = ', M_to_L
 #    plotSurfDens(M_to_L, h_disc, mu0_c_R, 0, Rmax, 0.1, path, surfaceDensityStarR)
 #    gas_sf_data = surfaceDensityGas(path)
 #
 #    r_surfd_gas = gas_sf_data[0]
-#    r_star_and_gas = list(arange(Rmin, Rmax, 0.1)) + r_surfd_gas
+#    r_surfd_gas = filter(lambda x: x < 90, r_surfd_gas)
+#    r_star_and_gas = list(arange(Rmin, Rmax, (R2 - R1) / 1000.0)) + r_surfd_gas
 #    r_star_and_gas.sort()
-#    #    r_star_and_gas = filter(lambda x: ((x <= min(Rmax, R2)) & (x >= max(Rmin, R1))), r_star_and_gas)
-#    #    r_surfd_gas = filter(lambda x: ((x <= min(Rmax, R2)) & (x >= max(Rmin, R1, r_eff_bulge))), r_surfd_gas)
 #    r_star_and_gas = filter(lambda x: x > r_eff_bulge, r_star_and_gas)
 #    r_surfd_gas = filter(lambda x: x > r_eff_bulge, r_surfd_gas)
 #
-#    ratioSVEfromSigma(r_star_and_gas, h_disc, path, poly_star, sigLosPolyParams, sigLosPolyParamsMi, 100, incl)
+##    h_kin, sigR2 = asymmetricDriftEvaluation(r_star_and_gas, h_disc, path, poly_star, poly_gas, 90)
+##    sigZ2, sigPhi2 = velosityEllipsoid(h_disc,r_star_and_gas, sigR2, path, incl, sigLosPolyParams, poly_star)
+#
+##    ratioSVEfromSigma(r_star_and_gas, h_disc, path, poly_star, sigLosPolyParams, sigLosPolyParamsMi, 100, incl)
 #    SVEfunction = simpleSVEfromSigma
-#    #    SVEfunction = simpleSVEwhenPhiEqualsZ
-#    sig_R2, sig_Phi2, sig_Z2 = SVEfunction(r_star_and_gas, h_disc, path, poly_star, sigMajData,
-#        sigLosPolyParams, 0.5, 71, incl)
+##    SVEfunction = simpleSVEwhenPhiEqualsZ
+#    sig_R2, sig_Phi2, sig_Z2 = SVEfunction(r_star_and_gas, h_disc, path, poly_star, sigMajData, sigLosPolyParams, 0.5, 136, incl)
 #
-#    #    h_kin, sigR2 = asymmetricDriftEvaluation(r_star_and_gas, h_disc, path, poly_star, poly_gas, 91)
-#    #    sigZ2, sigPhi2 = velosityEllipsoid(h_disc,r_star_and_gas, sigR2, path, incl, sigLosPolyParams, poly_star)
-#
-#
-#    # Решаем гравнеустойчивость для точек, где есть данные по газовой плотности
-#    star_density = [surfaceDensityStarI(M_to_L, h_disc, R, mu0_c_I) for R in r_surfd_gas]
+##    # Решаем гравнеустойчивость для точек, где есть данные по газовой плотности
+#    star_density = [surfaceDensityStarR(M_to_L, h_disc, R, mu0_c_R) for R in r_surfd_gas]
 #    gas_density = [gas_sf_data[1][gas_sf_data[0].index(R)] for R in r_surfd_gas]
 #    sigma_corr_gas = [math.sqrt(sig_R2[r_star_and_gas.index(R)]) for R in r_surfd_gas]
 #    Qeffs = findTwoFluidQeffs(r_surfd_gas, poly_gas, gas_density, star_density, sigma_corr_gas, path, resolution, 60.0)
@@ -450,8 +544,7 @@ if __name__ == "__main__":
 #    discQeffs_3 = findTwoFluidWithDiscQeffs(r_surfd_gas, poly_gas, gas_density, star_density, sigma_corr_gas, path,
 #        resolution, hzStar, hzGas, 60.0)
 #    # Смотрим, какие результаты в случае однородно толстого диска 0.2h
-#    #    hzStar = [0.1 * h_disc] * r_surfd_gas.__len__()
-#    hzStar = [0.5] * r_surfd_gas.__len__()
+#    hzStar = [0.1*h_disc]*r_surfd_gas.__len__()
 #    discQeffs_4 = findTwoFluidWithDiscQeffs(r_surfd_gas, poly_gas, gas_density, star_density, sigma_corr_gas, path,
 #        resolution, hzStar, hzGas, 60.0)
 #
@@ -465,7 +558,7 @@ if __name__ == "__main__":
 #    eval_SigPhi_to_sigR(poly_star1, R1, R2, 0.1, path)
 #    evalEpyciclicFreq(poly_gas1, arange(R1 + 2, R2, 0.1), path, resolution, h_disc)
 #    sig_R2_1, sig_Phi2_1, sig_Z2_1 = SVEfunction(r_star_and_gas, h_disc, path, poly_star, sigMajData,
-#        sigLosPolyParams, 0.5, 71, incl)
+#        sigLosPolyParams, 0.5, 100, incl)
 #    sigma_corr_gas_1 = [math.sqrt(sig_R2_1[r_star_and_gas.index(R)]) for R in r_surfd_gas]
 #    Qeffs_1 = findTwoFluidQeffs(r_surfd_gas, poly_gas1, gas_density, star_density, sigma_corr_gas_1, path, resolution,
 #        60.0)
@@ -488,7 +581,7 @@ if __name__ == "__main__":
 #    eval_SigPhi_to_sigR(poly_star2, R1, R2, 0.1, path)
 #    evalEpyciclicFreq(poly_gas2, arange(R1 + 2, R2, 0.1), path, resolution, h_disc)
 #    sig_R2_2, sig_Phi2_2, sig_Z2_2 = SVEfunction(r_star_and_gas, h_disc, path, poly_star, sigMajData,
-#        sigLosPolyParams, 0.5, 71, incl)
+#        sigLosPolyParams, 0.5, 100, incl)
 #    sigma_corr_gas_2 = [math.sqrt(sig_R2_2[r_star_and_gas.index(R)]) for R in r_surfd_gas]
 #    Qeffs_2 = findTwoFluidQeffs(r_surfd_gas, poly_gas2, gas_density, star_density, sigma_corr_gas_2, path, resolution,
 #        60.0)
@@ -513,38 +606,38 @@ if __name__ == "__main__":
 #    Qeffs1F_list = [Qeffs1F]
 #    MC_iter = 1
 #
-#    while MC_iter < monte_carlo_realizations:
-#        MC_iter += 1
-#        print '#!!!!!!!!!!!!# Monte-Carlo iterration number ', MC_iter
-#        poly_star_mc, poly_gas_mc, star_data_mc, gas_data_mc = bendStarRC(correctGasData, correctStarData, path, incl,
-#            0.0, False, pol_degree_star, pol_degree_gas, name, scale, gas_corr_by_incl, True)
-#        sigLosPolyParams_mc = fitPolySigLosMaj(correctSigmaLosMaj, path, scale, incl, sig_pol_deg, True, min(Rmax, R2))
-#        eval_SigPhi_to_sigR(poly_star_mc, R1, R2, 0.1, path)
-#        evalEpyciclicFreq(poly_gas_mc, arange(R1 + 2, R2, 0.1), path, resolution, h_disc)
-#        sig_R2_mc, sig_Phi2_mc, sig_Z2_mc = SVEfunction(r_star_and_gas, h_disc, path, poly_star, sigMajData,
-#            sigLosPolyParams, 0.5, 71, incl)
-#        sigma_corr_gas_mc = [math.sqrt(sig_R2_mc[r_star_and_gas.index(R)]) for R in r_surfd_gas]
-#        Qeffs_mc = findTwoFluidQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc, path,
-#            resolution, 60.0)
-#        hydroQeffs_mc = findTwoFluidHydroQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc,
-#            path,
-#            resolution, 60.0)
-#        sigmaZgas_mc = [math.sqrt(sig_Z2_mc[r_star_and_gas.index(R)]) for R in r_surfd_gas]
-#        hzStar_mc = [zStar(R[1], R[2], resolution, R[3]) / 2 for R in
-#                     zip(r_surfd_gas, star_density, gas_density, sigmaZgas_mc)]
-#        discQeffs_mc = findTwoFluidWithDiscQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc,
-#            path,
-#            resolution, hzStar_mc, hzGas, 60.0)
-#        Qeffs1F_mc = findOneFluidQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc, path,
-#            resolution,
-#            60.0)
-#        sigR2_list.append(sig_R2_mc)
-#        sigZ2_list.append(sig_Z2_mc)
-#        sigPhi2_list.append(sig_Phi2_mc)
-#        Qeffs_list.append(zip(*Qeffs_mc)[2])
-#        hydroQeffs_list.append(zip(*hydroQeffs_mc)[2])
-#        discQeffs_list.append(zip(*discQeffs_mc)[2])
-#        Qeffs1F_list.append(Qeffs1F_mc)
+##    while MC_iter < monte_carlo_realizations:
+##        MC_iter += 1
+##        print '#!!!!!!!!!!!!# Monte-Carlo iterration number ', MC_iter
+##        poly_star_mc, poly_gas_mc, star_data_mc, gas_data_mc = bendStarRC(correctGasData, correctStarData, path, incl,
+##            0.0, False, pol_degree_star, pol_degree_gas, name, scale, gas_corr_by_incl, True)
+##        sigLosPolyParams_mc = fitPolySigLosMaj(correctSigmaLosMaj, path, scale, incl, sig_pol_deg, True, min(Rmax, R2))
+##        eval_SigPhi_to_sigR(poly_star_mc, R1, R2, 0.1, path)
+##        evalEpyciclicFreq(poly_gas_mc, arange(R1 + 2, R2, 0.1), path, resolution, h_disc)
+##        sig_R2_mc, sig_Phi2_mc, sig_Z2_mc = SVEfunction(r_star_and_gas, h_disc, path, poly_star, sigMajData,
+##            sigLosPolyParams, 0.5, 100, incl)
+##        sigma_corr_gas_mc = [math.sqrt(sig_R2_mc[r_star_and_gas.index(R)]) for R in r_surfd_gas]
+##        Qeffs_mc = findTwoFluidQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc, path,
+##            resolution, 60.0)
+##        hydroQeffs_mc = findTwoFluidHydroQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc,
+##            path,
+##            resolution, 60.0)
+##        sigmaZgas_mc = [math.sqrt(sig_Z2_mc[r_star_and_gas.index(R)]) for R in r_surfd_gas]
+##        hzStar_mc = [zStar(R[1], R[2], resolution, R[3]) / 2 for R in
+##                     zip(r_surfd_gas, star_density, gas_density, sigmaZgas_mc)]
+##        discQeffs_mc = findTwoFluidWithDiscQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc,
+##            path,
+##            resolution, hzStar_mc, hzGas, 60.0)
+##        Qeffs1F_mc = findOneFluidQeffs(r_surfd_gas, poly_gas_mc, gas_density, star_density, sigma_corr_gas_mc, path,
+##            resolution,
+##            60.0)
+##        sigR2_list.append(sig_R2_mc)
+##        sigZ2_list.append(sig_Z2_mc)
+##        sigPhi2_list.append(sig_Phi2_mc)
+##        Qeffs_list.append(zip(*Qeffs_mc)[2])
+##        hydroQeffs_list.append(zip(*hydroQeffs_mc)[2])
+##        discQeffs_list.append(zip(*discQeffs_mc)[2])
+##        Qeffs1F_list.append(Qeffs1F_mc)
 #
 #    plotFinalPics(path, poly_star, poly_gas, di, star_data, gas_data, incl, resolution, h_disc, r_eff_bulge,
 #        sigMajData, sigLosGaussParams, sigLosPolyParams, sigLosSinhParams, r_surfd_gas,
@@ -557,9 +650,8 @@ if __name__ == "__main__":
 #        zip(sig_R2, sig_R2_1, sig_R2_2) + sigR2_list,
 #        zip(sig_Phi2, sig_Phi2_1, sig_Phi2_2) + sigPhi2_list,
 #        zip(sig_Z2, sig_Z2_1, sig_Z2_2) + sigZ2_list,
-#        hzStar)
-
-
+#        hzStar, peculiarities, 0)
+#
 #    plt.show()
 
     finishTime = time.time()

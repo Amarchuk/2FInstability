@@ -4,13 +4,14 @@ __author__ = 'amarch'
 # Отражаем звездную кривую вращения, перегибаем ее, используя данные по большой и малой оси,
 # затем приблизить полиномом вручную; полученный полином и картинку сохранить если потребуется.
 
-import matplotlib.pyplot as plt
 from bisect import bisect
-import math
+import sys
+
 import numpy
 from scipy import interpolate
-from velocityEllipsoidReconstr import *
-import sys
+
+from core.velocityEllipsoidReconstr import *
+
 
 # Класс для логирования в файл
 class Tee(object):

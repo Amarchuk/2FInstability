@@ -1,11 +1,7 @@
 __author__ = 'amarch'
 # -*- coding: utf-8 -*-
 
-from numpy import *
-import matplotlib.pyplot as plt
-import scipy
-import math
-from velocityEllipsoidReconstr import *
+from core.velocityEllipsoidReconstr import *
 
 
 

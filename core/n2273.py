@@ -1,15 +1,8 @@
 __author__ = 'amarch'
 # -*- coding: utf-8 -*-
 
-from velocityEllipsoidReconstr import *
-from rotateAndFitStarRC import *
-from instabCriteriaSolution import *
-from plotFinal import *
-import sys
-import time
-import os
 import shutil
-from main import *
+from core.main import *
 
 
 
