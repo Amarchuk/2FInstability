@@ -49,6 +49,11 @@ class Galaxy():
         self.params.append(new_param)
         setattr(self, new_param, value)
 
+    def plot(self):
+        im = plt.imread(self.image)
+        plt.imshow(im)
+        plt.title(self.name)
+
 
 if __name__ == "__main__":
     b = Galaxy(name="NGC1", path = "some/path", incl = "60.0", delta_incl = "0.0",
