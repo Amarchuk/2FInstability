@@ -16,22 +16,22 @@ class RotationCurve():
     path = "."
     description = None
     data_points = []
+    fake_data_points = []
+    poly_fit = poly1d([0])
 
     def __init__(self, path, name, description=None):
         self.name = name
         self.path = path
         self.description = description
-        rc_file = open(path)
-        for line in rc_file:
-            if line[0] == '#':
-                pass
-            elif line.__len__() >= 4:
+        if os.path.isfile(path):
+            rc_file = open(path)
+            for line in rc_file:
+                if line[0] == '#':
+                    pass
+                else:
                     line = filter(lambda x: x != '', line.split("  "))
-                    self.data_points.append((float(line[0]), float(line[2]), float(line[3])))
-            else:
-                line = filter(lambda x: x != '', line.split("  "))
-                self.data_points.append((float(line[0]), float(line[1]), float(line[2])))
-        rc_file.close()
+                    self.data_points.append((float(line[0]), float(line[1]), float(line[2])))
+            rc_file.close()
 
     def radii(self):
         if self.data_points.__len__() == 0:
@@ -50,6 +50,9 @@ class RotationCurve():
             raise UnboundLocalError("No points in rotation curve")
         else:
             return map(lambda x: x[2], self.data_points)
+
+    def add_fake_points(self, point, count):
+        self.fake_data_points = self.fake_data_points + zip(arange(point[0], point[0]+count, 1), [point[1]]*count, [point[2]]*count)
 
     def print_info(self):
         infoutils.print_header("Rotation curve", self.name, self.description, 0)

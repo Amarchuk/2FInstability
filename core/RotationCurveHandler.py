@@ -8,10 +8,11 @@ from Galaxy import *
 
 
 class RotationCurveHandler():
+    star_ma_rc = None
+    star_mi_rc = None
+    gas_rcs = {}
+
     def __init__(self, galaxyname, galaxy):
-        self.star_ma_rc = None
-        self.star_mi_rc = None
-        self.gas_rcs = {}
         self.name = galaxyname + " Rotation Curve Handler"
         self.galaxy = galaxy
 
@@ -43,64 +44,64 @@ class RotationCurveHandler():
         return integral
 
     def find_zero_point(self, rc):
-        zero_point = minimize(self.bend_rc_integral,
+        zero_point = minimize(lambda x: self.bend_rc_integral(x, rc),
                               [numpy.mean(rc.velocities()), numpy.mean(rc.radii())],
                               method='nelder-mead', options={'xtol': 1e-8, 'disp': True})
         return zero_point.x
 
+
     def incline_velocity(self, v, angle):
         return v / math.sin(angle * math.pi / 180)
 
-    def bend_star_ma_rc(self):
-        rc = self.star_ma_rc
-        zero_point = self.find_zero_point(rc)
-        self.bended_star_ma_rc = RotationCurve(os.path.basename(self.star_ma_rc.path) + "/v_star_ma_bended.dat",
-                                               "Bended RC: " + self.star_ma_rc.name)
-        incl_lambda = lambda x: self.incline_velocity(self.galaxy.incl, x)
-        self.bended_star_ma_rc.data_points = zip(abs(self.star_ma_rc.radii() - zero_point[1]),
-                                                 map(incl_lambda, abs(self.star_ma_rc.velocities() - zero_point[0])),
-                                                 map(incl_lambda, self.star_ma_rc.delta_velocities()))
-        self.bended_star_ma_rc.data_points.sort()
+    def correct_rc(self, rc, zero_point, angle):
+        bended_star_ma_rc = RotationCurve(os.path.dirname(rc.path) + "/bended_" + os.path.basename(rc.path),
+                                          "Bended and inclined " + rc.name)
+        if reduce(lambda x,y: (x > 0) and (y>0), rc.radii()):
+            bended_star_ma_rc.data_points  = rc.data_points
+        else:
+            incl_lambda = lambda x: self.incline_velocity(x, angle)
+            bended_star_ma_rc.data_points = zip(map(lambda x: abs(x - zero_point[1]), rc.radii()),
+                                                map(incl_lambda, map(lambda x: abs(x - zero_point[0]), rc.velocities())),
+                                                map(incl_lambda, rc.delta_velocities()))
+            bended_star_ma_rc.data_points.sort()
+        return bended_star_ma_rc
+
+
+    def get_corrected_star_ma_rc(self, zero_point, angle):
+        self.bended_star_ma_rc = self.correct_rc(self.star_ma_rc, zero_point, angle)
         return self.bended_star_ma_rc
 
-    def bend_gas_rc(self, rc_name):
-    # self.gas_rc = RotationCurve(os.path.basename(self.gas_rcs[rc_name]) + "/v_gas.dat",
-    #                                        "Main gas RC: " + self.gas_rcs[rc_name].name)
-    # incl_lambda = lambda x: self.incline_velocity(self.galaxy.incl, x)
-    # self.gas_rc.data_points = zip(self.star_ma_rc.radii(),
-    #                                          map(incl_lambda, abs(self.star_ma_rc.velocities() - zero_point[0])),
-    #                                          map(incl_lambda, self.star_ma_rc.delta_velocities()))
+    def get_corrected_gas_ma_rc(self, rc_name, zero_point, angle):
+        self.bended_gas_ma_rc = self.correct_rc(self.gas_rcs[rc_name], zero_point, angle)
+        return self.bended_gas_ma_rc
+
+    def interpolate_poly_rc(self, rc, deg):
+        rc.poly_fit = poly1d(polyfit(zip(*(rc.data_points + rc.fake_data_points))[0],
+                                     zip(*(rc.data_points + rc.fake_data_points))[1], deg=deg,
+                                     w=map(lambda x: 1 / (x + 0.1) ** 2,
+                                           zip(*(rc.data_points + rc.fake_data_points))[2])))
 
 
-if __name__ == "__main__":
-    ngc338 = Galaxy(name="NGC 338 (UGC 624)", path="../data/ngc338", incl="64.0", delta_incl="7.5",
-                    description="Inclination according to Zasov 2012, photometry in I band.",
-                    resolution="311", image="../data/ngc338/ngc338_SDSS.jpeg")
-    handler = RotationCurveHandler("ngc 338", ngc338)
-    handler.set_stellar_ma_rc(RotationCurve("../data/ngc338/v_stars_ma.dat", "Stars MA RC NGC338"))
-    zero = handler.find_zero_point()
-    print zero
 
-
-# r = handler.star_ma_rc.radii()
-# dv_ma = handler.star_ma_rc.delta_velocities()
-# s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-#                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=1)
-# plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=1")
-# s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-#                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=2)
-# plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=2")
-# s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-#                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=3)
-# plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=3")
-# s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-#                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=4)
-# plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=4")
-# s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-#                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=5)
-# plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=5")
-# plt.plot(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(), 'o')
-# plt.legend()
-# plt.show()
-# p_star = poly1d(polyfit(r_ma, map(abs, v_ma), deg=pol_degree_star, w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma)))
+    # r = handler.star_ma_rc.radii()
+    # dv_ma = handler.star_ma_rc.delta_velocities()
+    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
+    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=1)
+    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=1")
+    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
+    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=2)
+    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=2")
+    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
+    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=3)
+    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=3")
+    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
+    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=4)
+    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=4")
+    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
+    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=5)
+    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=5")
+    # plt.plot(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(), 'o')
+    # plt.legend()
+    # plt.show()
+    # p_star = poly1d(polyfit(r_ma, map(abs, v_ma), deg=pol_degree_star, w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma)))
 
