@@ -34,14 +34,20 @@ class Galaxy():
         self.description = ""
         self.resolution = None
         self.image = None
+        self.star_rc = None
+        self.gas_rc = None
         for param in self.params:
             setattr(self, param, params.pop(param, getattr(self, param)))
 
-    def print_info(self):
-        infoutils.print_header("Galaxy", self.name, self.description, 0)
+    def print_info(self, indent):
+        infoutils.print_header("Galaxy", self.name, self.description, indent)
         for param in self.params:
             if param not in ("name","description"):
-                infoutils.print_simple_param(1, param, str(getattr(self, param)))
+                infoutils.print_simple_param(1+indent, param, str(getattr(self, param)))
+        if self.star_rc is not None:
+            self.star_rc.print_info(indent)
+        if self.gas_rc is not None:
+            self.gas_rc.print_info(indent)
 
 
     def add_param(self, new_param, value=None):
@@ -52,6 +58,11 @@ class Galaxy():
         im = plt.imread(self.image)
         plt.imshow(im)
         plt.title(self.name)
+
+    def plot_rcs(self):
+        plt.title("Rotation curves for " + self.name)
+        self.star_rc.plot('$V_{star}(R)$')
+        self.gas_rc.plot('$V_{gas}(R)$', color='green')
 
     def initialize_handler(self):
         self.rc_handler = RotationCurveHandler(self.name, self)

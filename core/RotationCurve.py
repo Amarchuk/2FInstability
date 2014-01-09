@@ -54,23 +54,23 @@ class RotationCurve():
     def add_fake_points(self, point, count):
         self.fake_data_points = self.fake_data_points + zip(arange(point[0], point[0]+count, 1), [point[1]]*count, [point[2]]*count)
 
-    def print_info(self):
-        infoutils.print_header("Rotation curve", self.name, self.description, 0)
-        infoutils.print_list_summary(1, "radii in arcsec", self.radii(), description=self.description)
-        infoutils.print_list_summary(1, "velocities in km/s", self.velocities())
-
-    def plot(self, label):
-        # plt.axhline(y=numpy.array(self.velocities()).mean(), color='red', label='mean')
-        plt.plot(self.radii(), self.velocities(), '.', label=label)
-        plt.errorbar(self.radii(), self.velocities(), yerr=self.delta_velocities(), fmt=None,
-                     marker=None, mew=0)
-        plt.xlabel("$r,\ ''$")
-        plt.ylabel("$V_{" + label + "},\ km/s$")
-        plt.legend()
+    def print_info(self, indent):
+        infoutils.print_header("Rotation curve", self.name, self.description, indent)
+        infoutils.print_simple_param(indent+1, "fake data points count",  str(self.fake_data_points.__len__()))
+        if self.poly_fit != poly1d([0]):
+            infoutils.print_simple_param(indent+1, "polyfit degree",  self.poly_fit.coeffs.__len__())
+            infoutils.print_simple_param(indent+1, "polyfit coeffs",  list(self.poly_fit.coeffs))
+        infoutils.print_list_summary(1+indent, "radii in arcsec", self.radii(), description=self.description)
+        infoutils.print_list_summary(1+indent, "velocities in km/s", self.velocities())
 
 
-if __name__ == "__main__":
-    rc1 = RotationCurve("../data/ngc338/v_stars_ma.dat", "Stellar MA RC",
-                       description="Many-many words about such RC\n with author name and observation parameters. \n "
-                                   "Maybe some links and refs.")
-    rc1.print_info()
+    def plot(self, label, color='red'):
+        plt.plot(self.radii(), self.velocities(), '.', label=label, color=color)
+        plt.errorbar(self.radii(), self.velocities(), yerr=self.delta_velocities(), fmt='.',
+                     marker='.', mew=0, color=color)
+        plt.xlabel("$r,\ arcsec$")
+        plt.ylabel("$V,\ km/s$")
+        if self.poly_fit != poly1d([0]):
+            poly_radii = arange(min(self.radii()), max(self.radii()) + 25, 0.1)
+            plt.plot(poly_radii, self.poly_fit(poly_radii), '-', label='polinom approx for '+ label)
+        plt.legend(loc='lower right')

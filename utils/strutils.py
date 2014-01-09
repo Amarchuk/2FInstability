@@ -15,7 +15,7 @@ def print_list_summary(base_indent, title, list, description=None):
     @param list: numerical data for info
     """
     indent_level = " " * base_indent * 4
-    next_indent_level = " " * (base_indent + 4)
+    next_indent_level = " " * (base_indent*4 + 4)
     print indent_level + bcolors.OKGREEN + title + bcolors.ENDC + ":"
     if description != None:
         print indent_level + bcolors.BOLD + "Description: " + bcolors.ENDC +\
@@ -38,6 +38,6 @@ def print_header(title, name, description=None, indent=0):
 def print_simple_param(indent, name, value):
     indent_level = " " * indent * 4
     if value != None:
-        print indent_level + bcolors.OKGREEN +  name + ": " + bcolors.ENDC + value
+        print indent_level + bcolors.OKGREEN +  name + ": " + bcolors.ENDC + str(value)
     else:
         print indent_level + bcolors.OKGREEN +  name + ": " + bcolors.FAIL + "None" + bcolors.ENDC
