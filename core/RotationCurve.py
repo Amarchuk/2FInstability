@@ -12,17 +12,14 @@ import matplotlib.pyplot as plt
 
 
 class RotationCurve():
-    name = None
-    path = "."
-    description = None
-    data_points = []
-    fake_data_points = []
-    poly_fit = poly1d([0])
 
     def __init__(self, path, name, description=None):
         self.name = name
         self.path = path
         self.description = description
+        self.data_points = []
+        self.fake_data_points = []
+        self.poly_fit = poly1d([0])
         if os.path.isfile(path):
             rc_file = open(path)
             for line in rc_file:
@@ -30,7 +27,10 @@ class RotationCurve():
                     pass
                 else:
                     line = filter(lambda x: x != '', line.split("  "))
-                    self.data_points.append((float(line[0]), float(line[1]), float(line[2])))
+                    try:
+                        self.data_points.append((float(line[0]), float(line[1]), float(line[2])))
+                    except ValueError:
+                        self.data_points.append((float(line[0]), float(line[1]), 0))
             rc_file.close()
 
     def radii(self):
@@ -60,8 +60,8 @@ class RotationCurve():
         infoutils.print_list_summary(1, "velocities in km/s", self.velocities())
 
     def plot(self, label):
-        plt.axhline(y=numpy.array(self.velocities()).mean(), color='red', label='mean')
-        plt.plot(self.radii(), self.velocities(), 'x', label=label)
+        # plt.axhline(y=numpy.array(self.velocities()).mean(), color='red', label='mean')
+        plt.plot(self.radii(), self.velocities(), '.', label=label)
         plt.errorbar(self.radii(), self.velocities(), yerr=self.delta_velocities(), fmt=None,
                      marker=None, mew=0)
         plt.xlabel("$r,\ ''$")

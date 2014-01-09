@@ -81,27 +81,3 @@ class RotationCurveHandler():
                                      w=map(lambda x: 1 / (x + 0.1) ** 2,
                                            zip(*(rc.data_points + rc.fake_data_points))[2])))
 
-
-
-    # r = handler.star_ma_rc.radii()
-    # dv_ma = handler.star_ma_rc.delta_velocities()
-    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=1)
-    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=1")
-    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=2)
-    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=2")
-    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=3)
-    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=3")
-    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=4)
-    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=4")
-    # s1 = scipy.interpolate.splrep(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(),
-    #                                                     w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma), k=5)
-    # plt.plot(numpy.arange(min(r), max(r), 0.1), interpolate.splev(numpy.arange(min(r), max(r), 0.1),s1,der=0), '-', label="k=5")
-    # plt.plot(handler.star_ma_rc.radii(), handler.star_ma_rc.velocities(), 'o')
-    # plt.legend()
-    # plt.show()
-    # p_star = poly1d(polyfit(r_ma, map(abs, v_ma), deg=pol_degree_star, w=map(lambda x: 1 / (x + 0.1) ** 2, dv_ma)))
-
