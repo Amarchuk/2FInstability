@@ -57,6 +57,11 @@ class Galaxy():
         self.params.append(new_param)
         setattr(self, new_param, value)
 
+    def add_img(self, img_desc, img_path):
+        self.imgs.append((img_desc, img_path))
+        self.params.append(img_desc)
+        setattr(self, img_desc, img_path)
+
     def plot(self):
         im = plt.imread(self.image)
         plt.imshow(im)
@@ -66,6 +71,9 @@ class Galaxy():
         plt.title("Rotation curves for " + self.name)
         self.star_rc.plot('$V_{star}(R)$')
         self.gas_rc.plot('$V_{gas}(R)$', color='green')
+
+    def plot_own_imgs(self):
+        self.plot_imgs_in_subplots(self.imgs)
 
     def plot_imgs_in_subplots(self, imgs):
         '''
