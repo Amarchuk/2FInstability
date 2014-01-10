@@ -36,8 +36,11 @@ class Galaxy():
         self.image = None
         self.star_rc = None
         self.gas_rc = None
+        self.imgs = []
         for param in self.params:
             setattr(self, param, params.pop(param, getattr(self, param)))
+        if self.image is not None:
+            self.imgs.append((self.name, self.image))
 
     def print_info(self, indent):
         infoutils.print_header("Galaxy", self.name, self.description, indent)
@@ -64,6 +67,31 @@ class Galaxy():
         self.star_rc.plot('$V_{star}(R)$')
         self.gas_rc.plot('$V_{gas}(R)$', color='green')
 
+    def plot_imgs_in_subplots(self, imgs):
+        '''
+        plot images 2 per row,
+        if odd, span first img
+        '''
+        imgs_count = imgs.__len__()
+        curr_img_number = 0
+        for img_and_descr in imgs:
+            img = plt.imread(img_and_descr[1])
+            descr = img_and_descr[0]
+            if imgs_count%2 == 1 and curr_img_number == 0:
+                plt.subplot((imgs_count/2 + imgs_count%2), 1, curr_img_number+1)
+                curr_img_number += 2
+            else:
+                plt.subplot((imgs_count/2 + imgs_count%2), 2, curr_img_number+1)
+                curr_img_number += 1
+            plt.imshow(img)
+            plt.title(descr)
+            plt.tick_params(axis='x', which='both',bottom='off',top='off', labelbottom='off')
+            plt.tick_params(axis='y', which='both',bottom='off',top='off',  labelleft='off')
+            # plt.tight_layout(h_pad=0.1, w_pad=0.1)
+            plt.subplots_adjust(left=0.01, right=0.991, top=0.95, bottom=0.01, hspace=0.1)
+
+
+
     def initialize_handler(self):
         self.rc_handler = RotationCurveHandler(self.name, self)
 
@@ -85,25 +113,3 @@ class Galaxy():
         self.rc_handler.interpolate_poly_rc(self.rc_handler.bended_gas_ma_rc, gas_poly_deg)
         self.gas_rc = self.rc_handler.bended_gas_ma_rc
 
-
-if __name__ == "__main__":
-    b = Galaxy(name="NGC1", path = "some/path", incl = "60.0", delta_incl = "0.0",
-               description = "Really cool galaxy\n with many-many\n cool observations available")
-    b.print_info()
-    b.add_param("SDSS Link", "http://link-to-sdss")
-    b.print_info()
-
-    # top = Tkinter.Tk()
-    # top.title("Title bitches")
-    # top.geometry("500x500")
-    # # entry = Tkinter.Entry(top)
-    # # entry.grid(column=0,row=0,sticky='EW')
-    # # button = Tkinter.Button(top,text=u"Click me !")
-    # # button.grid(column=1,row=0)
-    # # label = Tkinter.Label(top,anchor="w",fg="white",bg="blue")
-    # # label.grid(column=0,row=1,columnspan=2,sticky='EW')
-    # # top.grid_columnconfigure(0,weight=1)
-    # img = ImageTk.PhotoImage(Image.open("../incl_compar.gif"))
-    # panel = Tkinter.Label(top, image = img)
-    # panel.pack(side = "bottom", fill = "both", expand = "yes")
-    # top.mainloop()
