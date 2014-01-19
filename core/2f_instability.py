@@ -32,31 +32,27 @@ if __name__ == "__main__":
                       gas_fake_points=(((32, 285, 1), 5), ((46, 268, 1), 54)))
 
 
-    ngc1167 = Galaxy(name="NGC 1167 (UGC 2487)", path="../data/ngc1167", incl=36.0, delta_incl=2.0,
-                    description="Photometry in R band.",
-                    resolution=330, image="../data/ngc1167/ngc1167_SDSS.jpeg")
-    ngc1167.add_param("SDSS DR9 link",
-                     "http://skyserver.sdss3.org/dr9/en/tools/explore/obj.asp?ra=45.42639624&dec=35.20561448")
-    ngc1167.add_img("2MASS image JHK", "../data/ngc1167/ngc1167_JHK.jpg")
-    ngc1167.add_img("Image with HI surf. dens.", "../data/ngc1167/ugc2487.gif")
-    ngc1167.print_info(0)
-
-    ngc1167.initialize_handler()
-    ngc1167.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc1167/v_stars_ma.dat", "Stars MA RC NGC1167"))
-    ngc1167.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc1167/v_stars_mi.dat", "Stars MI RC NGC1167"))
-    ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_ma.dat", "Gas MA RC NGC1167"), "v_gas_ma")
-    ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_noord.dat", "Gas Noord RC NGC1167"),
-                                 "v_gas_noord")
-    ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_WSRT.dat", "Gas WSRT RC NGC1167"), "v_gas_WSRT")
-    ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_struve.dat", "Gas Struve RC NGC1167"), "v_gas_struve")
-
-    ngc1167.handle_rcs(zero_point_star=ngc1167.rc_handler.find_zero_point(ngc1167.rc_handler.star_ma_rc),
-                       zero_point_gas=ngc1167.rc_handler.find_zero_point(ngc1167.rc_handler.gas_rcs["v_gas_ma"]),
-                       gas_name="v_gas_ma",
-                      star_poly_deg=15, gas_poly_deg=8, star_fake_points=(((36, 340, 2), 50),),
-                      gas_fake_points=())
-
-    ngc1167.plot_rcs()
-    plt.show()
-
+    # ngc1167 = Galaxy(name="NGC 1167 (UGC 2487)", path="../data/ngc1167", incl=36.0, delta_incl=2.0,
+    #                 description="Photometry in R band.",
+    #                 resolution=330, image="../data/ngc1167/ngc1167_SDSS.jpeg")
+    # ngc1167.add_param("SDSS DR9 link",
+    #                  "http://skyserver.sdss3.org/dr9/en/tools/explore/obj.asp?ra=45.42639624&dec=35.20561448")
+    # ngc1167.add_img("2MASS image JHK", "../data/ngc1167/ngc1167_JHK.jpg")
+    # ngc1167.add_img("Image with HI surf. dens.", "../data/ngc1167/ugc2487.gif")
+    # ngc1167.print_info(0)
+    #
+    # ngc1167.initialize_handler()
+    # ngc1167.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc1167/v_stars_ma.dat", "Stars MA RC NGC1167"))
+    # ngc1167.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc1167/v_stars_mi.dat", "Stars MI RC NGC1167"))
+    # ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_ma.dat", "Gas MA RC NGC1167"), "v_gas_ma")
+    # ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_noord.dat", "Gas Noord RC NGC1167"),
+    #                              "v_gas_noord")
+    # ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_WSRT.dat", "Gas WSRT RC NGC1167"), "v_gas_WSRT")
+    # ngc1167.rc_handler.add_gas_rc(RotationCurve("../data/ngc1167/v_gas_struve.dat", "Gas Struve RC NGC1167"), "v_gas_struve")
+    #
+    # ngc1167.handle_rcs(zero_point_star=ngc1167.rc_handler.find_zero_point(ngc1167.rc_handler.star_ma_rc),
+    #                    zero_point_gas=ngc1167.rc_handler.find_zero_point(ngc1167.rc_handler.gas_rcs["v_gas_ma"]),
+    #                    gas_name="v_gas_ma",
+    #                   star_poly_deg=15, gas_poly_deg=8, star_fake_points=(((36, 340, 2), 50),),
+    #                   gas_fake_points=())
 
