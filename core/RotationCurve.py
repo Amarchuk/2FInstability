@@ -68,7 +68,7 @@ class RotationCurve():
         plt.plot(self.radii(), self.velocities(), '.', label=label, color=color)
         plt.errorbar(self.radii(), self.velocities(), yerr=self.delta_velocities(), fmt='.',
                      marker='.', mew=0, color=color)
-        plt.xlabel("$r,\ arcsec$")
+        plt.xlabel("$R,\ arcsec$")
         plt.ylabel("$V,\ km/s$")
         if self.poly_fit != poly1d([0]):
             poly_radii = arange(0, max(self.radii()) + 30, 0.1)
@@ -78,4 +78,4 @@ class RotationCurve():
                 plt.ylim(0, 600)
             elif min(poly_vel) < 0:
                 plt.ylim(0)
-        plt.legend(loc='lower right')
+        plt.legend(loc='lower right').draw_frame(False)

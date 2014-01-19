@@ -47,14 +47,13 @@ class VelocityDispersion():
         else:
             return map(lambda x: x[2], self.data_points)
 
-    def add_fake_points(self, point, count):
-        self.fake_data_points = self.fake_data_points + zip(arange(point[0], point[0]+count, 1), [point[1]]*count, [point[2]]*count)
+    def add_fake_exp_points(self, point, count, expscale):
+        fake_radii = arange(point[0], point[0]+count, 1)
+        self.fake_data_points = self.fake_data_points + zip(fake_radii, [point[1]*math.exp(-(x-point[0]) / expscale) for x in fake_radii], [point[2]]*count)
 
     def expand_minor(self, incl):
-        '''
-        Expand minor Sigma(Rcos(i)) -> Sigma(R).
-        incl in deg
-        '''
+        '''Expand minor Sigma(Rcos(i)) -> Sigma(R).
+        incl in deg'''
         expand_fun = lambda x: (x[0]/math.cos(incl*math.pi/180), x[1], x[2])
         self.data_points = map(expand_fun, self.data_points)
 
@@ -72,14 +71,17 @@ class VelocityDispersion():
         plt.plot(self.radii(), self.dispersions(), '.', label=label, color=color)
         plt.errorbar(self.radii(), self.dispersions(), yerr=self.delta_dispersions(), fmt='.',
                      marker='.', mew=0, color=color)
-        plt.xlabel("$r,\ arcsec$")
+        plt.xlabel("$R,\ arcsec$")
         plt.ylabel("$\sigma,\ km/s$")
         if self.poly_fit != poly1d([0]):
-            poly_radii = arange(0, max(self.radii()) + 30, 0.1)
-            poly_sig = self.poly_fit(poly_radii)
+            max_R = max(map(abs, self.radii()))
+            poly_radii = list(arange(-0.1, -max_R, -0.1)[::-1]) + \
+                         list(arange(0, max_R, 0.1))
+            poly_sig = list(self.poly_fit(arange(0.1, max_R, 0.1))[::-1]) + list(self.poly_fit(arange(0, max_R, 0.1)))
             plt.plot(poly_radii, poly_sig, '-', label='polinom approx for '+ label)
-            if max(poly_sig) > 150:
-                plt.ylim(0, 150)
+            if max(poly_sig) > 200:
+                plt.ylim(0, 200)
             elif min(poly_sig) < 0:
                 plt.ylim(0)
-        plt.legend(loc='lower right')
+        # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
+        plt.legend(loc='upper right').draw_frame(False)

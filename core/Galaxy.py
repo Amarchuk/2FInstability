@@ -13,6 +13,7 @@ from PIL import ImageTk, Image
 from utils import strutils as infoutils
 from utils.bcolors import *
 from RotationCurveHandler import *
+from VelocityDispersionHandler import *
 
 class Galaxy():
 
@@ -94,12 +95,11 @@ class Galaxy():
             plt.title(descr)
             plt.tick_params(axis='x', which='both',bottom='off',top='off', labelbottom='off')
             plt.tick_params(axis='y', which='both',bottom='off',top='off',  labelleft='off')
-            # plt.tight_layout(h_pad=0.1, w_pad=0.1)
             plt.subplots_adjust(left=0.01, right=0.991, top=0.95, bottom=0.01, hspace=0.1)
 
 
 
-    def initialize_handler(self):
+    def initialize_rc_handler(self):
         self.rc_handler = RotationCurveHandler(self.name, self)
 
     def handle_rcs(self, zero_point_star=(0,0), zero_point_gas=(0,0), incl=(None, None), gas_name ="",
@@ -120,3 +120,22 @@ class Galaxy():
         self.rc_handler.interpolate_poly_rc(self.rc_handler.bended_gas_ma_rc, gas_poly_deg)
         self.gas_rc = self.rc_handler.bended_gas_ma_rc
 
+    def initialize_sig_los_handler(self):
+        self.sig_handler = VelocityDispersionHandler(self.name, self)
+
+    def handle_sig_los(self, sig_ma_deg=0, sig_mi_deg=0,
+                   sig_ma_fake_points=(), sig_mi_fake_points=()):
+
+        for entity in sig_ma_fake_points:
+            self.sig_handler.sig_ma.add_fake_exp_points(entity[0], entity[1], expscale=entity[2])
+        self.sig_handler.interpolate_poly_sig(self.sig_handler.sig_ma, sig_ma_deg)
+        self.sig_los_ma = self.sig_handler.sig_ma
+
+        for entity in sig_mi_fake_points:
+            self.sig_handler.sig_mi.add_fake_exp_points(entity[0], entity[1], expscale=entity[2])
+        self.sig_handler.sig_mi.expand_minor(self.incl)
+        self.sig_handler.interpolate_poly_sig(self.sig_handler.sig_mi, sig_mi_deg)
+        self.sig_los_mi = self.sig_handler.sig_mi
+
+    def plot_sig_los(self):
+        self.sig_handler.plot_two_in_subplots()
