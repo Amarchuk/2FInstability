@@ -16,17 +16,16 @@ from RotationCurveHandler import *
 
 class Galaxy():
 
-    params = [
-        "name", # galaxy name
-        "path", # path to galaxy's data folder
-        "incl", # inclination in deg
-        "delta_incl", # variation in inclination
-        "description", #galaxy notes
-        "resolution", # resolution in pc/arcsec
-        "image" # path to general image of galaxy
-    ]
-
     def __init__(self, **params):
+        self.params = [
+            "name", # galaxy name
+            "path", # path to galaxy's data folder
+            "incl", # inclination in deg
+            "delta_incl", # variation in inclination
+            "description", #galaxy notes
+            "resolution", # resolution in pc/arcsec
+            "image" # path to general image of galaxy
+        ]
         self.name = None
         self.path = "."
         self.incl = None

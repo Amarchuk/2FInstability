@@ -71,6 +71,11 @@ class RotationCurve():
         plt.xlabel("$r,\ arcsec$")
         plt.ylabel("$V,\ km/s$")
         if self.poly_fit != poly1d([0]):
-            poly_radii = arange(min(self.radii()), max(self.radii()) + 25, 0.1)
-            plt.plot(poly_radii, self.poly_fit(poly_radii), '-', label='polinom approx for '+ label)
+            poly_radii = arange(0, max(self.radii()) + 30, 0.1)
+            poly_vel = self.poly_fit(poly_radii)
+            plt.plot(poly_radii, poly_vel, '-', label='polinom approx for '+ label)
+            if max(poly_vel) > 500:
+                plt.ylim(0, 600)
+            elif min(poly_vel) < 0:
+                plt.ylim(0)
         plt.legend(loc='lower right')
