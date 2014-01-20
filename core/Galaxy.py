@@ -36,6 +36,7 @@ class Galaxy():
         self.image = None
         self.star_rc = None
         self.gas_rc = None
+        self.sig_handler = None
         self.imgs = []
         for param in self.params:
             setattr(self, param, params.pop(param, getattr(self, param)))
@@ -51,6 +52,8 @@ class Galaxy():
             self.star_rc.print_info(indent)
         if self.gas_rc is not None:
             self.gas_rc.print_info(indent)
+        if self.sig_handler is not None:
+            self.sig_handler.print_info(indent)
 
 
     def add_param(self, new_param, value=None):

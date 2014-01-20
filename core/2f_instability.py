@@ -42,6 +42,7 @@ if __name__ == "__main__":
     ngc338.plot_sig_los()
     plt.show()
 
+    ngc338.print_info(0)
     # ngc338.sig_handler.plot_two_in_one()
     # plt.show()
     #

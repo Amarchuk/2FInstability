@@ -58,7 +58,7 @@ class RotationCurve():
         infoutils.print_header("Rotation curve", self.name, self.description, indent)
         infoutils.print_simple_param(indent+1, "fake data points count",  str(self.fake_data_points.__len__()))
         if self.poly_fit != poly1d([0]):
-            infoutils.print_simple_param(indent+1, "polyfit degree",  self.poly_fit.coeffs.__len__())
+            infoutils.print_simple_param(indent+1, "polyfit degree",  self.poly_fit.coeffs.__len__()-1)
             infoutils.print_simple_param(indent+1, "polyfit coeffs",  list(self.poly_fit.coeffs))
         infoutils.print_list_summary(1+indent, "radii in arcsec", self.radii(), description=self.description)
         infoutils.print_list_summary(1+indent, "velocities in km/s", self.velocities())

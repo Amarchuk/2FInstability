@@ -146,3 +146,10 @@ class RotationCurveHandler():
             color = rc_and_col[1]
             rc.plot(rc.name, color=color)
 
+    def rcs_radii_intersection(self, rc1, rc2):
+        Rmin = max(min(rc1.radii()), min(rc2.radii()))
+        Rmax = min(max(rc1.radii()), max(rc2.radii()))
+        if Rmin < Rmax:
+            return [Rmin, Rmax]
+        else:
+            return [0, 0]

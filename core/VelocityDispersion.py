@@ -61,7 +61,7 @@ class VelocityDispersion():
         infoutils.print_header("Velocity Dispersion", self.name, self.description, indent)
         infoutils.print_simple_param(indent+1, "fake data points count",  str(self.fake_data_points.__len__()))
         if self.poly_fit != poly1d([0]):
-            infoutils.print_simple_param(indent+1, "polyfit degree",  self.poly_fit.coeffs.__len__())
+            infoutils.print_simple_param(indent+1, "polyfit degree",  self.poly_fit.coeffs.__len__()-1)
             infoutils.print_simple_param(indent+1, "polyfit coeffs",  list(self.poly_fit.coeffs))
         infoutils.print_list_summary(1+indent, "radii in arcsec", self.radii(), description=self.description)
         infoutils.print_list_summary(1+indent, "dispersions in km/s", self.dispersions())
@@ -85,3 +85,11 @@ class VelocityDispersion():
                 plt.ylim(0)
         # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
         plt.legend(loc='upper right').draw_frame(False)
+
+
+    def plot_on_one_side(self, label, color='red'):
+        plt.plot(map(abs, self.radii()), self.dispersions(), '.', label=label, color=color)
+        plt.errorbar(map(abs,self.radii()), self.dispersions(), yerr=self.delta_dispersions(), fmt='.',
+                     marker='.', mew=0, color=color)
+        plt.xlabel("$R,\ arcsec$")
+        plt.ylabel("$\sigma,\ km/s$")
