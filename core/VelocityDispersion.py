@@ -79,8 +79,8 @@ class VelocityDispersion():
                          list(arange(0, max_R, 0.1))
             poly_sig = list(self.poly_fit(arange(0.1, max_R, 0.1))[::-1]) + list(self.poly_fit(arange(0, max_R, 0.1)))
             plt.plot(poly_radii, poly_sig, '-', label='polinom approx for '+ label)
-            if max(poly_sig) > 200:
-                plt.ylim(0, 200)
+            if max(poly_sig) > 250:
+                plt.ylim(0, 250)
             elif min(poly_sig) < 0:
                 plt.ylim(0)
         # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")

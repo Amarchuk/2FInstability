@@ -64,11 +64,11 @@ class RadialToAzimuthalRatioHandler():
 
 
 
-    def plot_sigPhi_to_sigR(self, color='red'):
+    def plot_sigPhi2_to_sigR2(self, color='red'):
         for y in self.intersect_list:
             plt.axvline(x=y, ls='--')
-        plt.plot(self.xx, [sigPhi_to_sigR(self.poly_star, x) for x in self.xx], '.-', color=color)
-        plt.plot(self.xx, [sigPhi_to_sigR_real(self.poly_star, x) for x in self.xx], '.-')
+        plt.plot(self.xx, [self.sigPhi2_to_sigR2(x) for x in self.xx], '.-', color=color)
+        plt.plot(self.xx, [self.sigPhi_to_sigR_real(x) for x in self.xx], '.-')
         plt.axvline(x=(self.minxx+(self.maxxx-self.minxx) / 3), ls='-')
         plt.axhline(y=(self.maxyyy), ls='-.')
         plt.axhline(y=0)
@@ -81,5 +81,5 @@ class RadialToAzimuthalRatioHandler():
         return 0.5 * (1 + R * self.poly_star.deriv()(R) / self.poly_star(R))
 
 
-    def sigPhi_to_sigR(self, R):
+    def sigPhi2_to_sigR2(self, R):
         return 0.5 + self.sigPhi_to_sigR_nullp * math.exp(-R/self.sigPhi_to_sigR_expscale)

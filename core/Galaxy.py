@@ -14,6 +14,7 @@ from utils import strutils as infoutils
 from utils.bcolors import *
 from RotationCurveHandler import *
 from VelocityDispersionHandler import *
+from VelocityEllipsoidHandler import *
 
 class Galaxy():
 
@@ -142,3 +143,6 @@ class Galaxy():
 
     def plot_sig_los(self):
         self.sig_handler.plot_two_in_subplots()
+
+    def initialize_sve_handler(self):
+        self.sve_handler = VelocityEllipsoidHandler(self.name, self)
