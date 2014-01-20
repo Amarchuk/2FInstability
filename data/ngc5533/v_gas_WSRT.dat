@@ -5,27 +5,27 @@
 # inclination = 53 pm 2.5 deg (adopted by Noordermeer+2007, inside 200")
 # data are corrected for inclination
 # r"   v_r    dv
-  0    0
-  2  281  spline
-  6  279  spline
- 10  279  spline
- 14  278  spline
- 18  280  spline
- 22  283  spline
- 26  284  spline
- 30  287  spline
- 34  288  spline
- 38  288  spline
- 40  287  spline
- 50  283  spline
- 60  277  spline
- 70  272  spline
- 80  267  spline
- 90  266  spline
-100  261  spline
-150  238  spline
-200  244  spline
-250  232  spline
-300  224  spline
-350  224  spline
-385  227  spline
+  0    0    0.1
+  2  281    0.1
+  6  279    0.1
+ 10  279    0.1
+ 14  278    0.1
+ 18  280    0.1
+ 22  283    0.1
+ 26  284    0.1
+ 30  287    0.1
+ 34  288    0.1
+ 38  288    0.1
+ 40  287    0.1
+ 50  283    0.1
+ 60  277    0.1
+ 70  272    0.1
+ 80  267    0.1
+ 90  266    0.1
+100  261    0.1
+150  238    0.1
+200  244    0.1
+250  232    0.1
+300  224    0.1
+350  224    0.1
+385  227    0.1
