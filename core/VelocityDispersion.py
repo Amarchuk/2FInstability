@@ -26,7 +26,10 @@ class VelocityDispersion():
                     pass
                 else:
                     line = filter(lambda x: x != '', line.split("  "))
-                    self.data_points.append((float(line[0]), float(line[3]), float(line[4])))
+                    if line.__len__() == 3:
+                        self.data_points.append((float(line[0]), float(line[1]), float(line[2])))
+                    else:
+                        self.data_points.append((float(line[0]), float(line[3]), float(line[4])))
             sig_file.close()
 
     def radii(self):

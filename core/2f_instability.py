@@ -86,33 +86,68 @@ if __name__ == "__main__":
     # plt.show()
 
 
-    ngc2273 = Galaxy(name="NGC 2273 (UGC 3546)", path="../data/ngc2273", incl=55.0, delta_incl=3.0,
+    # ngc2273 = Galaxy(name="NGC 2273 (UGC 3546)", path="../data/ngc2273", incl=55.0, delta_incl=3.0,
+    #                 description="Photometry in R band.",
+    #                 resolution=130.0, image="../data/ngc2273/ngc2273_JHK.jpg")
+    # ngc2273.add_img("Image with HI surf. dens.", "../data/ngc2273/ugc3546.gif")
+    #
+    # ngc2273.initialize_rc_handler()
+    # ngc2273.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc2273/v_stars_ma.dat", "Stars MA RC ngc2273"))
+    # ngc2273.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc2273/v_stars_mi.dat", "Stars MI RC ngc2273"))
+    # ngc2273.rc_handler.add_gas_rc(RotationCurve("../data/ngc2273/v_gas_ma.dat", "Gas MA RC ngc2273"), "v_gas_ma")
+    # ngc2273.rc_handler.add_gas_rc(RotationCurve("../data/ngc2273/v_gas_WSRT.dat", "Gas WSRT RC ngc2273"), "v_gas_WSRT")
+    #
+    # ngc2273.handle_rcs(zero_point_star=(0,0),
+    #                    zero_point_gas=(0,0),
+    #                    gas_name="v_gas_ma",
+    #                   star_poly_deg=15, gas_poly_deg=8, star_fake_points=(((36.0, 155.0, 2.0), 80),),
+    #                   gas_fake_points=())
+    #
+    # ngc2273.initialize_sig_los_handler()
+    # ngc2273.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc2273/v_stars_ma.dat", "Sig MA los ngc2273"))
+    # ngc2273.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc2273/v_stars_mi.dat", "Sig MI los ngc2273"))
+    # ngc2273.handle_sig_los(sig_ma_deg=10, sig_mi_deg=10,
+    #                sig_ma_fake_points=[((21.4, 42.0, 1.0), 87, 100.0)],
+    #                sig_mi_fake_points=[((37.54, 71.0, 1.0), 87, 187.0), ((0.0, 120.0, 1.0), 2, 1000.0)])
+    #
+    # ngc2273.plot_sig_los()
+    # plt.show()
+    #
+    # ngc2273.initialize_sve_handler()
+    # ngc2273.sve_handler.plot_sigZ2_to_sigR2()
+    # plt.show()
+
+    ngc2985 = Galaxy(name="NGC 2985 (UGC 5253)", path="../data/ngc2985", incl=36.0, delta_incl=3.0,
                     description="Photometry in R band.",
-                    resolution=130.0, image="../data/ngc2273/ngc2273_JHK.jpg")
-    ngc2273.add_img("Image with HI surf. dens.", "../data/ngc2273/ugc3546.gif")
+                    resolution=102.0, image="../data/ngc2985/ngc2985_JHK.jpg")
+    ngc2985.add_img("Image with HI surf. dens.", "../data/ngc2985/ugc5253.gif")
 
-    ngc2273.initialize_rc_handler()
-    ngc2273.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc2273/v_stars_ma.dat", "Stars MA RC ngc2273"))
-    ngc2273.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc2273/v_stars_mi.dat", "Stars MI RC ngc2273"))
-    ngc2273.rc_handler.add_gas_rc(RotationCurve("../data/ngc2273/v_gas_ma.dat", "Gas MA RC ngc2273"), "v_gas_ma")
-    ngc2273.rc_handler.add_gas_rc(RotationCurve("../data/ngc2273/v_gas_WSRT.dat", "Gas WSRT RC ngc2273"), "v_gas_WSRT")
+    ngc2985.initialize_rc_handler()
+    ngc2985.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc2985/v_stars_noord.dat", "Stars MA RC Noord ngc2985"))
+    ngc2985.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc2985/v_stars_mi.dat", "Stars MI RC ngc2985"))
+    ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_ma.dat", "Gas MA RC ngc2985"), "v_gas_ma")
+    ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_Halpha.dat", "Gas Halpha RC ngc2985"), "v_gas_Halpha")
+    ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_WSRT.dat", "Gas WSRT RC ngc2985"), "v_gas_WSRT")
 
-    ngc2273.handle_rcs(zero_point_star=(0,0),
+    ngc2985.handle_rcs(zero_point_star=(0,0),
                        zero_point_gas=(0,0),
                        gas_name="v_gas_ma",
-                      star_poly_deg=15, gas_poly_deg=8, star_fake_points=(((36.0, 155.0, 2.0), 80),),
-                      gas_fake_points=())
+                      star_poly_deg=25, gas_poly_deg=25, star_fake_points=(((44.0, 226.0, 1.0), 60),),
+                      gas_fake_points=(((71.0, 240.0, 1.0), 34),))
 
-    ngc2273.initialize_sig_los_handler()
-    ngc2273.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc2273/v_stars_ma.dat", "Sig MA los ngc2273"))
-    ngc2273.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc2273/v_stars_mi.dat", "Sig MI los ngc2273"))
-    ngc2273.handle_sig_los(sig_ma_deg=10, sig_mi_deg=10,
-                   sig_ma_fake_points=[((21.4, 42.0, 1.0), 87, 100.0)],
-                   sig_mi_fake_points=[((37.54, 71.0, 1.0), 87, 187.0), ((0.0, 120.0, 1.0), 2, 1000.0)])
+    # ngc2985.plot_rcs()
+    # plt.show()
 
-    ngc2273.plot_sig_los()
+    ngc2985.initialize_sig_los_handler()
+    ngc2985.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc2985/s_stars_maN.dat", "Sig MA los ngc2985"))
+    ngc2985.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc2985/s_stars_miN.dat", "Sig MI los ngc2985"))
+    ngc2985.handle_sig_los(sig_ma_deg=8, sig_mi_deg=12,
+                   sig_ma_fake_points=[((20.0, 81.0, 1.0), 150, 265.0)],
+                   sig_mi_fake_points=[((15.0, 100.0, 1.0), 100, 250.0), ])
+
+    ngc2985.plot_sig_los()
     plt.show()
 
-    ngc2273.initialize_sve_handler()
-    ngc2273.sve_handler.plot_sigZ2_to_sigR2()
+    ngc2985.initialize_sve_handler()
+    ngc2985.sve_handler.plot_sigZ2_to_sigR2()
     plt.show()
