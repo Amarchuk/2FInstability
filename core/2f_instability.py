@@ -117,37 +117,78 @@ if __name__ == "__main__":
     # ngc2273.sve_handler.plot_sigZ2_to_sigR2()
     # plt.show()
 
-    ngc2985 = Galaxy(name="NGC 2985 (UGC 5253)", path="../data/ngc2985", incl=36.0, delta_incl=3.0,
-                    description="Photometry in R band.",
-                    resolution=102.0, image="../data/ngc2985/ngc2985_JHK.jpg")
-    ngc2985.add_img("Image with HI surf. dens.", "../data/ngc2985/ugc5253.gif")
-
-    ngc2985.initialize_rc_handler()
-    ngc2985.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc2985/v_stars_noord.dat", "Stars MA RC Noord ngc2985"))
-    ngc2985.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc2985/v_stars_mi.dat", "Stars MI RC ngc2985"))
-    ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_ma.dat", "Gas MA RC ngc2985"), "v_gas_ma")
-    ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_Halpha.dat", "Gas Halpha RC ngc2985"), "v_gas_Halpha")
-    ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_WSRT.dat", "Gas WSRT RC ngc2985"), "v_gas_WSRT")
-
-    ngc2985.handle_rcs(zero_point_star=(0,0),
-                       zero_point_gas=(0,0),
-                       gas_name="v_gas_ma",
-                      star_poly_deg=25, gas_poly_deg=25, star_fake_points=(((44.0, 226.0, 1.0), 60),),
-                      gas_fake_points=(((71.0, 240.0, 1.0), 34),))
-
-    # ngc2985.plot_rcs()
+    # ngc2985 = Galaxy(name="NGC 2985 (UGC 5253)", path="../data/ngc2985", incl=36.0, delta_incl=3.0,
+    #                 description="Photometry in R band.",
+    #                 resolution=102.0, image="../data/ngc2985/ngc2985_JHK.jpg")
+    # ngc2985.add_img("Image with HI surf. dens.", "../data/ngc2985/ugc5253.gif")
+    #
+    # ngc2985.initialize_rc_handler()
+    # ngc2985.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc2985/v_stars_noord.dat", "Stars MA RC Noord ngc2985"))
+    # ngc2985.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc2985/v_stars_mi.dat", "Stars MI RC ngc2985"))
+    # ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_ma.dat", "Gas MA RC ngc2985"), "v_gas_ma")
+    # ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_Halpha.dat", "Gas Halpha RC ngc2985"), "v_gas_Halpha")
+    # ngc2985.rc_handler.add_gas_rc(RotationCurve("../data/ngc2985/v_gas_WSRT.dat", "Gas WSRT RC ngc2985"), "v_gas_WSRT")
+    #
+    # ngc2985.handle_rcs(zero_point_star=(0,0),
+    #                    zero_point_gas=(0,0),
+    #                    gas_name="v_gas_ma",
+    #                   star_poly_deg=25, gas_poly_deg=25, star_fake_points=(((44.0, 226.0, 1.0), 60),),
+    #                   gas_fake_points=(((71.0, 240.0, 1.0), 34),))
+    #
+    # # ngc2985.plot_rcs()
+    # # plt.show()
+    #
+    # ngc2985.initialize_sig_los_handler()
+    # ngc2985.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc2985/s_stars_maN.dat", "Sig MA los ngc2985"))
+    # ngc2985.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc2985/s_stars_miN.dat", "Sig MI los ngc2985"))
+    # ngc2985.handle_sig_los(sig_ma_deg=8, sig_mi_deg=12,
+    #                sig_ma_fake_points=[((20.0, 81.0, 1.0), 150, 265.0)],
+    #                sig_mi_fake_points=[((15.0, 100.0, 1.0), 100, 250.0), ])
+    #
+    # ngc2985.plot_sig_los()
+    # plt.show()
+    #
+    # ngc2985.initialize_sve_handler()
+    # ngc2985.sve_handler.plot_sigZ2_to_sigR2()
     # plt.show()
 
-    ngc2985.initialize_sig_los_handler()
-    ngc2985.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc2985/s_stars_maN.dat", "Sig MA los ngc2985"))
-    ngc2985.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc2985/s_stars_miN.dat", "Sig MI los ngc2985"))
-    ngc2985.handle_sig_los(sig_ma_deg=8, sig_mi_deg=12,
-                   sig_ma_fake_points=[((20.0, 81.0, 1.0), 150, 265.0)],
-                   sig_mi_fake_points=[((15.0, 100.0, 1.0), 100, 250.0), ])
 
-    ngc2985.plot_sig_los()
-    plt.show()
+    # ngc3898 = Galaxy(name="NGC 2985 (UGC 6787)", path="../data/ngc3898", incl=70.0, delta_incl=3.0,
+    #                 description="Photometry in R band.",
+    #                 resolution=92.0, image="../data/ngc3898/ngc3898_SDSS.jpeg")
+    # ngc3898.add_img("Image with HI surf. dens.", "../data/ngc3898/ugc6787.gif")
+    # ngc3898.add_img("2MASS image JHK", "../data/ngc3898/ngc3898_JHK.jpg")
+    #
+    # ngc3898.initialize_rc_handler()
+    # ngc3898.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc3898/v_stars_noord.dat", "Stars MA RC Noord ngc3898"))
+    # ngc3898.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc3898/v_stars_mi.dat", "Stars MI RC ngc3898"))
+    # ngc3898.rc_handler.add_gas_rc(RotationCurve("../data/ngc3898/v_gas_ma.dat", "Gas MA RC ngc3898"), "v_gas_ma")
+    # ngc3898.rc_handler.add_gas_rc(RotationCurve("../data/ngc3898/v_gas_Ha.dat", "Gas Halpha RC ngc3898"), "v_gas_Halpha")
+    # ngc3898.rc_handler.add_gas_rc(RotationCurve("../data/ngc3898/v_gas_WSRT.dat", "Gas WSRT RC ngc3898"), "v_gas_WSRT")
+    #
+    # ngc3898.handle_rcs(zero_point_star=(0,0),
+    #                    zero_point_gas=(0,0),
+    #                    gas_name="v_gas_ma",
+    #                   star_poly_deg=12, gas_poly_deg=25,
+    #                   star_fake_points=(((16.5, 156.0, 2.0), 126),((8.5, 189.0, 1.0), 2)),
+    #                   gas_fake_points=(((5.0, 274.0, 5.0), 5),((189.0, 240.0, 5.0), 30), ((0.0, 0.0, 1.0), 1), ((22.0, 217.0, 1.0), 7)))
+    #
+    #
+    # # ngc3898.plot_rcs()
+    # # plt.show()
+    #
+    # ngc3898.initialize_sig_los_handler()
+    # ngc3898.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc3898/s_stars_maN.dat", "Sig MA los ngc3898"))
+    # ngc3898.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc3898/s_stars_miN.dat", "Sig MI los ngc3898"))
+    # ngc3898.handle_sig_los(sig_ma_deg=8, sig_mi_deg=12,
+    #                sig_ma_fake_points=[((8.8, 147.0, 1.0), 120, 360.0)],
+    #                sig_mi_fake_points=[((24.0, 183.0, 1.0), 100, 300.0), ])
+    #
+    # ngc3898.plot_sig_los()
+    # plt.show()
+    #
+    # ngc3898.initialize_sve_handler()
+    # ngc3898.sve_handler.plot_sigZ2_to_sigR2()
+    # plt.show()
 
-    ngc2985.initialize_sve_handler()
-    ngc2985.sve_handler.plot_sigZ2_to_sigR2()
-    plt.show()
+    
