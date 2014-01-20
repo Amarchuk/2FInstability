@@ -86,7 +86,7 @@ class VelocityDispersion():
                 plt.ylim(0, 250)
             elif min(poly_sig) < 0:
                 plt.ylim(0)
-        plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
+        # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
         plt.legend(loc='upper right').draw_frame(False)
 
 

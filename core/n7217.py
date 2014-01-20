@@ -36,19 +36,7 @@ def correctGasData(r_g1, v_g1, dv_g1):
     #    dv_g = dv_g + dv_points * multiplate
 
 
-    add_points = 50
-    r_points = [74]
-    v_points = [302]
-    dv_points = [5]
 
-    r_g = r_g + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
-    v_g = v_g + v_points * add_points
-    dv_g = dv_g + dv_points * add_points
-
-    add_points = 7
-    r_points = [33]
-    v_points = [303]
-    dv_points = [3]
 
     r_g = r_g + [i[0] + scale * i[1] for i in zip(r_points * add_points, range(1, add_points + 1))]
     v_g = v_g + v_points * add_points

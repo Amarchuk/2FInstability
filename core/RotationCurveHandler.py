@@ -105,9 +105,15 @@ class RotationCurveHandler():
                 all_rcs.append(self.gas_rcs[gas_rc_name])
         return all_rcs
 
+    def all(self, iterable):
+        for element in iterable:
+            if not element:
+                return False
+        return True
+
     def is_corrected(self, rc):
-        return reduce(lambda x, y: (x >= 0) and (y >= 0), rc.radii()) and \
-               reduce(lambda x, y: (x < 500) and (y < 500), rc.velocities())
+        return self.all(i >= 0 for i in rc.radii()) and \
+               self.all(i < 500 for i in rc.velocities())
 
 
     def print_info(self, indent):

@@ -79,4 +79,4 @@ class RotationCurve():
             elif min(poly_vel) < 0:
                 plt.ylim(0)
         plt.legend(loc='lower right').draw_frame(False)
-        plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
+        # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
