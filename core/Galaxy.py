@@ -133,12 +133,14 @@ class Galaxy():
         for entity in sig_ma_fake_points:
             self.sig_handler.sig_ma.add_fake_exp_points(entity[0], entity[1], expscale=entity[2])
         self.sig_handler.interpolate_poly_sig(self.sig_handler.sig_ma, sig_ma_deg)
+        self.sig_handler.interpolate_bezier(self.sig_handler.sig_ma)
         self.sig_los_ma = self.sig_handler.sig_ma
 
         for entity in sig_mi_fake_points:
             self.sig_handler.sig_mi.add_fake_exp_points(entity[0], entity[1], expscale=entity[2])
         self.sig_handler.sig_mi.expand_minor(self.incl)
         self.sig_handler.interpolate_poly_sig(self.sig_handler.sig_mi, sig_mi_deg)
+        self.sig_handler.interpolate_bezier(self.sig_handler.sig_mi)
         self.sig_los_mi = self.sig_handler.sig_mi
 
     def plot_sig_los(self):

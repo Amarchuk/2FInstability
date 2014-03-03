@@ -19,6 +19,7 @@ class VelocityDispersion():
         self.data_points = []
         self.fake_data_points = []
         self.poly_fit = poly1d([0])
+        self.bezier = None
         if os.path.isfile(path):
             sig_file = open(path)
             for line in sig_file:
@@ -60,6 +61,7 @@ class VelocityDispersion():
         expand_fun = lambda x: (x[0]/math.cos(incl*math.pi/180), x[1], x[2])
         self.data_points = map(expand_fun, self.data_points)
 
+
     def print_info(self, indent):
         infoutils.print_header("Velocity Dispersion", self.name, self.description, indent)
         infoutils.print_simple_param(indent+1, "fake data points count",  str(self.fake_data_points.__len__()))
@@ -76,6 +78,12 @@ class VelocityDispersion():
                      marker='.', mew=0, color=color)
         plt.xlabel("$R,\ arcsec$")
         plt.ylabel("$\sigma,\ km/s$")
+        self.plot_poly_fit(label)
+        self.plot_bezier_fit(label)
+        # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
+        plt.legend(loc='upper right').draw_frame(False)
+
+    def plot_poly_fit(self, label):
         if self.poly_fit != poly1d([0]):
             max_R = max(map(abs, self.radii()))
             poly_radii = list(arange(-0.1, -max_R, -0.1)[::-1]) + \
@@ -86,13 +94,27 @@ class VelocityDispersion():
                 plt.ylim(0, 250)
             elif min(poly_sig) < 0:
                 plt.ylim(0)
-        # plt.plot(zip(*(self.fake_data_points))[0], zip(*(self.fake_data_points))[1], 'o', label = "fake points")
-        plt.legend(loc='upper right').draw_frame(False)
+
+    def plot_bezier_fit(self, label):
+        if self.bezier != None:
+            max_R = max(map(abs, self.radii()))
+            bezier_radii = list(arange(-0.1, -max_R, -0.1)[::-1]) + \
+                         list(arange(0, max_R, 0.1))
+            bezier_sig = list(self.poly_fit(arange(0.1, max_R, 0.1))[::-1]) + list(self.poly_fit(arange(0, max_R, 0.1)))
+            plt.plot(bezier_radii, bezier_sig, '-', label='bezier approx for '+ label)
+            if max(bezier_sig) > 250:
+                plt.ylim(0, 250)
+            elif min(bezier_sig) < 0:
+                plt.ylim(0)
 
 
-    def plot_on_one_side(self, label, color='red'):
+    def plot_on_one_side(self, label, color='red', all_data=False):
         plt.plot(map(abs, self.radii()), self.dispersions(), '.', label=label, color=color)
         plt.errorbar(map(abs,self.radii()), self.dispersions(), yerr=self.delta_dispersions(), fmt='.',
                      marker='.', mew=0, color=color)
+        if all_data:
+            self.plot_poly_fit(label)
+            self.plot_bezier_fit(label)
         plt.xlabel("$R,\ arcsec$")
         plt.ylabel("$\sigma,\ km/s$")
+        plt.xlim(0)

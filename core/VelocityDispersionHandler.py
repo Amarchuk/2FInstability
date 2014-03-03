@@ -11,6 +11,7 @@ from Galaxy import *
 from utils import strutils as infoutils
 import itertools
 import copy
+from utils import bezier_curve as bezier
 
 
 class VelocityDispersionHandler():
@@ -35,6 +36,11 @@ class VelocityDispersionHandler():
                                      tuple(sig.dispersions()) + zip(*(sig.fake_data_points))[1], deg=deg))
                                      # ,w=map(lambda x: 1 / (x + 0.1) ** 2,
                                      #       tuple(sig.delta_dispersions()) + zip(*(sig.fake_data_points))[2])))
+
+    def interpolate_bezier(self, sig, nTimes=1000):
+        points = map(lambda p : [abs(p[0]), p[1]], sig.data_points)
+        points.sort()
+        sig.bezier = bezier.bezier_curve(points, nTimes)
 
 
     def print_info(self, indent):

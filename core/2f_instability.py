@@ -6,46 +6,54 @@ from VelocityDispersion import *
 
 
 if __name__ == "__main__":
-    # ngc338 = Galaxy(name="NGC 338 (UGC 624)", path="../data/ngc338", incl=64.0, delta_incl=7.5,
-    #                 description="Inclination according to Zasov 2012, photometry in I band.",
-    #                 resolution=311.0, image="../data/ngc338/ngc338_SDSS.jpeg")
-    # ngc338.add_param("SDSS DR9 link",
-    #                  "http://skyserver.sdss3.org/dr9/en/tools/explore/obj.asp?ra=15.15164775&dec=30.66902519")
-    # ngc338.add_img("2MASS image JHK", "../data/ngc338/ngc338_JHK.jpg")
-    # ngc338.add_img("Image with HI surf. dens.", "../data/ngc338/ugc624.gif")
-    # ngc338.add_img("SDSS DR9 whole image", "../data/ngc338/sdss_dr9_whole.jpg")
-    # ngc338.print_info(0)
+    ngc338 = Galaxy(name="NGC 338 (UGC 624)", path="../data/ngc338", incl=64.0, delta_incl=7.5,
+                    description="Inclination according to Zasov 2012, photometry in I band.",
+                    resolution=311.0, image="../data/ngc338/ngc338_SDSS.jpeg")
+    ngc338.add_param("SDSS DR9 link",
+                     "http://skyserver.sdss3.org/dr9/en/tools/explore/obj.asp?ra=15.15164775&dec=30.66902519")
+    ngc338.add_img("2MASS image JHK", "../data/ngc338/ngc338_JHK.jpg")
+    ngc338.add_img("Image with HI surf. dens.", "../data/ngc338/ugc624.gif")
+    ngc338.add_img("SDSS DR9 whole image", "../data/ngc338/sdss_dr9_whole.jpg")
+    ngc338.print_info(0)
+
+    stars_ma_rc = RotationCurve(ngc338.path + "/v_stars_ma.dat", "Stars MA RC NGC338")
+    stars_ma_rc.print_info(0)
+
+    ngc338.initialize_rc_handler()
+    ngc338.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc338/v_stars_ma.dat", "Stars MA RC NGC338"))
+    ngc338.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc338/v_stars_mi.dat", "Stars MI RC NGC338"))
+    ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_ma.dat", "Gas MA RC NGC338"), "v_gas_ma")
+    ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_Katkov.dat", "Gas Katkov RC NGC338"),
+                                 "v_gas_Katkov")
+    ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_WSRT.dat", "Gas WSRT RC NGC338"), "v_gas_WSRT")
+    ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_Court.dat", "Gas Court RC NGC338"), "v_gas_Court")
+
+    ngc338.handle_rcs(zero_point_star=(4759.845, 0.0), zero_point_gas=(4759.845, 0.0), gas_name="v_gas_ma",
+                      star_poly_deg=25, gas_poly_deg=25, star_fake_points=(((49.0, 238.0, 5.0), 50),),
+                      gas_fake_points=(((32.0, 285.0, 1.0), 5), ((46.0, 268.0, 1.0), 54)))
+
+    ngc338.initialize_sig_los_handler()
+    ngc338.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc338/v_stars_ma.dat", "Sig MA los NGC338"))
+    ngc338.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc338/v_stars_mi.dat", "Sig MI los NGC338"))
+    ngc338.handle_sig_los(sig_ma_deg=10, sig_mi_deg=8,
+                   sig_ma_fake_points=[((15.0, 84.0, 1.0), 90, 114.0)],
+                   sig_mi_fake_points=[((42.7500, 87.70, 10.28), 10, 10000)])
+
+    ngc338.sig_handler.sig_ma.plot_on_one_side('$\sigma_{los}^{maj}$', all_data=True)
+    ngc338.sig_handler.sig_mi.plot_on_one_side('$\sigma_{los}^{min}$', color='blue', all_data=True)
+    plt.legend()
+    plt.show()
+
+    # ngc338.plot_rcs()
+    # plt.show()
     #
-    # stars_ma_rc = RotationCurve(ngc338.path + "/v_stars_ma.dat", "Stars MA RC NGC338")
-    # stars_ma_rc.print_info(0)
+    # ngc338.plot_sig_los()
+    # plt.show()
     #
-    # ngc338.initialize_rc_handler()
-    # ngc338.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc338/v_stars_ma.dat", "Stars MA RC NGC338"))
-    # ngc338.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc338/v_stars_mi.dat", "Stars MI RC NGC338"))
-    # ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_ma.dat", "Gas MA RC NGC338"), "v_gas_ma")
-    # ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_Katkov.dat", "Gas Katkov RC NGC338"),
-    #                              "v_gas_Katkov")
-    # ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_WSRT.dat", "Gas WSRT RC NGC338"), "v_gas_WSRT")
-    # ngc338.rc_handler.add_gas_rc(RotationCurve("../data/ngc338/v_gas_Court.dat", "Gas Court RC NGC338"), "v_gas_Court")
-    #
-    # ngc338.handle_rcs(zero_point_star=(4759.845, 0.0), zero_point_gas=(4759.845, 0.0), gas_name="v_gas_ma",
-    #                   star_poly_deg=25, gas_poly_deg=25, star_fake_points=(((49.0, 238.0, 5.0), 50),),
-    #                   gas_fake_points=(((32.0, 285.0, 1.0), 5), ((46.0, 268.0, 1.0), 54)))
-    #
-    # ngc338.initialize_sig_los_handler()
-    # ngc338.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc338/v_stars_ma.dat", "Sig MA los NGC338"))
-    # ngc338.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc338/v_stars_mi.dat", "Sig MI los NGC338"))
-    # ngc338.handle_sig_los(sig_ma_deg=10, sig_mi_deg=8,
-    #                sig_ma_fake_points=[((15.0, 84.0, 1.0), 90, 114.0)],
-    #                sig_mi_fake_points=[((42.7500, 87.70, 10.28), 10, 10000)])
-    #
-    # # ngc338.plot_sig_los()
-    # # plt.show()
-    # #
-    # # ngc338.initialize_sve_handler()
-    # # ngc338.sve_handler.plot_sigZ2_to_sigR2()
-    # # plt.show()
-    #
+    # ngc338.initialize_sve_handler()
+    # ngc338.sve_handler.plot_sigZ2_to_sigR2()
+    # plt.show()
+
     # ngc1167 = Galaxy(name="NGC 1167 (UGC 2487)", path="../data/ngc1167", incl=36.0, delta_incl=2.0,
     #                 description="Photometry in R band.",
     #                 resolution=330.0, image="../data/ngc1167/ngc1167_SDSS.jpeg")
@@ -77,15 +85,15 @@ if __name__ == "__main__":
     #                sig_ma_fake_points=[((7.0, 220.0, 1.0), 90, 43.0)],
     #                sig_mi_fake_points=[((28.0, 143.5, 1.0), 40, 140.0)])
     #
-
+    #
     # ngc1167.plot_sig_los()
     # plt.show()
-    #
+
     # ngc1167.initialize_sve_handler()
     # ngc1167.sve_handler.plot_sigZ2_to_sigR2()
     # plt.show()
-
-
+    #
+    #
     # ngc2273 = Galaxy(name="NGC 2273 (UGC 3546)", path="../data/ngc2273", incl=55.0, delta_incl=3.0,
     #                 description="Photometry in R band.",
     #                 resolution=130.0, image="../data/ngc2273/ngc2273_JHK.jpg")
@@ -113,10 +121,10 @@ if __name__ == "__main__":
     # ngc2273.plot_sig_los()
     # plt.show()
     #
-    # ngc2273.initialize_sve_handler()
-    # ngc2273.sve_handler.plot_sigZ2_to_sigR2()
-    # plt.show()
-
+    # # ngc2273.initialize_sve_handler()
+    # # ngc2273.sve_handler.plot_sigZ2_to_sigR2()
+    # # plt.show()
+    #
     # ngc2985 = Galaxy(name="NGC 2985 (UGC 5253)", path="../data/ngc2985", incl=36.0, delta_incl=3.0,
     #                 description="Photometry in R band.",
     #                 resolution=102.0, image="../data/ngc2985/ngc2985_JHK.jpg")
@@ -148,10 +156,10 @@ if __name__ == "__main__":
     # ngc2985.plot_sig_los()
     # plt.show()
     #
-    # ngc2985.initialize_sve_handler()
-    # ngc2985.sve_handler.plot_sigZ2_to_sigR2()
-    # plt.show()
-
+    # # ngc2985.initialize_sve_handler()
+    # # ngc2985.sve_handler.plot_sigZ2_to_sigR2()
+    # # plt.show()
+    #
 
     # ngc3898 = Galaxy(name="NGC 2985 (UGC 6787)", path="../data/ngc3898", incl=70.0, delta_incl=3.0,
     #                 description="Photometry in R band.",
@@ -186,7 +194,7 @@ if __name__ == "__main__":
     #
     # ngc3898.plot_sig_los()
     # plt.show()
-    #
+
     # ngc3898.initialize_sve_handler()
     # ngc3898.sve_handler.plot_sigZ2_to_sigR2()
     # plt.show()
@@ -226,44 +234,44 @@ if __name__ == "__main__":
     # ngc5533.plot_sig_los()
     # plt.show()
     #
-    # ngc5533.initialize_sve_handler()
-    # ngc5533.sve_handler.plot_sigZ2_to_sigR2()
+    # # ngc5533.initialize_sve_handler()
+    # # ngc5533.sve_handler.plot_sigZ2_to_sigR2()
+    # # plt.show()
+
+    # ngc7217 = Galaxy(name="NGC 7273 (UGC 11914)", path="../data/ngc7217", incl=30.0, delta_incl=5.0,
+    #                 description="Photometry in I band. Silchenko",
+    #                 resolution=80.0, image="../data/ngc7217/ngc7217_SDSS.jpeg")
+    # ngc7217.add_img("Image with HI surf. dens.", "../data/ngc7217/ugc11914.gif")
+    # ngc7217.add_img("2MASS image JHK", "../data/ngc7217/ngc7217_JHK.jpg")
+    #
+    # ngc7217.initialize_rc_handler()
+    # ngc7217.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc7217/v_stars_ma.dat", "Stars MA RC Noord ngc7217"))
+    # ngc7217.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc7217/v_stars_mi.dat", "Stars MI RC ngc7217"))
+    # ngc7217.rc_handler.add_gas_rc(RotationCurve("../data/ngc7217/v_gas_ma.dat", "Gas MA RC ngc7217"), "v_gas_ma")
+    #
+    # ngc7217.handle_rcs(zero_point_star=(0.5, 0),
+    #                    zero_point_gas=(0.5, 0),
+    #                    gas_name="v_gas_ma",
+    #                   star_poly_deg=10, gas_poly_deg=12,
+    #                   star_fake_points=(((75.0, 221.0, 5.0), 50),),
+    #                   gas_fake_points=(((74.0,302.0,5.0),50),((33.0,303.0,3.0),7)))
+    #
+    # # ngc7217.plot_rcs()
+    # # plt.show()
+    #
+    # ngc7217.initialize_sig_los_handler()
+    # ngc7217.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc7217/v_stars_ma.dat", "Sig MA los ngc7217"))
+    # ngc7217.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc7217/v_stars_mi.dat", "Sig MI los ngc7217"))
+    # ngc7217.handle_sig_los(sig_ma_deg=10, sig_mi_deg=12,
+    #                sig_ma_fake_points=[((20.0, 107.0, 1.0), 100, 250.0)],
+    #                sig_mi_fake_points=[((22.0, 97.0, 1.0), 100, 1000.0), ])
+    #
+    #
+    # ngc7217.plot_sig_los()
     # plt.show()
-
-    ngc7217 = Galaxy(name="NGC 7273 (UGC 11914)", path="../data/ngc7217", incl=30.0, delta_incl=5.0,
-                    description="Photometry in I band. Silchenko",
-                    resolution=80.0, image="../data/ngc7217/ngc7217_SDSS.jpeg")
-    ngc7217.add_img("Image with HI surf. dens.", "../data/ngc7217/ugc11914.gif")
-    ngc7217.add_img("2MASS image JHK", "../data/ngc7217/ngc7217_JHK.jpg")
-
-    ngc7217.initialize_rc_handler()
-    ngc7217.rc_handler.set_stellar_ma_rc(RotationCurve("../data/ngc7217/v_stars_ma.dat", "Stars MA RC Noord ngc7217"))
-    ngc7217.rc_handler.set_stellar_mi_rc(RotationCurve("../data/ngc7217/v_stars_mi.dat", "Stars MI RC ngc7217"))
-    ngc7217.rc_handler.add_gas_rc(RotationCurve("../data/ngc7217/v_gas_ma.dat", "Gas MA RC ngc7217"), "v_gas_ma")
-
-    ngc7217.handle_rcs(zero_point_star=(0.5, 0),
-                       zero_point_gas=(0.5, 0),
-                       gas_name="v_gas_ma",
-                      star_poly_deg=10, gas_poly_deg=12,
-                      star_fake_points=(((75.0, 221.0, 5.0), 50),),
-                      gas_fake_points=(((74.0,302.0,5.0),50),((33.0,303.0,3.0),7)))
-
-    # ngc7217.plot_rcs()
-    # plt.show()
-
-    ngc7217.initialize_sig_los_handler()
-    ngc7217.sig_handler.set_sig_ma(VelocityDispersion("../data/ngc7217/v_stars_ma.dat", "Sig MA los ngc7217"))
-    ngc7217.sig_handler.set_sig_mi(VelocityDispersion("../data/ngc7217/v_stars_mi.dat", "Sig MI los ngc7217"))
-    ngc7217.handle_sig_los(sig_ma_deg=10, sig_mi_deg=12,
-                   sig_ma_fake_points=[((20.0, 107.0, 1.0), 100, 250.0)],
-                   sig_mi_fake_points=[((22.0, 97.0, 1.0), 100, 1000.0), ])
-
-
-    ngc7217.plot_sig_los()
-    plt.show()
-
-    ngc7217.initialize_sve_handler()
-    ngc7217.sve_handler.plot_sigZ2_to_sigR2()
-    plt.show()
-
-    #TODO: проверить, что везде правильно делится на sin кривая вращения
+    #
+    # # ngc7217.initialize_sve_handler()
+    # # ngc7217.sve_handler.plot_sigZ2_to_sigR2()
+    # # plt.show()
+    #
+    # #TODO: проверить, что везде правильно делится на sin кривая вращения
