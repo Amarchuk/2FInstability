@@ -12,6 +12,7 @@ from utils import strutils as infoutils
 import itertools
 import copy
 from RadialToAzimuthalRatioHandler import *
+from RadialToVerticalRatioHandler import *
 import scipy.optimize
 
 
@@ -22,6 +23,7 @@ class VelocityEllipsoidHandler():
         self.galaxy = galaxy
         self.sve_dict = {}
         self.sigPhi_to_sigR_ratio_handler = None
+        self.sigZ_to_sigR_ratio_handler = None
 
 
     def get_sve(self, name):
@@ -116,34 +118,13 @@ class VelocityEllipsoidHandler():
         self.galaxy.sig_los_mi.plot_on_one_side('$\sigma_{los}^{min}$', color='blue', all_data=True)
         plt.legend()
 
-    def experimental_alpha_evaluation(self, normalize=False):
+    def experimental_alpha_evaluation(self):
+        if self.sigZ_to_sigR_ratio_handler is None:
+            self.sigZ_to_sigR_ratio_handler = RadialToVerticalRatioHandler(self.galaxy)
+        self.sigZ_to_sigR_ratio_handler.experimental_alpha_evaluation()
 
-        def residuals(params, xdata, ydata):
-            return (ydata - numpy.dot(xdata, params))
-
-        x0 = [0.25, 0.25]
-        sig_max = self.galaxy.sig_los_mi.bezier(0.0)**2
-        points = map(lambda p : [abs(p[0]), p[1]], self.galaxy.sig_los_ma.data_points)
-        points.sort()
-        radii = [p[0] for p in points]
-
-        def F(x):
-            return (self.galaxy.sig_los_mi.bezier(x)**2)/sig_max
-
-        if normalize:
-            ydata = numpy.concatenate(([sig_max],[(p[1]**2)/F(p[0]) for p in points]))
-            xdata = numpy.transpose(numpy.array([numpy.concatenate(([1.0],[self.sigPhi2_to_sigR2(x) for x in radii])),
-                                                 numpy.concatenate(([1.0],[1.0 for x in radii]))]))
-        else:
-            ydata = numpy.concatenate(([sig_max],[p[1]**2 for p in points]))
-            xdata = numpy.transpose(numpy.array([numpy.concatenate(([1.0],[F(x)*self.sigPhi2_to_sigR2(x) for x in radii])),
-                                                 numpy.concatenate(([1.0],[F(x) for x in radii]))]))
-        solution = scipy.optimize.leastsq(residuals, x0, args=(xdata, ydata))[0]
-        print '<',solution[0],' : ',solution[1],'>'
-        if solution[0] > 0 and solution[1] > 0:
-            tan = math.tan(self.galaxy.incl*math.pi/180.0)
-            sin = math.sin(self.galaxy.incl*math.pi/180.0)
-            sig_R_0 = math.sqrt(solution[0])/sin
-            print 'sig_R_0: ', sig_R_0
-            print 'sig_Z/sigR: ', math.sqrt(solution[1]/solution[0])*tan
-        plt.plot([0.0] + radii, map(abs, residuals((solution[0], solution[1]), xdata, ydata)), 'x-')
+    def plot_sve_from_lstsqr(self):
+        self.sigZ_to_sigR_ratio_handler.plot_sig_R()
+        self.sigZ_to_sigR_ratio_handler.plot_sig_Z()
+        self.sigZ_to_sigR_ratio_handler.plot_reconstructed_sig_los_mi()
+        plt.legend()
