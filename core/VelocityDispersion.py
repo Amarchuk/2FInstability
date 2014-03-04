@@ -100,7 +100,7 @@ class VelocityDispersion():
             max_R = max(map(abs, self.radii()))
             bezier_radii = list(arange(-0.1, -max_R, -0.1)[::-1]) + \
                          list(arange(0, max_R, 0.1))
-            bezier_sig = list(self.poly_fit(arange(0.1, max_R, 0.1))[::-1]) + list(self.poly_fit(arange(0, max_R, 0.1)))
+            bezier_sig = list(self.bezier(arange(0.1, max_R, 0.1))[::-1]) + list(self.bezier(arange(0, max_R, 0.1)))
             plt.plot(bezier_radii, bezier_sig, '-', label='bezier approx for '+ label)
             if max(bezier_sig) > 250:
                 plt.ylim(0, 250)
