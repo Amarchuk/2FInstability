@@ -54,6 +54,9 @@ if __name__ == "__main__":
     ngc338.sve_handler.plot_sve_from_bezier()
     plt.show()
 
+    ngc338.sve_handler.experimental_alpha_evaluation()
+    plt.show()
+
     # ngc1167 = Galaxy(name="NGC 1167 (UGC 2487)", path="../data/ngc1167", incl=36.0, delta_incl=2.0,
     #                 description="Photometry in R band.",
     #                 resolution=330.0, image="../data/ngc1167/ngc1167_SDSS.jpeg")
