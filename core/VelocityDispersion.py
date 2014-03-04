@@ -113,7 +113,7 @@ class VelocityDispersion():
         plt.errorbar(map(abs,self.radii()), self.dispersions(), yerr=self.delta_dispersions(), fmt='.',
                      marker='.', mew=0, color=color)
         if all_data:
-            self.plot_poly_fit(label)
+            # self.plot_poly_fit(label)
             self.plot_bezier_fit(label)
         plt.xlabel("$R,\ arcsec$")
         plt.ylabel("$\sigma,\ km/s$")
