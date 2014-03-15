@@ -16,6 +16,8 @@ if __name__ == "__main__":
     ngc338.add_img("SDSS DR9 whole image", "../data/ngc338/sdss_dr9_whole.jpg")
     ngc338.print_info(0)
 
+    ngc338.set_bulge_radius(15.0)
+
     stars_ma_rc = RotationCurve(ngc338.path + "/v_stars_ma.dat", "Stars MA RC NGC338")
     stars_ma_rc.print_info(0)
 
@@ -54,7 +56,7 @@ if __name__ == "__main__":
     ngc338.sve_handler.plot_sve_from_bezier()
     # plt.show()
 
-    ngc338.sve_handler.experimental_alpha_evaluation()
+    ngc338.sve_handler.experimental_alpha_evaluation3()
     ngc338.sve_handler.plot_sve_from_lstsqr()
     plt.show()
 

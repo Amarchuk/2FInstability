@@ -8,8 +8,6 @@ import scipy
 from scipy.special import *
 import math
 import inspect
-import Tkinter
-from PIL import ImageTk, Image
 from utils import strutils as infoutils
 from utils.bcolors import *
 from RotationCurveHandler import *
@@ -148,3 +146,6 @@ class Galaxy():
 
     def initialize_sve_handler(self):
         self.sve_handler = VelocityEllipsoidHandler(self.name, self)
+
+    def set_bulge_radius(self, r_eff):
+        self.r_eff = r_eff

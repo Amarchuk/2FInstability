@@ -123,8 +123,19 @@ class VelocityEllipsoidHandler():
             self.sigZ_to_sigR_ratio_handler = RadialToVerticalRatioHandler(self.galaxy)
         self.sigZ_to_sigR_ratio_handler.experimental_alpha_evaluation()
 
+    def experimental_alpha_evaluation2(self):
+        if self.sigZ_to_sigR_ratio_handler is None:
+            self.sigZ_to_sigR_ratio_handler = RadialToVerticalRatioHandler(self.galaxy)
+        self.sigZ_to_sigR_ratio_handler.experimental_alpha_evaluation2()
+
+    def experimental_alpha_evaluation3(self):
+        if self.sigZ_to_sigR_ratio_handler is None:
+            self.sigZ_to_sigR_ratio_handler = RadialToVerticalRatioHandler(self.galaxy)
+        self.sigZ_to_sigR_ratio_handler.experimental_alpha_evaluation3()
+
     def plot_sve_from_lstsqr(self):
         self.sigZ_to_sigR_ratio_handler.plot_sig_R()
         self.sigZ_to_sigR_ratio_handler.plot_sig_Z()
         self.sigZ_to_sigR_ratio_handler.plot_reconstructed_sig_los_mi()
+        self.sigZ_to_sigR_ratio_handler.plot_reconstructed_sig_los_ma()
         plt.legend()
