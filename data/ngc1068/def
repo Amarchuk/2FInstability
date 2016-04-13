@@ -151,38 +151,35 @@ set loadpath
 set fontpath 
 set psdir
 set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap v5
-f(x) = a*x**2 + b*x +c
-spl_min(x) = -0.837985*x + 119.984
-phi_to_z(x) = 0.0023379*x**2 - 0.260943*x + 7.44761
-sig_maj_exp(x, sig_R_0, alpha) = sig_R_0*spl_min(x)/sig_min_0 * sqrt(phi_to_z(x) * sin_i**2 + alpha**2 * cos_i**2)
-sig_min_exp(x, sig_R_0, alpha) = sig_R_0*spl_min(x)/sig_min_0 * sqrt(sin_i**2 + alpha**2 * cos_i**2)
-func(x,a,b) = (x > 67) ? sig_min_exp(x-30.,a,b) : sig_maj_exp(x,a,b)
-GNUTERM = "win"
-x = 0.0
-sig_min_0 = 100.0
+
+cd 'C:\science\2FInstability\data\ngc1068'
+
 sin_i = 0.5
-cos_i = 0.866
-a = 1.28663414929834
-b = -82.9751781305552
-GPFUN_f = "f(x) = a*x**2 + b*x +c"
-FIT_CONVERGED = 1
-FIT_NDF = 28
-FIT_STDFIT = 2.33238584832618
-FIT_WSSR = 152.320664873223
-FIT_P = 0.0
-FIT_NITER = 1
-a_err = 2137.50743049836
-b_err = 137853.124596357
-GPFUN_spl_min = "spl_min(x) = -0.837985*x + 119.984"
-c = 7.44761058318647
-c_err = 0.0375707397997334
-GPFUN_phi_to_z = "phi_to_z(x) = 0.0023379*x**2 - 0.260943*x + 7.44761"
+cos_i = 0.866025403784
+#CHANGE HERE
+sig_min_0 = 105.841732619
+
+a = 1.0
+b = 150.0
+f(x) = a*x + b
+fit a*x + b 'spl_sig_dt.txt' using 1:2 via a, b
+spl_min(x) = a*x + b
+
+m = 0.01
+n = 0.30
+k = 10.0
+f(x) = m*x**2 + n*x +k
+fit f(x) 'spl_sig_dt.txt' using 1:3 via m, n, k
+phi_to_z(x) = m*x**2 + n*x + k
+
 sig_R_0 = 100.0
 alpha = 0.5
-GPFUN_sig_maj_exp = "sig_maj_exp(x, sig_R_0, alpha) = sig_R_0*spl_min(x)/sig_min_0 * sqrt(phi_to_z(x) * sin_i**2 + alpha**2 * cos_i**2)"
-GPFUN_sig_min_exp = "sig_min_exp(x, sig_R_0, alpha) = sig_R_0*spl_min(x)/sig_min_0 * sqrt(sin_i**2 + alpha**2 * cos_i**2)"
-GPFUN_func = "func(x,a,b) = (x > 67) ? sig_min_exp(x-30.,a,b) : sig_maj_exp(x,a,b)"
-## Last datafile plotted: "sig_dt.txt"
-plot 'sig_dt.txt' using 1:2, func(x, 1.28, -82.)
-## fit func(x,a,b) 'sig_dt.txt' using 1:2:3 yerr via a,b
-#    EOF
+
+sig_maj_exp(x, sig_R_0, alpha) = sig_R_0*spl_min(x)/sig_min_0 * sqrt(phi_to_z(x) * sin_i**2 + alpha**2 * cos_i**2)
+sig_min_exp(x, sig_R_0, alpha) = sig_R_0*spl_min(x)/sig_min_0 * sqrt(sin_i**2 + alpha**2 * cos_i**2)
+
+r_shift = 66.8473895582
+#CHANGE HERE
+func(x, q, p) = (x > r_shift) ? sig_min_exp(x-r_shift.,q,p) : sig_maj_exp(x,q,p)
+
+fit func(x,q,p) 'sig_dt.txt' using 1:2:3 yerr via q,p
