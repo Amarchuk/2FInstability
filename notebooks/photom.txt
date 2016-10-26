@@ -1,0 +1,35 @@
+NGC 2273
+
+в дипломе B~4 и R~3 и результат ~ 1000 но есть бар
+
+http://iopscience.iop.org/article/10.1086/381924/pdf - декомпозиция в R и I причем с учетом бара
+http://iopscience.iop.org/article/10.1086/511333/pdf - B-V для всей галактики
+https://arxiv.org/pdf/astro-ph/0508097v1.pdf - декомпозиция в Ks
+https://arxiv.org/pdf/1002.4370v1.pdf - еще одна в Ks
+
+NGC 7217
+
+
+
+
+NGC 2985
+
+B, R - маленькие, около 60
+макс. диск ~ 450
+другие R и J - больше 1000
+похоже два диска
+https://arxiv.org/pdf/1510.05752v1.pdf - декомпозиция из кривой вращения, соотв. прямая массовая модель
+в http://adsabs.harvard.edu/cgi-bin/bib_query?1998AJ....116.1626B и https://arxiv.org/pdf/1104.1053v1.pdf без диска(
+http://www.aanda.org/articles/aa/pdf/2001/10/aa10227.pdf - J, H, K
+
+
+NGC 5533
+
+B, R ~ 150
+макс диск 330
+J ~ 750
+http://adsabs.harvard.edu/cgi-bin/bib_query?1996ApJS..103..363C - r полоса, старое
+http://adsabs.harvard.edu/cgi-bin/bib_query?1991A%26AS...91..469B - R, есть профиль, старое
+http://adsabs.harvard.edu/cgi-bin/bib_query?1998AJ....116.1626B - видимо V, данные в таблице онлайн
+http://iopscience.iop.org/article/10.1086/300490/pdf - M/L указано как 3.1
+https://arxiv.org/pdf/astro-ph/9704274v1.pdf - 6.8 в В
