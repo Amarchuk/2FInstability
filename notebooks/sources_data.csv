@@ -1,0 +1,34 @@
+source,N338,N1167,N2985,N3898,N4258,N4725,N5533,link,notes
+UGC,624,2487,5253,6787,7353,7989,9133,,
+HYPERLEDA,"75.6, 76.560 \pm 17.629, 107.3","49., -, 70.","37.9,-,177","56.3,-,107","68.3, 7.656 \pm  0.124,150","45.4,13.804 \pm  3.179,35.7","60.3,33.33 \pm 0.45,28.2",,
+NED scale dist,62,66,19,18.4,8.97,20.5,56.1,,Luminosity Distance
+Dispersions,,,,,,,,,
+Noordermeer 08,,,"37, 21.1, 356-340","69, 18.9, 107-118",,,"53, 54.3, 24-45",https://ui.adsabs.harvard.edu/#abs/2008MNRAS.388.1381N/abstract https://ui.adsabs.harvard.edu/#abs/2007MNRAS.376.1513N/abstract https://ui.adsabs.harvard.edu/#abs/2007MNRAS.376.1480N/abstract,
+Zasov 08,,"36, 67, 70",,,,,,https://ui.adsabs.harvard.edu/#abs/2008ARep...52...79Z/abstract,
+Zasov 12,"64, 65, 108",,,,,,,https://ui.adsabs.harvard.edu/#abs/2012AstBu..67..362Z/abstract,
+Heraudeau 1998,,,,,"70.3, -480, 150",,,http://adsabs.harvard.edu/cgi-bin/bib_query?1998A%26AS..133..317H,угол из эллиптичности
+Heraudeau 1999,,,"44.2, -1328, 0.","49.2, -1153, 107",,"46.5, -1225,35",,http://adsabs.harvard.edu/cgi-bin/bib_query?1999A%26AS..136..509H,угол из эллиптичности
+CALIFA 2016,," 40.5,-,62",,,,,,ftp://ftp.caha.es/CALIFA/dataproducts/Stellar_Kinematics_V1200/FalconBarroso_etal_2016.pdf,"расстояние не понятно, угол из эллиптичности, хотя у меня почему-то записал 42 угол"
+Dumas 07 SAURON,,,"38,22.4,-2",,,,,https://ui.adsabs.harvard.edu/#abs/2007MNRAS.379.1249D/abstract,
+Pignatelli 01,,,"54., 17.1, 107",,,,,https://ui.adsabs.harvard.edu/#abs/2001MNRAS.323..188P/abstract,
+Gas data,,,,,,,,,
+Noordermeer 05 HI,"59, 65.1","36., 67.4","38, 21.1","67, 18.9",,"51., 18.2","53, 54.3",https://ui.adsabs.harvard.edu/#abs/2005A&A...442..137N/abstract,"Не понятно, откуда PA, а это критично, видимо LEDA vs https://ui.adsabs.harvard.edu/#abs/2002A&A...390..863S/abstract"
+Lavezzi 98 CO,+',,,,,,,https://ui.adsabs.harvard.edu/#abs/1998AJ....115..405L/abstract,
+Courteau 97 Vel_21cm,"68, 71.22, -",,,,,,,https://ui.adsabs.harvard.edu/#abs/1997AJ....114.2402C/abstract,PA from UGC
+Eymeren 11 Vel_HI,,,,,"69.5, 7.8, 331.25","44.19,25.91,32.45","51.9,54.3,30.36",https://arxiv.org/pdf/1103.4928v1.pdf,
+Yim 16 CO+HI,,,,,"66., 8.0?, ","44., 26.8",,https://arxiv.org/pdf/1608.06735v1.pdf,не понял что с PA
+SF,,,,,,,,,
+Epinat 08 GHASP,,,"36\pm 5, 21.1, 176","53\pm 2, 18.9, 112",,,,https://arxiv.org/pdf/0808.0132v1.pdf,"все данные есть морф и кинем, я взял кинем."
+Hameed 05 H_alpha,,,"42., 22.4","46., 21.9",,"43., 12.4",,http://iopscience.iop.org/article/10.1086/430211/pdf,
+SPITZER,,,,,+',+',,,
+Photometry,,,,,,,,,
+"Noordermer, Hulst 07 BR (I)","64, -, -72","38, -, 70","36, -, -3",,,,"52, -, 26",https://ui.adsabs.harvard.edu/#abs/2007MNRAS.376.1480N/abstract,"расстояния такие же, как в газе N05"
+CALIFA 16 gri,,"-,-,72",,,,,"-,-,27.5",http://adsabs.harvard.edu/abs/2016arXiv161005324M,"нет расстояний и углов, PA диска из ужасной таблицы c ошибкой +- 0.5 примерно, я беру примерно среднее из трех"
+Heidt 01 JHK,,,"32-40,28.,2-160","63-74,37.5,102-106",,"63,13.0, 44.5",,http://www.aanda.org/articles/aa/pdf/2001/10/aa10227.pdf,"PA среднее по полосам, i из Q_d=a/b"
+Gutierrez 2012 R,,,"36, 21.1, 178","53., 18.9, 107",,,,https://ui.adsabs.harvard.edu/#abs/2011AJ....142..145G/abstract,
+Mendez-Abreu 08 J,,,"29.5, 22.4, 1.5","60., 21.9, 106.9",,,"50., 54., 26.3",https://ui.adsabs.harvard.edu/#abs/2008A&A...478..353M/abstract,наклон из q_d
+S4G 15,,,"33.9, -,175",,,"56., -,34.",,http://adsabs.harvard.edu/abs/2015ApJS..219....4S,PA для outer isopote
+YOSHINO 08 VIJ,,,,,"59.3,7.8",,,http://pasj.oxfordjournals.org/content/60/3/493.full.pdf,"i из a/b, PA не понятно"
+Fisher 10 S4G,,,,,"-,8.17,-","-,13.24,-",,http://iopscience.iop.org/article/10.1088/0004-637X/716/2/942/pdf,PA не ясно
+,,,,,,,,,
+HUBBLE,,,+',,,+',,,
