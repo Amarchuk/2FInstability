@@ -38,4 +38,9 @@ nosetests.xml
 .idea/.name
 .idea/workspace.xml
 
-materials/
+materials/*
+
+data/ngc628/blanc_fits/*
+notebooks/.ipynb_checkpoints/*
+notebooks/2f/.ipynb_checkpoints/*
+notebooks/2f/test_short/.ipynb_checkpoints/*
